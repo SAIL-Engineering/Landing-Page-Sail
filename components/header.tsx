@@ -86,48 +86,50 @@ export default function Header() {
             >
               SAIL
             </Link>
-            <nav className="hidden lg:block" aria-label="Main menu">
-              <NavigationMenu>
-                <NavigationMenuList className="text-sm text-white/70">
-                  <DropdownNavItem trigger="Solutions">
-                    <ul className="grid w-[360px] gap-3 bg-white p-4 md:w-[420px]">
-                      <ListItem
-                        href="/solutions/enterprise-compliance"
-                        title="Enterprise Compliance"
-                      >
-                        Centralized classification, duties, and audit trails.
-                      </ListItem>
-                      <ListItem
-                        href="/solutions/customs-brokerage"
-                        title="Customs Brokerage"
-                      >
-                        Faster filing and fewer holds at the port.
-                      </ListItem>
-                      <ListItem
-                        href="/solutions/advisory-trade-law"
-                        title="Advisory & Trade Law"
-                      >
-                        Audit-ready documentation for every client.
-                      </ListItem>
-                    </ul>
-                  </DropdownNavItem>
-                  <NavItem href="/#product">Product</NavItem>
-                  <NavItem href="/#how">How it works</NavItem>
-                  <NavItem href="/#results">Results</NavItem>
-                </NavigationMenuList>
-              </NavigationMenu>
-            </nav>
           </div>
+
+          <nav className="hidden lg:block">
+            <NavigationMenu>
+              <NavigationMenuList className="text-sm text-white/90">
+                <DropdownNavItem trigger="Solutions">
+                  <ul className="grid w-[360px] gap-3 bg-white p-4 md:w-[420px]">
+                    <ListItem
+                      href="/solutions/enterprise-compliance"
+                      title="Enterprise Compliance"
+                    >
+                      Centralized classification, duties, and audit trails.
+                    </ListItem>
+                    <ListItem
+                      href="/solutions/customs-brokerage"
+                      title="Customs Brokerage"
+                    >
+                      Faster filing and fewer holds at the port.
+                    </ListItem>
+                    <ListItem
+                      href="/solutions/advisory-trade-law"
+                      title="Advisory & Trade Law"
+                    >
+                      Audit-ready documentation for every client.
+                    </ListItem>
+                  </ul>
+                </DropdownNavItem>
+                <NavItem href="/#product">Product</NavItem>
+                <NavItem href="/#how">How it works</NavItem>
+                <NavItem href="/#results">Results</NavItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </nav>
+
           <div className="hidden items-center gap-3 lg:flex">
             <Button
               variant="outline"
-              className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+              className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900"
               asChild
             >
               <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
             </Button>
             <Button variant="sail" asChild>
-              <Link href="mailto:info@sailgtx.com">Request demo</Link>
+              <Link href="mailto:info@sailgtx.com">Request free audit</Link>
             </Button>
           </div>
           <div className="lg:hidden">

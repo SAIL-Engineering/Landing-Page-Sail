@@ -1,4 +1,3 @@
-import Footer from "@/components/footer";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -32,20 +31,26 @@ export default function Home() {
               sizes="100vw"
             />
           </div>
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/65 to-black/90" />
           <div className="absolute left-10 top-10 z-10 h-24 w-24 rounded-full border border-white/10" />
           <div className="absolute right-16 top-32 z-10 h-40 w-40 rounded-full border border-white/10" />
           <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1fr_1.1fr]">
             <div className="space-y-6">
               <Badge className="border border-[#D8FD49]/60 bg-[#D8FD49] text-black">
-                Built for customs brokers
+                Built for Brokers & Enterprises
               </Badge>
               <h1 className="fade-up font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] md:text-6xl">
-                Trade compliance, finally built for change.
+                Global Trade Execution <br className="hidden md:block" /> for
+                the Modern Compliance Team.
               </h1>
               <p className="fade-up fade-up-delay max-w-xl text-lg text-white/85 md:text-xl">
-                Stay audit-ready while tariff and regulatory changes update in
-                minutes—not months.
+                <span className="sail-wordmark">SAIL</span>{" "}
+                <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                  GTX
+                </span>{" "}
+                is the platform that equips trade compliance teams and brokers
+                with intelligent agents to automate classification, screen
+                risks, and recover revenue—in real time.
               </p>
               <div className="fade-up flex flex-col gap-3 sm:flex-row sm:items-center">
                 <div className="flex w-full items-center gap-2 rounded-full bg-white px-4 py-2 text-slate-800 shadow-[0_16px_40px_rgba(3,6,20,0.45)] sm:w-auto">
@@ -54,13 +59,41 @@ export default function Home() {
                     placeholder="Work email"
                     aria-label="Work email"
                   />
-                  <Button variant="sail" className="h-10 px-4 text-sm" asChild>
-                    <Link href="mailto:info@sailgtx.com">Request demo</Link>
+                  <Button
+                    variant="sail"
+                    className="group h-10 w-full overflow-hidden px-6 text-sm transition-all duration-300 hover:border-[#343CED] hover:bg-[#343CED] hover:!bg-none hover:text-white sm:w-auto"
+                    asChild
+                  >
+                    <Link
+                      href="mailto:info@sailgtx.com"
+                      className="relative flex items-center justify-center"
+                    >
+                      <span className="flex items-center transition-transform duration-300 group-hover:-translate-y-10">
+                        Get compliant for free
+                      </span>
+                      <span className="absolute flex translate-y-10 items-center gap-2 transition-transform duration-300 group-hover:translate-y-0">
+                        Get Your Free Audit
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="16"
+                          height="16"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M5 12h14" />
+                          <path d="m12 5 7 7-7 7" />
+                        </svg>
+                      </span>
+                    </Link>
                   </Button>
                 </div>
                 <Button
                   variant="outline"
-                  className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+                  className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900"
                   asChild
                 >
                   <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
@@ -122,17 +155,19 @@ export default function Home() {
 
         <section className="bg-[#f9fafc] py-10">
           <div className="sail-kicker mx-auto flex max-w-6xl flex-wrap items-center gap-8 px-6">
-            <span className="text-slate-400">Trusted by</span>
+            <span className="text-slate-400">
+              Trusted by leaders in global trade
+            </span>
             <div className="flex items-center gap-10">
               <img
                 src="/logos/Koch_logo.svg"
                 alt="Koch Industries"
-                className="h-9 w-auto"
+                className="h-7 w-auto"
               />
               <img
                 src="/logos/Invista_Logo-removebg-preview.png"
                 alt="Invista"
-                className="h-12 w-auto origin-left scale-[2.15]"
+                className="h-11 w-auto"
               />
             </div>
           </div>
@@ -142,50 +177,64 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="mb-12 max-w-2xl">
               <p className="sail-kicker">
-                <span className="sail-wordmark">SAIL</span> product suite
+                <span className="sail-wordmark">SAIL</span>{" "}
+                <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                  GTX
+                </span>
               </p>
               <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
-                Built for every workflow.
+                Visibility isn&apos;t enough. You need execution.
               </h2>
               <p className="mt-4 text-slate-600">
-                Replace manual compliance tools with one platform designed for
-                brokers, enterprises, and advisory teams.
+                Stop just monitoring risks. Start resolving them with autonomous
+                compliance workflows designed for brokers and rapid-response
+                teams.
               </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2">
               {[
                 {
-                  title: "Enterprise Compliance",
+                  title: "Enterprise Trade Compliance",
                   body: "Centralize classification, duties, and audit trails across global teams.",
                   href: "/solutions/enterprise-compliance",
-                  tint: "from-[#e7ebff] via-white to-[#D8FD49]/50",
+                  image: "/pixel-art/containers.png", // Placeholder
                 },
                 {
                   title: "Customs Brokerage",
                   body: "File faster with automated updates and reduce hold risk at the port.",
                   href: "/solutions/customs-brokerage",
-                  tint: "from-[#f2f3ff] via-white to-[#e9fbe0]",
+                  image: "/pixel-art/containers.png",
                 },
                 {
-                  title: "Advisory & Trade Law",
+                  title: "Global Trade Advisory Firms",
                   body: "Deliver audit-ready documentation and compliance support for clients.",
                   href: "/solutions/advisory-trade-law",
-                  tint: "from-[#f9f6ef] via-white to-[#e7ebff]",
+                  image: "/pixel-art/containers.png", // Placeholder
+                },
+                {
+                  title: "Trade Law Firms",
+                  body: "Support counsel with rapid, data-backed regulatory analysis.",
+                  href: "/solutions/advisory-trade-law",
+                  image: "/pixel-art/containers.png", // Placeholder
                 },
               ].map((item) => (
                 <Card
                   key={item.title}
                   className="group flex h-full flex-col rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#343CED]/30 hover:bg-white"
                 >
-                  <div
-                    className={`mb-6 h-44 rounded-2xl bg-gradient-to-br ${item.tint}`}
-                  >
-                    <div className="flex h-full items-end justify-between rounded-2xl border border-black/5 bg-white/40 p-4">
-                      <div className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600">
-                        Live updates
-                      </div>
-                      <div className="h-8 w-8 rounded-full bg-[#343CED]" />
+                  <div className="bg-dot-black/[0.1] relative mb-6 flex h-44 items-center justify-center overflow-hidden rounded-2xl border-2 border-slate-900/5 bg-slate-50 p-6 shadow-sm">
+                    {/* Radial gradient for the container to give a faded look */}
+                    <div className="absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
+                    <div className="absolute right-3 top-3 z-10 rounded-md border border-black/5 bg-[#D8FD49] px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-black shadow-sm">
+                      Live
                     </div>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      width={150}
+                      height={150}
+                      className="relative z-10 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
+                    />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900">
                     {item.title}
@@ -207,21 +256,24 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
               <div>
-                <p className="sail-kicker">Product</p>
+                <p className="sail-kicker">Intelligence</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
-                  Compliance that updates itself.
+                  Your automated compliance workforce.
                 </h2>
                 <p className="mt-4 text-slate-600">
                   Tariff and regulatory change is constant.{" "}
-                  <span className="sail-wordmark">SAIL</span> keeps your
-                  classifications, duties, and documentation current without
-                  months of manual rework.
+                  <span className="sail-wordmark">SAIL</span>{" "}
+                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                    GTX
+                  </span>{" "}
+                  acts as a force multiplier, keeping your classifications and
+                  duties current without the manual rework.
                 </p>
                 <div className="mt-8 space-y-4 text-sm text-slate-600">
                   {[
-                    "Continuous compliance monitoring",
-                    "Audit-ready documentation trails",
-                    "Accurate classification and duty calculation",
+                    "Precision Duty Engine (Calculate & Simulate)",
+                    "Digital Compliance Twin (Audit-ready trails)",
+                    "Always-On Monitor (Auto-detect tariff changes)",
                     "Country of origin and FTA qualification",
                     "Supplier documentation collection",
                     "Integrations with email, SAP, Oracle, or standalone",
@@ -488,13 +540,18 @@ export default function Home() {
           <div className="mx-auto max-w-6xl px-6">
             <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
               <div>
-                <p className="sail-kicker">Results</p>
+                <p className="sail-kicker">Reclaim Your Revenue</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
-                  Real-world outcomes for compliance teams.
+                  Identify recovery opportunities in minutes.
                 </h2>
                 <p className="mt-4 text-slate-600">
-                  <span className="sail-wordmark">SAIL</span> delivers audit
-                  readiness on demand and prevents costly delays at the border.
+                  Tariffs change daily. Your duties shouldn&apos;t.{" "}
+                  <span className="sail-wordmark">SAIL</span>{" "}
+                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                    GTX
+                  </span>{" "}
+                  re-runs your history to find overpayments and confirm
+                  compliance.
                 </p>
                 <div className="mt-8 grid gap-4 md:grid-cols-2">
                   {[
@@ -558,8 +615,11 @@ export default function Home() {
                   Modernize your compliance workflow today.
                 </h2>
                 <p className="mt-3 text-white/70">
-                  Join <span className="sail-wordmark">SAIL</span> and keep
-                  every shipment audit-ready with updates in minutes.
+                  Join <span className="sail-wordmark">SAIL</span>{" "}
+                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                    GTX
+                  </span>{" "}
+                  and keep every shipment audit-ready with updates in minutes.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
@@ -578,7 +638,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

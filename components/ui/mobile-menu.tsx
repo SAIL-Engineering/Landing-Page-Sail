@@ -59,7 +59,10 @@ export default function MobileMenu() {
       >
         <div>
           <SheetHeader className="mb-4">
-            <SheetTitle className="sail-wordmark text-center">SAIL</SheetTitle>
+            <SheetTitle className="text-center">
+              <span className="sail-wordmark">SAIL</span>{" "}
+              <span style={{ fontFamily: "var(--font-nunito-sans)" }}>GTX</span>
+            </SheetTitle>
           </SheetHeader>
           <div className="mb-6 space-y-3">
             <Button variant="sail" className="w-full" asChild>
@@ -67,7 +70,7 @@ export default function MobileMenu() {
                 href="mailto:info@sailgtx.com"
                 onClick={() => setIsOpen(false)}
               >
-                Request demo
+                Request free audit
               </Link>
             </Button>
             <Button
