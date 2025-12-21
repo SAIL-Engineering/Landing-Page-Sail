@@ -47,7 +47,7 @@ export default function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-white/10 rounded-md"
+          className="rounded-md text-white hover:bg-white/10"
           aria-label="Open menu"
         >
           <Menu className="h-6 w-6" />

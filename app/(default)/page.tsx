@@ -20,7 +20,7 @@ export default function Home() {
       <main className="bg-[#F6F3EB]">
         <section
           id="hero"
-          className="text-white relative overflow-hidden bg-[#0b0f2b] pb-24 pt-32"
+          className="relative overflow-hidden bg-[#0b0f2b] pb-24 pt-32 text-white"
         >
           <div className="absolute inset-0 z-0">
             <Image
@@ -33,22 +33,22 @@ export default function Home() {
             />
           </div>
           <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
-          <div className="border-white/10 absolute left-10 top-10 z-10 h-24 w-24 rounded-full border" />
-          <div className="border-white/10 absolute right-16 top-32 z-10 h-40 w-40 rounded-full border" />
+          <div className="absolute left-10 top-10 z-10 h-24 w-24 rounded-full border border-white/10" />
+          <div className="absolute right-16 top-32 z-10 h-40 w-40 rounded-full border border-white/10" />
           <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1fr_1.1fr]">
             <div className="space-y-6">
               <Badge className="border border-[#D8FD49]/60 bg-[#D8FD49] text-black">
                 Built for customs brokers
               </Badge>
-              <h1 className="fade-up text-white font-serif text-4xl font-semibold leading-[1.05] tracking-tight drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] md:text-6xl">
+              <h1 className="fade-up font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] md:text-6xl">
                 Trade compliance, finally built for change.
               </h1>
-              <p className="fade-up fade-up-delay text-white/85 max-w-xl text-lg md:text-xl">
+              <p className="fade-up fade-up-delay max-w-xl text-lg text-white/85 md:text-xl">
                 Stay audit-ready while tariff and regulatory changes update in
                 minutes—not months.
               </p>
               <div className="fade-up flex flex-col gap-3 sm:flex-row sm:items-center">
-                <div className="bg-white flex w-full items-center gap-2 rounded-full px-4 py-2 text-slate-800 shadow-[0_16px_40px_rgba(3,6,20,0.45)] sm:w-auto">
+                <div className="flex w-full items-center gap-2 rounded-full bg-white px-4 py-2 text-slate-800 shadow-[0_16px_40px_rgba(3,6,20,0.45)] sm:w-auto">
                   <input
                     className="min-w-[200px] flex-1 bg-transparent text-sm outline-none placeholder:text-slate-400"
                     placeholder="Work email"
@@ -66,7 +66,7 @@ export default function Home() {
                   <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
                 </Button>
               </div>
-              <div className="fade-up text-white/70 flex flex-wrap items-center gap-6 text-sm">
+              <div className="fade-up flex flex-wrap items-center gap-6 text-sm text-white/70">
                 <div className="flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-[#D8FD49]" />
                   Audit-ready workflows
@@ -79,8 +79,8 @@ export default function Home() {
             </div>
             <div className="fade-up relative">
               <div className="absolute -right-10 top-10 h-56 w-56 rounded-full bg-[#343CED]/30 blur-[120px]" />
-              <div className="border-white/10 bg-white/10 relative rounded-[28px] border p-4 shadow-[0_30px_80px_rgba(5,8,30,0.45)] backdrop-blur">
-                <div className="bg-white rounded-[20px] p-5 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.2)]">
+              <div className="relative rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-[0_30px_80px_rgba(5,8,30,0.45)] backdrop-blur">
+                <div className="rounded-[20px] bg-white p-5 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.2)]">
                   <div className="flex items-center justify-between text-xs text-slate-400">
                     <span>Product preview (placeholder)</span>
                     <span className="rounded-full bg-[#D8FD49] px-2 py-0.5 text-[10px] font-semibold text-black">
@@ -105,14 +105,14 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-                <div className="border-white/40 bg-white absolute -bottom-6 -right-4 w-40 rounded-[24px] border p-3 text-slate-900 shadow-[0_18px_40px_rgba(10,14,40,0.25)]">
+                <div className="absolute -bottom-6 -right-4 w-40 rounded-[24px] border border-white/40 bg-white p-3 text-slate-900 shadow-[0_18px_40px_rgba(10,14,40,0.25)]">
                   <div className="text-xs text-slate-500">Shipment check</div>
                   <div className="mt-2 text-lg font-semibold">Low risk</div>
                   <div className="mt-2 h-2 rounded-full bg-slate-100">
                     <div className="h-2 w-4/5 rounded-full bg-[#343CED]" />
                   </div>
                 </div>
-                <div className="border-white/20 text-white absolute -bottom-10 right-24 w-24 rounded-[18px] border bg-[#0b0f2b] p-3 text-xs shadow-[0_12px_30px_rgba(6,9,30,0.35)]">
+                <div className="absolute -bottom-10 right-24 w-24 rounded-[18px] border border-white/20 bg-[#0b0f2b] p-3 text-xs text-white shadow-[0_12px_30px_rgba(6,9,30,0.35)]">
                   <span className="font-mono">132</span> shipments saved
                 </div>
               </div>
@@ -175,13 +175,13 @@ export default function Home() {
               ].map((item) => (
                 <Card
                   key={item.title}
-                  className="hover:bg-white group flex h-full flex-col rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#343CED]/30"
+                  className="group flex h-full flex-col rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#343CED]/30 hover:bg-white"
                 >
                   <div
                     className={`mb-6 h-44 rounded-2xl bg-gradient-to-br ${item.tint}`}
                   >
-                    <div className="bg-white/40 flex h-full items-end justify-between rounded-2xl border border-black/5 p-4">
-                      <div className="bg-white rounded-full px-3 py-1 text-xs font-semibold text-slate-600">
+                    <div className="flex h-full items-end justify-between rounded-2xl border border-black/5 bg-white/40 p-4">
+                      <div className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-slate-600">
                         Live updates
                       </div>
                       <div className="h-8 w-8 rounded-full bg-[#343CED]" />
@@ -234,7 +234,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="grid gap-4">
-                <Card className="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
+                <Card className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
                   <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                     Risk score
                   </p>
@@ -250,7 +250,7 @@ export default function Home() {
                     <div className="h-2 w-4/5 rounded-full bg-[#343CED]" />
                   </div>
                 </Card>
-                <Card className="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
+                <Card className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
                   <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                     Checklist
                   </p>
@@ -303,7 +303,7 @@ export default function Home() {
                   key={item.title}
                   className="rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
                 >
-                  <div className="bg-white/70 mb-5 flex h-40 items-center justify-center rounded-2xl border border-dashed border-black/10 text-xs uppercase tracking-widest text-slate-400">
+                  <div className="mb-5 flex h-40 items-center justify-center rounded-2xl border border-dashed border-black/10 bg-white/70 text-xs uppercase tracking-widest text-slate-400">
                     Screenshot placeholder
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900">
@@ -357,7 +357,7 @@ export default function Home() {
               ].map((item) => (
                 <Card
                   key={item.title}
-                  className="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
+                  className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
                 >
                   <p className="font-mono text-xs uppercase tracking-widest text-[#343CED]">
                     Capability
@@ -462,8 +462,8 @@ export default function Home() {
                     key={item.day}
                     className="relative rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
                   >
-                    <div className="bg-white absolute -top-4 left-6 h-3 w-3 rounded-full border border-slate-300" />
-                    <div className="bg-white inline-flex rounded-full border border-slate-200 px-3 py-1 font-mono text-xs font-semibold text-slate-600">
+                    <div className="absolute -top-4 left-6 h-3 w-3 rounded-full border border-slate-300 bg-white" />
+                    <div className="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-xs font-semibold text-slate-600">
                       {item.day}
                     </div>
                     <h3 className="mt-4 font-serif text-lg font-semibold text-slate-900">
@@ -517,7 +517,7 @@ export default function Home() {
                   ].map((item) => (
                     <Card
                       key={item.label}
-                      className="bg-white rounded-2xl border border-black/5 p-4 shadow-[0_10px_20px_rgba(15,23,42,0.06)]"
+                      className="rounded-2xl border border-black/5 bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.06)]"
                     >
                       <p className="font-mono text-sm font-semibold text-slate-900">
                         {item.value}
@@ -529,7 +529,7 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <Card className="bg-white rounded-3xl border border-black/5 p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+              <Card className="rounded-3xl border border-black/5 bg-white p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Case study
                 </p>
@@ -551,13 +551,13 @@ export default function Home() {
 
         <section className="bg-[#f0f4ff] py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-white flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 md:flex-row md:items-center">
+            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
               <div className="max-w-xl">
                 <p className="sail-kicker-light">Get started</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight">
                   Modernize your compliance workflow today.
                 </h2>
-                <p className="text-white/70 mt-3">
+                <p className="mt-3 text-white/70">
                   Join <span className="sail-wordmark">SAIL</span> and keep
                   every shipment audit-ready with updates in minutes.
                 </p>

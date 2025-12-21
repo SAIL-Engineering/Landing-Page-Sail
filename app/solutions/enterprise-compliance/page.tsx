@@ -54,7 +54,7 @@ export default function EnterpriseCompliancePage() {
               </div>
             </div>
             <div className="grid gap-4">
-              <Card className="bg-white border border-black/5 p-6">
+              <Card className="border border-black/5 bg-white p-6">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Global visibility
                 </p>
@@ -66,7 +66,7 @@ export default function EnterpriseCompliancePage() {
                   supporting documentation.
                 </p>
               </Card>
-              <Card className="bg-white border border-black/5 p-6">
+              <Card className="border border-black/5 bg-white p-6">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Change management
                 </p>
@@ -83,10 +83,10 @@ export default function EnterpriseCompliancePage() {
           </div>
           <div className="sail-kicker mx-auto mt-10 flex max-w-6xl flex-wrap items-center gap-6 px-6">
             <span className="text-slate-400">Trusted by</span>
-            <span className="bg-white rounded-full border border-slate-200 px-3 py-1">
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Koch Industries
             </span>
-            <span className="bg-white rounded-full border border-slate-200 px-3 py-1">
+            <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
               Invista
             </span>
           </div>
@@ -166,7 +166,7 @@ export default function EnterpriseCompliancePage() {
               ].map((item) => (
                 <Card
                   key={item.title}
-                  className="bg-white border border-black/5 p-6"
+                  className="border border-black/5 bg-white p-6"
                 >
                   <p className="text-xs uppercase tracking-widest text-slate-500">
                     {item.title}
@@ -180,13 +180,13 @@ export default function EnterpriseCompliancePage() {
 
         <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-white flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 md:flex-row md:items-center">
+            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
               <div className="max-w-xl">
                 <p className="sail-kicker-light">Enterprise ready</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold">
                   Bring enterprise compliance into one system.
                 </h2>
-                <p className="text-white/70 mt-3">
+                <p className="mt-3 text-white/70">
                   Get audit-ready documentation and tariff updates without the
                   manual scramble.
                 </p>

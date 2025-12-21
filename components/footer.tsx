@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
-    <footer className="text-white w-full border-t border-black/10 bg-[#0f1115] px-6 py-14">
+    <footer className="w-full border-t border-black/10 bg-[#0f1115] px-6 py-14 text-white">
       <div className="mx-auto max-w-6xl">
         <div className="grid gap-10 lg:grid-cols-[1.4fr_2.6fr]">
           <div>
@@ -15,7 +15,7 @@ export default function Footer() {
             >
               SAIL
             </Link>
-            <p className="text-white/70 mt-4 max-w-sm text-sm">
+            <p className="mt-4 max-w-sm text-sm text-white/70">
               Trade compliance software for brokers and enterprises that need
               audit-ready workflows and faster updates.
             </p>
@@ -35,10 +35,10 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
             {footerSections.map(({ title, links }, idx) => (
               <div key={idx}>
-                <h5 className="text-white/80 text-sm font-semibold uppercase tracking-wide">
+                <h5 className="text-sm font-semibold uppercase tracking-wide text-white/80">
                   {title}
                 </h5>
-                <ul className="text-white/60 mt-4 space-y-2 text-sm">
+                <ul className="mt-4 space-y-2 text-sm text-white/60">
                   {links.map(({ text, href, target = "_self" }, idx) => (
                     <li key={idx}>
                       <Link
@@ -56,9 +56,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-white/10 my-10 border-b" />
+        <div className="my-10 border-b border-white/10" />
 
-        <div className="text-white/60 flex flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between">
+        <div className="flex flex-col gap-6 text-sm text-white/60 md:flex-row md:items-center md:justify-between">
           <span>
             &copy; {new Date().getFullYear()}{" "}
             <span className="sail-wordmark">SAIL</span>. All rights reserved.
@@ -70,11 +70,11 @@ export default function Footer() {
                   key={link}
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-white/10 rounded-full"
+                  className="rounded-full hover:bg-white/10"
                   asChild
                 >
                   <Link href={link} target="_blank" rel="noopener noreferrer">
-                    <Icon className="text-white/70 hover:text-white h-4 w-4" />
+                    <Icon className="h-4 w-4 text-white/70 hover:text-white" />
                   </Link>
                 </Button>
               ))}

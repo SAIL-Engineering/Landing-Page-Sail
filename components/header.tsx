@@ -81,16 +81,16 @@ export default function Header() {
           <div className="flex items-center gap-8">
             <Link
               href="/"
-              className={cn("sail-wordmark text-white text-2xl")}
+              className={cn("sail-wordmark text-2xl text-white")}
               aria-label="SAIL Home"
             >
               SAIL
             </Link>
             <nav className="hidden lg:block" aria-label="Main menu">
               <NavigationMenu>
-                <NavigationMenuList className="text-white/70 text-sm">
+                <NavigationMenuList className="text-sm text-white/70">
                   <DropdownNavItem trigger="Solutions">
-                    <ul className="bg-white grid w-[360px] gap-3 p-4 md:w-[420px]">
+                    <ul className="grid w-[360px] gap-3 bg-white p-4 md:w-[420px]">
                       <ListItem
                         href="/solutions/enterprise-compliance"
                         title="Enterprise Compliance"

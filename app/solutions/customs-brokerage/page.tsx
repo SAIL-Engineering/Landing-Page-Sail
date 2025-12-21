@@ -54,7 +54,7 @@ export default function CustomsBrokeragePage() {
               </div>
             </div>
             <div className="grid gap-4">
-              <Card className="bg-white border border-black/5 p-6">
+              <Card className="border border-black/5 bg-white p-6">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Filing speed
                 </p>
@@ -66,7 +66,7 @@ export default function CustomsBrokeragePage() {
                   accelerate clearance.
                 </p>
               </Card>
-              <Card className="bg-white border border-black/5 p-6">
+              <Card className="border border-black/5 bg-white p-6">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Accuracy
                 </p>
@@ -154,7 +154,7 @@ export default function CustomsBrokeragePage() {
               ].map((item) => (
                 <Card
                   key={item.title}
-                  className="bg-white border border-black/5 p-6"
+                  className="border border-black/5 bg-white p-6"
                 >
                   <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                     {item.title}
@@ -168,13 +168,13 @@ export default function CustomsBrokeragePage() {
 
         <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-white flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 md:flex-row md:items-center">
+            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
               <div className="max-w-xl">
                 <p className="sail-kicker-light">Get started</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold">
                   Keep every shipment moving.
                 </h2>
-                <p className="text-white/70 mt-3">
+                <p className="mt-3 text-white/70">
                   Sign up and modernize your brokerage workflow today.
                 </p>
               </div>

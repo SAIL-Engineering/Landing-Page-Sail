@@ -54,7 +54,7 @@ export default function AdvisoryTradeLawPage() {
               </div>
             </div>
             <div className="grid gap-4">
-              <Card className="bg-white border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
+              <Card className="border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Documentation
                 </p>
@@ -66,7 +66,7 @@ export default function AdvisoryTradeLawPage() {
                   for every client.
                 </p>
               </Card>
-              <Card className="bg-white border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
+              <Card className="border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
                 <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                   Advisory insight
                 </p>
@@ -155,7 +155,7 @@ export default function AdvisoryTradeLawPage() {
               ].map((item) => (
                 <Card
                   key={item.title}
-                  className="bg-white rounded-3xl border border-black/5 p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
+                  className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
                 >
                   <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
                     {item.title}
@@ -169,13 +169,13 @@ export default function AdvisoryTradeLawPage() {
 
         <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="text-white flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 md:flex-row md:items-center">
+            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
               <div className="max-w-xl">
                 <p className="sail-kicker-light">Get started</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight">
                   Deliver compliance with confidence.
                 </h2>
-                <p className="text-white/70 mt-3">
+                <p className="mt-3 text-white/70">
                   Create audit-ready deliverables and keep clients current.
                 </p>
               </div>

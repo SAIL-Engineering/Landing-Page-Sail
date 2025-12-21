@@ -119,7 +119,7 @@ export default function SignUp() {
                 variant="authgroup"
                 className="relative flex w-full items-center rounded-md px-0"
               >
-                <GoogleLogoColored className="text-white mx-1 h-4 w-4 shrink-0" />
+                <GoogleLogoColored className="mx-1 h-4 w-4 shrink-0 text-white" />
                 <span>Sign up with Google</span>
               </Button>
             </form>
