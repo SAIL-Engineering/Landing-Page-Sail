@@ -55,7 +55,7 @@ export default function Home() {
                     aria-label="Work email"
                   />
                   <Button variant="sail" className="h-10 px-4 text-sm" asChild>
-                    <Link href="/signup">Sign up</Link>
+                    <Link href="mailto:info@sailgtx.com">Request demo</Link>
                   </Button>
                 </div>
                 <Button
@@ -564,7 +564,7 @@ export default function Home() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <Button variant="sail" asChild>
-                  <Link href="/signup">Sign up</Link>
+                  <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
                 <Button
                   variant="outline"

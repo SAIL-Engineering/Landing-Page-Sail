@@ -32,7 +32,7 @@ export default function AdvisoryTradeLawPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="sail" asChild>
-                  <Link href="/signup">Sign up</Link>
+                  <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
                 <Button
                   variant="outline"
@@ -181,7 +181,7 @@ export default function AdvisoryTradeLawPage() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <Button variant="sail" asChild>
-                  <Link href="/signup">Sign up</Link>
+                  <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
                 <Button
                   variant="outline"

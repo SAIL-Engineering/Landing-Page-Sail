@@ -1,8 +1,17 @@
 import { ComponentType } from "react";
 
-export const CONTACT_EMAIL = "info@sailgtx.com";
+type FooterLink = {
+  text: string;
+  href: string;
+  target?: "_self" | "_blank";
+};
 
-export const footerSections = [
+type FooterSection = {
+  title: string;
+  links: FooterLink[];
+};
+
+export const footerSections: FooterSection[] = [
   {
     title: "Solutions",
     links: [
@@ -55,8 +64,6 @@ export const footerSections = [
     ],
   },
 ];
-
-export const HCAPTCHA_SITE_KEY_PUBLIC = "fa6c8c52-7694-45b0-97ec-7814072256b4";
 
 type SocialMediaLink = {
   icon: ComponentType<{ className?: string }>;

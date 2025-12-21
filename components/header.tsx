@@ -127,7 +127,7 @@ export default function Header() {
               <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
             </Button>
             <Button variant="sail" asChild>
-              <Link href="/signup">Sign up</Link>
+              <Link href="mailto:info@sailgtx.com">Request demo</Link>
             </Button>
           </div>
           <div className="lg:hidden">

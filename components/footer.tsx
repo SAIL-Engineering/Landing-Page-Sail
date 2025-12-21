@@ -21,7 +21,7 @@ export default function Footer() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Button variant="sail" asChild>
-                <Link href="/signup">Sign up</Link>
+                <Link href="mailto:info@sailgtx.com">Request demo</Link>
               </Button>
               <Button
                 variant="outline"

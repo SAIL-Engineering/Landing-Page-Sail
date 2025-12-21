@@ -63,8 +63,11 @@ export default function MobileMenu() {
           </SheetHeader>
           <div className="mb-6 space-y-3">
             <Button variant="sail" className="w-full" asChild>
-              <Link href="/signup" onClick={() => setIsOpen(false)}>
-                Sign up
+              <Link
+                href="mailto:info@sailgtx.com"
+                onClick={() => setIsOpen(false)}
+              >
+                Request demo
               </Link>
             </Button>
             <Button
