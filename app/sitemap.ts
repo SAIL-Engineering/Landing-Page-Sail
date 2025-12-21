@@ -1,6 +1,6 @@
 import { MetadataRoute } from "next/types";
 
-const BASE_URL = "https://trypear.ai";
+const BASE_URL = "https://www.sailgtx.com";
 
 const pages: Array<{
   route: string;
@@ -15,7 +15,21 @@ const pages: Array<{
     | "never";
 }> = [
   { route: "/", priority: 1, changeFrequency: "weekly" },
-  { route: "/about", priority: 0.8, changeFrequency: "monthly" },
+  {
+    route: "/solutions/enterprise-compliance",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
+  {
+    route: "/solutions/customs-brokerage",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
+  {
+    route: "/solutions/advisory-trade-law",
+    priority: 0.7,
+    changeFrequency: "monthly",
+  },
   { route: "/privacy", priority: 0.5, changeFrequency: "yearly" },
   { route: "/terms-of-service", priority: 0.5, changeFrequency: "yearly" },
   { route: "/signin", priority: 0.6, changeFrequency: "monthly" },

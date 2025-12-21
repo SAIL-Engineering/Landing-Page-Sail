@@ -1,6 +1,5 @@
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
-import { AllowedProtocol } from "../types/url";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -23,9 +22,9 @@ interface OSType {
 }
 
 const defaultMetadata = {
-  title: "PearAI - The AI Code Editor For Your Next Project",
+  title: "SAIL | Modern Trade Compliance",
   description:
-    "PearAI is an open source AI code editor with powerful features like AI chat, PearAI Creator, and AI debugging to help you make what excites.",
+    "SAIL is modern trade compliance software for brokers and enterprises that need audit-ready workflows and faster tariff updates.",
 };
 
 export const normalizeDate = (dateString: string) => {
@@ -33,53 +32,30 @@ export const normalizeDate = (dateString: string) => {
   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
 };
 
-const allowedProtocols: AllowedProtocol[] = [
-  "http:",
-  "https:",
-  "pearai:",
-  "vscode:",
-  "code-oss:",
-  "vscode-insiders:",
-];
-
-export function isAllowedUrl(url: URL): boolean {
-  if (!allowedProtocols.includes(url.protocol as AllowedProtocol)) return false;
-  if (url.protocol === "http:" || url.protocol === "https:") {
-    return (
-      url.origin === window.location.origin || url.hostname === "localhost"
-    );
-  }
-  return true;
-}
-
 export const constructMetadata = ({
   title,
   description = defaultMetadata.description,
   canonical = "/",
-  ogImage = "/images/og-image.png",
+  ogImage = "/hero/hero.png",
 }: MetadataProps) => {
   return {
-    metadataBase: new URL("https://trypear.ai/"),
-    title: title ? `${title} - PearAI` : defaultMetadata.title,
+    metadataBase: new URL("https://www.sailgtx.com/"),
+    title: title ? `${title} - SAIL` : defaultMetadata.title,
     description,
     keywords: [
-      "code editor",
-      "ai code editor",
-      "ai",
-      "pearai",
-      "open source code editor",
+      "trade compliance software",
+      "customs brokerage",
+      "tariff updates",
+      "audit readiness",
+      "compliance workflows",
     ],
     alternates: {
       canonical,
     },
     authors: [
       {
-        name: "Nang",
-        url: "https://github.com/nang-dev",
-      },
-      {
-        name: "Duke Pan",
-        url: "https://github.com/Fryingpannn",
+        name: "SAIL",
+        url: "https://www.sailgtx.com/",
       },
     ],
     openGraph: {
@@ -104,12 +80,11 @@ export const constructMetadata = ({
     //   apple: "/icon.png",
     // },
 
-    // --- need a twitter handle for this ---
     // twitter: {
     //   title,
     //   description,
-    //   creator: "@trypearai",
-    //   site: "trypear.ai",
+    //   creator: "@sailgtx",
+    //   site: "sailgtx.com",
     //   card: "summary_large_image",
     // },
   };

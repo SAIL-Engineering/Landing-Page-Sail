@@ -61,6 +61,10 @@
 
     --blue-400: 216, 64%, 54%;
     --blue-500: 216, 79%, 53%;
+
+    --sail-blue: 52, 60, 237;
+    --sail-green: 216, 253, 73;
+    --sail-oat: 246, 243, 235;
   }
 
   .dark {
@@ -129,74 +133,96 @@
   }
 }
 
+.font-serif {
+  font-family:
+    var(--font-plex-serif), ui-serif, Georgia, Cambria, "Times New Roman",
+    Times, serif;
+}
+
+.font-mono {
+  font-family:
+    var(--font-jetbrains-mono), ui-monospace, SFMono-Regular, Menlo, Monaco,
+    Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+.sail-wordmark {
+  font-family:
+    var(--font-nunito-sans), "Nunito Sans", ui-sans-serif, system-ui, sans-serif;
+  font-weight: 900;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
 *::selection {
   background-color: hsla(var(--primary-700), 10%) !important;
   color: hsla(var(--primary-700), 100%) !important;
 }
 
-.text-link {
-  color: hsla(var(--blue-400), 0.8);
+.sail-cta {
+  background: linear-gradient(180deg, #e6ff6b 0%, #d8fd49 100%);
+  box-shadow:
+    0 12px 24px rgba(216, 253, 73, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  color: #0b0f2b;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.text-link:hover {
-  color: hsla(var(--blue-400), 0.8);
+.sail-cta:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    0 18px 32px rgba(216, 253, 73, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
-.thin-bullets ul {
-  list-style-type: disc;
+.sail-cta:active {
+  transform: translateY(0);
+  box-shadow:
+    0 8px 16px rgba(216, 253, 73, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
-.thin-bullets ul li::marker {
-  font-weight: normal;
-  font-size: 0.75em;
+.sail-nav-dark {
+  background: rgba(9, 12, 32, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 16px 30px rgba(5, 8, 30, 0.28);
+  backdrop-filter: blur(8px);
 }
 
-:is([data-theme="light"], .light) .react-tweet-theme {
-  --tweet-bg-color: --foreground;
-  --tweet-bg-color-hover: hsla(var(--gray-200), 100%);
+.fade-up {
+  animation: fade-up 0.6s ease both;
 }
 
-:is([data-theme="dark"], .dark) .react-tweet-theme {
-  --tweet-bg-color: --foreground;
-  --tweet-bg-color-hover: hsla(var(--gray-50), 100%);
+.fade-up-delay {
+  animation-delay: 0.12s;
 }
 
-.tweet-container_root__0rJLq {
-  max-width: 100% !important;
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.custom-tweet-container {
-  width: 100% !important;
-  box-sizing: border-box;
-}
-
-/* Prose */
-.prose code:not(pre code) {
-  @apply rounded-md border border-slate-300 bg-slate-200 px-1 py-0.5 before:content-none after:content-none dark:border-slate-700 dark:bg-slate-950;
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    animation: none;
+  }
 }
 
 @layer utilities {
-  .showcase-gradient-light {
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgba(250, 250, 250, 1) 0%,
-        rgba(250, 250, 250, 0) 50%
-      ),
-      radial-gradient(51% 51% at -11% 9%, #ff57dda1 1%, #ff57dd00 100%),
-      radial-gradient(51% 67% at 115% 96%, #ff57dda1 0%, #ff57dd00 100%),
-      radial-gradient(50% 66% at 50% 50%, #f2ff61a3 0%, #f2ff6100 100%),
-      radial-gradient(22% 117% at 2% 87%, #00f3ba00 20%, #00f3ba94 100%),
-      linear-gradient(0deg, #61cdffa3 0%, #61cdffa3 100%);
+  .sail-kicker {
+    @apply font-mono text-xs uppercase tracking-[0.3em] text-slate-500;
   }
 
-  .dark .showcase-gradient-light {
-    background-image:
-      linear-gradient(to bottom, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.1) 45%),
-      radial-gradient(51% 51% at -11% 9%, #ff57dda1 1%, #ff57dd00 100%),
-      radial-gradient(51% 67% at 115% 96%, #ff57dda1 0%, #ff57dd00 100%),
-      radial-gradient(50% 66% at 50% 50%, #f2ff61a3 0%, #f2ff6100 100%),
-      radial-gradient(22% 117% at 2% 87%, #00f3ba00 20%, #00f3ba94 100%),
-      linear-gradient(0deg, #61cdffa3 0%, #61cdffa3 100%);
+  .sail-kicker-light {
+    @apply font-mono text-xs uppercase tracking-[0.3em];
+    color: rgba(255, 255, 255, 0.6);
   }
 }

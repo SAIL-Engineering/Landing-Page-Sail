@@ -3,11 +3,6 @@ const nextConfig = {
   images: {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
-    remotePatterns: [
-      { protocol: "https", hostname: "pbs.twimg.com" },
-      { protocol: "https", hostname: "abs.twimg.com" },
-      { protocol: "https", hostname: "pearai.b-cdn.net" },
-    ],
   },
 };
 
@@ -46,19 +41,7 @@ const nextConfiguration = {
     ];
   },
   async redirects() {
-    // remove this redirect in next pearapp release
-    return [
-      {
-        source: "/features/tab-autocomplete",
-        destination: "/docs/tab-autocomplete",
-        permanent: true,
-      },
-      {
-        source: "/download",
-        destination: "/pricing",
-        permanent: true,
-      },
-    ];
+    return [];
   },
 };
 

@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         default:
           "rounded-xl bg-primary-700  text-white-main hover:bg-primary-800 dark:hover:bg-primary-600 hover:shadow-sm",
+        sail: "sail-cta rounded-full font-semibold",
         destructive:
           "rounded-xl bg-red-600/90 dark:bg-red-600/70 border border-red-700 dark:border-red-600 text-white-main hover:bg-red-700 hover:shadow-sm",
         outline:

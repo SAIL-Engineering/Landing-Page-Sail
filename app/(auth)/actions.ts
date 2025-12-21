@@ -12,10 +12,7 @@ import {
 import { UpdatePasswordFormData } from "@/utils/form-schema";
 import { getURL } from "@/lib/utils";
 
-export async function signin(
-  formData: FormData,
-  callbackForDesktopApp: string,
-) {
+export async function signin(formData: FormData) {
   const supabase = createClient();
 
   const data: SignInWithPasswordCredentials = {
@@ -24,7 +21,7 @@ export async function signin(
     options: { captchaToken: formData.get("captchaToken") as string },
   };
 
-  const { data: res, error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signInWithPassword(data);
 
   if (error) {
     return { error: error.message };
@@ -32,12 +29,6 @@ export async function signin(
 
   revalidatePath("/", "layout");
 
-  if (callbackForDesktopApp && res) {
-    // if login in from desktop app
-    return redirect(
-      `/dashboard?callback=${encodeURIComponent(callbackForDesktopApp)}`,
-    );
-  }
   redirect(`/dashboard`);
 }
 
@@ -50,20 +41,13 @@ export async function signin(
 //  - If sign up fails, return error: error.message (toast error on client)
 
 // OAuth sign-in with Google or GitHub
-export async function signinWithOAuth(
-  provider: Provider,
-  callbackForDesktopApp: string | string[] = "",
-) {
+export async function signinWithOAuth(provider: Provider) {
   const supabase = createClient();
-
-  const redirectToUrl = callbackForDesktopApp
-    ? `${getURL()}/auth/callback?callback=${callbackForDesktopApp}`
-    : `${getURL()}/auth/callback`;
 
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: provider,
     options: {
-      redirectTo: redirectToUrl,
+      redirectTo: `${getURL()}/auth/callback`,
     },
   });
 

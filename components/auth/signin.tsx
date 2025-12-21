@@ -21,7 +21,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { SignInFormData, signInSchema } from "@/utils/form-schema";
-import { useSearchParams } from "next/navigation";
 import { useToggle } from "@/hooks/useToggle";
 
 export default function SignIn() {
@@ -29,8 +28,6 @@ export default function SignIn() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [captchaToken, setCaptchaToken] = useState<string>();
   const captcha = useRef<HCaptcha>(null);
-  const searchParams = useSearchParams();
-  const callbackForDesktopApp = searchParams?.get("callback") ?? "";
 
   const form = useForm<SignInFormData>({
     resolver: zodResolver(signInSchema),
@@ -56,7 +53,7 @@ export default function SignIn() {
       formData.append("password", data.password);
       formData.append("captchaToken", captchaToken);
 
-      const response = await signin(formData, callbackForDesktopApp);
+      const response = await signin(formData);
       if (response?.error) {
         setErrorMessage(response.error);
       } else {
@@ -74,7 +71,7 @@ export default function SignIn() {
   const handleOAuthSignIn = async (provider: Provider) => {
     setErrorMessage(null);
     try {
-      await signinWithOAuth(provider, callbackForDesktopApp);
+      await signinWithOAuth(provider);
     } catch (error) {
       setErrorMessage("An unexpected error occurred. Please try again.");
     }
@@ -87,7 +84,9 @@ export default function SignIn() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="pb-12 pt-32 md:pb-20 md:pt-40">
           <div className="md:pb-17 mx-auto max-w-3xl pb-10 text-center text-3xl lg:text-4xl">
-            <h1 className="h1">Welcome back</h1>
+            <h1 className="font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Welcome back
+            </h1>
           </div>
 
           <div className="mx-auto max-w-sm">
@@ -219,11 +218,12 @@ export default function SignIn() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full rounded-md"
+                  variant="sail"
+                  className="w-full"
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
-                  {isSubmitting ? "Signing in..." : "Sign In"}
+                  {isSubmitting ? "Signing in..." : "Sign in"}
                 </Button>
 
                 {errorMessage && (

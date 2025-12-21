@@ -91,18 +91,19 @@ module.exports = {
         },
         beige: {
           100: "#FFFDFA",
-          200: "#FEFCFS", // This is the main color according to the image
+          200: "#FEFCF5", // This is the main color according to the image
           300: "#FEFDEC",
           400: "#FDF7E7",
           500: "#FDF6E3",
           600: "#FADE96",
         },
         white: {
+          DEFAULT: "#FFFFFF",
           50: "#FCFDFD",
           100: "#F9FBFB",
-          200: "#FOF4F5",
+          200: "#F0F4F5",
           300: "#F3FBFB",
-          400: "#EDEGER",
+          400: "#EDE6E7",
           500: "#F8DE96",
           main: "#FFFFFF",
         },

@@ -2,6 +2,7 @@ import "./css/style.css";
 import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { IBM_Plex_Serif, JetBrains_Mono, Nunito_Sans } from "next/font/google";
 import { PHProvider } from "./providers";
 import Header from "@/components/header";
 import { Toaster } from "@/components/ui/sonner";
@@ -14,13 +15,34 @@ const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
   ssr: false,
 });
 
+const plexSerif = IBM_Plex_Serif({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-plex-serif",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-jetbrains-mono",
+});
+
+const nunitoSans = Nunito_Sans({
+  subsets: ["latin"],
+  weight: ["900"],
+  variable: "--font-nunito-sans",
+});
+
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable} ${plexSerif.variable} ${jetbrainsMono.variable} ${nunitoSans.variable}`}
+    >
       <PHProvider>
         <body className={`bg-background font-sans tracking-tight antialiased`}>
           <ThemeProvider

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useState, useRef } from "react";
 import { signinWithOAuth } from "@/app/(auth)/actions";
 import { HCAPTCHA_SITE_KEY_PUBLIC } from "@/utils/constants";
-import { AdminUserAttributes, Provider } from "@supabase/supabase-js";
+import { Provider } from "@supabase/supabase-js";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
@@ -18,7 +18,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { signUpSchema, SignUpFormData } from "@/utils/form-schema";
-import { toast, Toaster } from "sonner";
+import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
@@ -102,7 +102,9 @@ export default function SignUp() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="pb-12 pt-32 md:pb-20 md:pt-40">
           <div className="md:pb-15 mx-auto max-w-3xl pb-10 text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl">
-            <h1 className="h1">Ready to build?</h1>
+            <h1 className="font-serif text-3xl font-semibold tracking-tight text-slate-900 sm:text-4xl">
+              Create your <span className="sail-wordmark">SAIL</span> account
+            </h1>
           </div>
           <div className="mx-auto max-w-sm">
             <form
@@ -266,14 +268,13 @@ export default function SignUp() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full rounded-md"
+                  variant="sail"
+                  className="w-full"
                   disabled={isSubmitting}
                   isLoading={isSubmitting}
                 >
-                  {isSubmitting ? "Signing up..." : "Sign Up"}
+                  {isSubmitting ? "Signing up..." : "Sign up"}
                 </Button>
-
-                <Toaster richColors />
               </form>
             </Form>
 

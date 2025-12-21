@@ -1,75 +1,85 @@
 import { footerSections, socialMediaLinks } from "@/utils/constants";
 import Link from "next/link";
-import PearWhiteLogo from "./ui/PearWhiteLogo.svg";
 import { Button } from "./ui/button";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#1F1F1F] px-6 py-[60px]">
-      <div className="mx-auto max-w-3xl lg:max-w-[1049px]">
-        <div className="grid grid-cols-2 gap-x-5 gap-y-9 sm:grid-cols-5 sm:gap-6">
-          {/* Logo and tagline */}
-          <div className="col-span-full xl:col-span-2">
-            <Link className="inline-block dark:invert" href="/">
-              <PearWhiteLogo />
+    <footer className="text-white w-full border-t border-black/10 bg-[#0f1115] px-6 py-14">
+      <div className="mx-auto max-w-6xl">
+        <div className="grid gap-10 lg:grid-cols-[1.4fr_2.6fr]">
+          <div>
+            <Link
+              href="/"
+              className="sail-wordmark text-xl"
+              aria-label="SAIL home"
+            >
+              SAIL
             </Link>
-            <p className="mb-2 text-[#808080]">Make What Excites.</p>
-            <p className="mb-4 text-[#808080] sm:mb-2">
-              * For more information about how integrations are built into
-              PearAI, see{" "}
-              <span className="cursor-pointer text-white-50 underline hover:text-white-50/80">
-                here.
-              </span>
+            <p className="text-white/70 mt-4 max-w-sm text-sm">
+              Trade compliance software for brokers and enterprises that need
+              audit-ready workflows and faster updates.
             </p>
-            <Button className="bg-white-50 px-6 py-3 text-sm font-semibold text-black hover:bg-white-50/80 sm:text-base">
-              <Link href="/pricing">Download</Link>
-            </Button>
-          </div>
-
-          {/* Sections with links */}
-          {footerSections.map(({ title, links }, idx) => (
-            <div key={idx}>
-              <h5 className="font-semibold text-white-50">{title}</h5>
-              <ul className="mt-5 space-y-3 text-[#808080]">
-                {links.map(({ text, href, target = "_self" }, idx) => (
-                  <li key={idx}>
-                    <Link
-                      href={href}
-                      target={target}
-                      className="hover:text-white-50/80"
-                    >
-                      {text}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        <div className="my-10 border-b border-[#2B2B2B]" />
-
-        <div className="flex flex-row-reverse items-center justify-between text-neutral-500">
-          {/* Social media links */}
-          <div className="-mr-[3px] flex items-center">
-            {socialMediaLinks.map(({ icon: Icon, link }) => (
-              <Button
-                key={link}
-                variant="ghost"
-                size="icon"
-                className="-mr-2 rounded-full hover:bg-transparent"
-              >
-                <Link href={link} target="_blank" rel="noopener noreferrer">
-                  <Icon className="h-5 w-5 text-[#808080] hover:text-white-50/80" />
-                </Link>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <Button variant="sail" asChild>
+                <Link href="/signup">Sign up</Link>
               </Button>
+              <Button
+                variant="outline"
+                className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+                asChild
+              >
+                <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
+              </Button>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
+            {footerSections.map(({ title, links }, idx) => (
+              <div key={idx}>
+                <h5 className="text-white/80 text-sm font-semibold uppercase tracking-wide">
+                  {title}
+                </h5>
+                <ul className="text-white/60 mt-4 space-y-2 text-sm">
+                  {links.map(({ text, href, target = "_self" }, idx) => (
+                    <li key={idx}>
+                      <Link
+                        href={href}
+                        target={target}
+                        className="hover:text-white"
+                      >
+                        {text}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
           </div>
+        </div>
 
-          {/* Copyright */}
-          <span className="text-base text-[#808080]">
-            &copy; {new Date().getFullYear()} PearAI - All rights reserved.
+        <div className="border-white/10 my-10 border-b" />
+
+        <div className="text-white/60 flex flex-col gap-6 text-sm md:flex-row md:items-center md:justify-between">
+          <span>
+            &copy; {new Date().getFullYear()}{" "}
+            <span className="sail-wordmark">SAIL</span>. All rights reserved.
           </span>
+          {socialMediaLinks.length > 0 ? (
+            <div className="flex items-center gap-2">
+              {socialMediaLinks.map(({ icon: Icon, link }) => (
+                <Button
+                  key={link}
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-white/10 rounded-full"
+                  asChild
+                >
+                  <Link href={link} target="_blank" rel="noopener noreferrer">
+                    <Icon className="text-white/70 hover:text-white h-4 w-4" />
+                  </Link>
+                </Button>
+              ))}
+            </div>
+          ) : null}
         </div>
       </div>
     </footer>

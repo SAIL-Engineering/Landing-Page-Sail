@@ -5,8 +5,6 @@ import { type CookieOptions, createServerClient } from "@supabase/ssr";
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
   const code = searchParams.get("code");
-  // if callback in param, means we should redirect to desktop pearai app instead and ignore "next"
-  const callback = searchParams.get("callback");
   // if "next" is in param, use it as the redirect URL
   const next = searchParams.get("next") ?? "/dashboard";
   let authError = "";
@@ -32,14 +30,7 @@ export async function GET(request: Request) {
     );
     const { data, error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) {
-      const response = NextResponse.redirect(`${origin}${next}`);
-      if (callback && data) {
-        // if login in from desktop app
-        return NextResponse.redirect(
-          `${origin}${next}?callback=${encodeURIComponent(callback)}`,
-        );
-      }
-      return response;
+      return NextResponse.redirect(`${origin}${next}`);
     }
     authError =
       error?.message ?? "Error during code exchange for oauth session";
