@@ -4,6 +4,7 @@ const nextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30, // 30 days
   },
+  transpilePackages: ["nucleo-ui-outline-18"],
 };
 
 // next.config.js

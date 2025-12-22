@@ -85,17 +85,19 @@ export default function Home() {
                   <Button
                     variant="sail"
                     size="lg"
-                    className="group text-base transition-all duration-300 hover:bg-[#343CED] hover:text-white"
+                    className="group relative overflow-hidden text-base transition-all duration-500"
                     asChild
                   >
-                    <Link href="mailto:info@sailgtx.com">
-                      <span className="group-hover:hidden">
-                        Get Your Free Audit
+                    <Link
+                      href="mailto:info@sailgtx.com"
+                      className="flex items-center justify-center"
+                    >
+                      <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
+                        Claim Your Free Audit
                       </span>
-                      <span className="hidden group-hover:inline">
-                        Identify Millions in Savings
+                      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                        Save Millions!
                       </span>
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
                   <Button
@@ -486,7 +488,6 @@ export default function Home() {
                 Built for everyone who touches Trade Compliance.
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-600">
-                Most platforms are built for one buyer.{" "}
                 <span className="sail-wordmark">SAIL</span> works across the
                 entire Trade Compliance ecosystem—because that&apos;s how the
                 work actually flows.
@@ -605,11 +606,11 @@ export default function Home() {
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {[
                 { src: "/logos/SAP_2011_logo.svg", alt: "SAP", width: 80 },
-                { src: "/logos/Oracle_logo.svg", alt: "Oracle", width: 100 },
+                { src: "/logos/oracle.svg", alt: "Oracle", width: 110 },
                 {
-                  src: "/logos/U.S._Customs_and_Border_Protection_logo.png",
+                  src: "/logos/cbp.png",
                   alt: "CBP",
-                  width: 50,
+                  width: 90,
                 },
                 {
                   src: "/logos/ace_logo_transparent.png",
@@ -617,17 +618,17 @@ export default function Home() {
                   width: 60,
                 },
                 {
-                  src: "/logos/Slack_Technologies-Logo.wine.png",
+                  src: "/logos/slack.png",
                   alt: "Slack",
-                  width: 90,
+                  width: 120,
                 },
                 {
-                  src: "/logos/Microsoft_Office_Teams_(2019–2025).svg.png",
+                  src: "/logos/teams.png",
                   alt: "Teams",
-                  width: 40,
+                  width: 50,
                 },
                 {
-                  src: "/logos/Microsoft_Outlook_Icon_(2025–present).svg",
+                  src: "/logos/outlook.svg",
                   alt: "Outlook",
                   width: 36,
                 },
@@ -638,7 +639,7 @@ export default function Home() {
                 },
                 { src: "/logos/Box,_Inc._logo.svg.png", alt: "Box", width: 70 },
                 {
-                  src: "/logos/Microsoft_Office_SharePoint_(2019–2025).svg",
+                  src: "/logos/sharepoint.svg",
                   alt: "SharePoint",
                   width: 36,
                 },
@@ -662,110 +663,133 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            CASE STUDY - Invista (With Invista Brand Colors)
+            CASE STUDY - Invista (Dark Theme)
         ═══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-gradient-to-br from-[#F6F3EB] to-[#EBE8E0] py-24">
+        <section className="bg-[#0b0f2b] py-24 text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
-                <p className="sail-kicker">Case Study</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                <p className="sail-kicker-light">Case Study</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-white md:text-4xl">
                   How Invista transformed Trade Compliance operations.
                 </h2>
-                <p className="mt-4 text-lg text-slate-600">
+                <p className="mt-4 text-lg text-slate-400">
                   From reactive firefighting to continuous confidence.
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <div className="rounded-xl border-l-4 border-[#003366] bg-white p-5 shadow-sm">
-                    <p className="mb-2 text-sm font-semibold text-[#003366]">
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:border-[#343CED]/50">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-wider text-slate-400">
                       The Challenge
                     </p>
-                    <p className="text-sm text-slate-700">
+                    <p className="text-sm leading-relaxed text-white/80">
                       Invista&apos;s Trade Compliance team managed 8,000+
                       product classifications across multiple business units.
                       Every tariff change meant weeks of manual review. CF-28
                       responses took 3-4 weeks to compile.
                     </p>
                   </div>
-                  <div className="rounded-xl border-l-4 border-[#343CED] bg-white p-5 shadow-sm">
-                    <p className="mb-2 text-sm font-semibold text-[#343CED]">
+                  <div className="rounded-xl border border-white/10 bg-white/5 p-5 shadow-sm transition hover:border-[#343CED]/50">
+                    <p className="mb-2 font-mono text-xs uppercase tracking-wider text-[#D8FD49]">
                       The Approach
                     </p>
-                    <p className="text-sm text-slate-700">
-                      <span className="sail-wordmark">SAIL</span> GTX deployed
-                      in 11 days. Full product catalog imported. Classification
-                      confidence scores generated. Continuous monitoring
-                      activated.
+                    <p className="text-sm leading-relaxed text-white/80">
+                      <span className="sail-wordmark text-white">SAIL</span> GTX
+                      deployed in 11 days. Full product catalog imported.
+                      Classification confidence scores generated. Continuous
+                      monitoring activated.
                     </p>
                   </div>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <Card className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <p className="mb-6 text-sm font-semibold text-[#003366]">
-                    The Results
-                  </p>
-                  <div className="space-y-4">
-                    {[
-                      {
-                        metric: "Time to classify new product",
-                        before: "45 minutes",
-                        after: "3 minutes",
-                      },
-                      {
-                        metric: "CF-28 response time",
-                        before: "3-4 weeks",
-                        after: "Same day",
-                      },
-                      {
-                        metric: "Products reviewed after tariff change",
-                        before: "~15% sampled",
-                        after: "100% automated",
-                      },
-                      {
-                        metric: "Classification confidence",
-                        before: "Unknown",
-                        after: "98.2% verified",
-                      },
-                      {
-                        metric: "Catalog currency",
-                        before: "Updated quarterly",
-                        after: "Continuously",
-                      },
-                    ].map((row) => (
-                      <div
-                        key={row.metric}
-                        className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0"
+              <div className="space-y-6">
+                <Card className="overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-0 shadow-xl backdrop-blur-sm">
+                  <div className="border-b border-white/10 bg-white/5 px-6 py-4">
+                    <div className="flex items-center justify-between">
+                      <p className="text-sm font-semibold text-white">
+                        Optimization Results
+                      </p>
+                      <Badge
+                        variant="outline"
+                        className="border-[#D8FD49] text-[#D8FD49]"
                       >
-                        <span className="text-sm text-slate-600">
-                          {row.metric}
-                        </span>
-                        <div className="flex items-center gap-3">
-                          <span className="text-sm text-slate-400 line-through">
-                            {row.before}
+                        Verified
+                      </Badge>
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <div className="space-y-5">
+                      {[
+                        {
+                          metric: "Time to classify new product",
+                          before: "45 minutes",
+                          after: "3 minutes",
+                        },
+                        {
+                          metric: "CF-28 response time",
+                          before: "3-4 weeks",
+                          after: "Same day",
+                        },
+                        {
+                          metric: "Products reviewed after tariff change",
+                          before: "~15% sampled",
+                          after: "100% automated",
+                        },
+                        {
+                          metric: "Classification confidence",
+                          before: "Unknown",
+                          after: "98.2% verified",
+                        },
+                        {
+                          metric: "Catalog currency",
+                          before: "Updated quarterly",
+                          after: "Continuously",
+                        },
+                      ].map((row) => (
+                        <div
+                          key={row.metric}
+                          className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0"
+                        >
+                          <span className="text-sm text-slate-400">
+                            {row.metric}
                           </span>
-                          <span className="font-mono text-sm font-semibold text-[#003366]">
-                            {row.after}
-                          </span>
+                          <div className="flex flex-col items-end gap-1 sm:flex-row sm:items-center sm:gap-3">
+                            <span className="text-xs text-slate-500 line-through">
+                              {row.before}
+                            </span>
+                            <span className="font-mono text-sm font-semibold text-[#D8FD49]">
+                              {row.after}
+                            </span>
+                          </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </Card>
 
-                <Card className="rounded-2xl border-l-4 border-[#003366] bg-white p-6 shadow-sm">
-                  <p className="text-slate-700">
-                    &ldquo;We used to dread tariff changes. Now{" "}
-                    <span className="sail-wordmark">SAIL</span> flags exactly
-                    what&apos;s affected and generates the re-classification
-                    analysis automatically. We just review and approve. Our team
-                    finally has time for strategic work.&rdquo;
-                  </p>
-                  <p className="mt-4 text-sm font-semibold text-[#003366]">
-                    — Trade Compliance Director, Invista
-                  </p>
+                <Card className="rounded-2xl border border-white/10 bg-white/5 p-8 shadow-xl backdrop-blur-sm">
+                  <div className="flex gap-4">
+                    <div className="flex-1">
+                      <p className="text-lg italic leading-relaxed text-white/90">
+                        &ldquo;We used to dread tariff changes. Now{" "}
+                        <span className="text-[#D8FD49]">SAIL</span> flags
+                        exactly what&apos;s affected and generates the
+                        re-classification analysis automatically. We just review
+                        and approve. Our team finally has time for strategic
+                        work.&rdquo;
+                      </p>
+                      <div className="mt-6 flex items-center gap-3">
+                        <div className="h-10 w-10 rounded-full bg-slate-700" />
+                        <div>
+                          <p className="font-semibold text-white">
+                            Director of Trade Compliance
+                          </p>
+                          <p className="text-sm text-slate-400">Invista</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </Card>
               </div>
             </div>
@@ -832,23 +856,23 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            TIME TO VALUE - More Emotional
+            TIME TO VALUE - Dark Theme & Nucleo Icons
         ═══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#F6F3EB] py-24">
+        <section className="bg-[#0b0f2b] py-24 text-white">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-16 lg:grid-cols-2">
               <div>
-                <p className="sail-kicker">Time to Value</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                <p className="sail-kicker-light">Time to Value</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-white md:text-4xl">
                   Stop waiting. Start winning.
                 </h2>
-                <p className="mt-4 text-lg text-slate-600">
+                <p className="mt-4 text-lg text-slate-400">
                   While competitors spend months in implementation hell—meetings
                   with consultants, painful data migrations, endless training
                   sessions—you&apos;ll already be classifying, filing, and
                   recovering duties.
                 </p>
-                <p className="mt-4 font-medium text-[#343CED]">
+                <p className="mt-4 font-medium text-[#D8FD49]">
                   <span className="sail-wordmark">SAIL</span> deploys in days
                   for brokers, weeks for enterprises. That&apos;s it.
                 </p>
@@ -858,45 +882,48 @@ export default function Home() {
                     {
                       day: "Day 1",
                       task: "Account setup, product catalog import",
-                      emoji: "🚀",
+                      icon: Package,
                     },
                     {
                       day: "Day 3",
                       task: "Classification engine calibrated to your products",
-                      emoji: "⚙️",
+                      icon: RefreshCw,
                     },
                     {
                       day: "Day 7",
                       task: "Full regulatory monitoring active",
-                      emoji: "📡",
+                      icon: Eye,
                     },
                     {
                       day: "Day 14",
                       task: "Team trained, workflows live",
-                      emoji: "✅",
+                      icon: CheckCircle,
                     },
                   ].map((item) => (
-                    <div
+                    <Card
                       key={item.day}
-                      className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition hover:shadow-md"
+                      className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm transition hover:border-[#343CED]/50 hover:bg-white/10 hover:shadow-md"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#343CED] to-[#343CED]/70 font-mono text-sm font-semibold text-white shadow-lg">
-                        {item.day.split(" ")[1]}
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#343CED] to-[#343CED]/70 shadow-lg shadow-[#343CED]/20">
+                        <item.icon className="h-6 w-6 text-white" />
                       </div>
                       <div className="flex-1">
-                        <span className="font-semibold text-slate-900">
-                          {item.day}
+                        <div className="flex items-center gap-2">
+                          <span className="font-mono text-xs font-bold text-[#D8FD49]">
+                            {item.day}
+                          </span>
+                        </div>
+                        <span className="font-medium text-white">
+                          {item.task}
                         </span>
-                        <span className="ml-2 text-slate-600">{item.task}</span>
                       </div>
-                      <span className="text-xl">{item.emoji}</span>
-                    </div>
+                    </Card>
                   ))}
                 </div>
               </div>
 
               <div className="flex flex-col justify-center">
-                <p className="mb-4 text-sm font-semibold text-slate-500">
+                <p className="mb-4 text-sm font-semibold text-slate-400">
                   Meanwhile, your competitors are stuck with:
                 </p>
                 <div className="space-y-4">
@@ -911,15 +938,15 @@ export default function Home() {
                     },
                     { name: "Consulting-led projects", time: "12+ months" },
                   ].map((comp) => (
-                    <div
+                    <Card
                       key={comp.name}
-                      className="flex items-center justify-between rounded-xl border border-red-100 bg-white p-4"
+                      className="flex items-center justify-between rounded-xl border border-red-500/20 bg-red-950/20 p-5 backdrop-blur-sm transition hover:border-red-500/40"
                     >
-                      <span className="text-slate-600">{comp.name}</span>
-                      <span className="font-mono text-sm text-red-400">
+                      <span className="text-slate-300">{comp.name}</span>
+                      <span className="font-mono text-sm font-semibold text-red-400">
                         {comp.time}
                       </span>
-                    </div>
+                    </Card>
                   ))}
                 </div>
                 <p className="mt-6 text-center text-sm italic text-slate-500">
@@ -949,12 +976,19 @@ export default function Home() {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="bg-[#D8FD49] text-black hover:bg-[#c8ed39]"
+                  className="group relative overflow-hidden bg-[#D8FD49] text-black transition-all duration-500 hover:bg-[#343CED]"
                   asChild
                 >
-                  <Link href="mailto:info@sailgtx.com">
-                    Get Your Free Audit
-                    <ArrowRight className="ml-2 h-4 w-4" />
+                  <Link
+                    href="mailto:info@sailgtx.com"
+                    className="flex items-center justify-center"
+                  >
+                    <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
+                      Claim Your Free Audit
+                    </span>
+                    <span className="absolute inset-0 flex items-center justify-center text-white opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                      Save Millions!
+                    </span>
                   </Link>
                 </Button>
                 <Button

@@ -128,8 +128,22 @@ export default function Header() {
             >
               <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
             </Button>
-            <Button variant="sail" asChild>
-              <Link href="mailto:info@sailgtx.com">Request free audit</Link>
+            <Button
+              variant="sail"
+              className="group relative overflow-hidden transition-all duration-500"
+              asChild
+            >
+              <Link
+                href="mailto:info@sailgtx.com"
+                className="flex items-center justify-center"
+              >
+                <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
+                  Claim Your Free Audit
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                  Save Millions!
+                </span>
+              </Link>
             </Button>
           </div>
           <div className="lg:hidden">

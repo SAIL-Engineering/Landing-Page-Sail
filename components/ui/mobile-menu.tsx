@@ -65,12 +65,22 @@ export default function MobileMenu() {
             </SheetTitle>
           </SheetHeader>
           <div className="mb-6 space-y-3">
-            <Button variant="sail" className="w-full" asChild>
+            <Button
+              variant="sail"
+              className="group relative w-full overflow-hidden transition-all duration-500"
+              asChild
+            >
               <Link
                 href="mailto:info@sailgtx.com"
                 onClick={() => setIsOpen(false)}
+                className="flex items-center justify-center"
               >
-                Request free audit
+                <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
+                  Claim Your Free Audit
+                </span>
+                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                  Save Millions!
+                </span>
               </Link>
             </Button>
             <Button
