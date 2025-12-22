@@ -47,7 +47,7 @@ export default function Home() {
         >
           <div className="absolute inset-0 z-0">
             <Image
-              src="/hero/hero.png"
+              src="/hero/hero.webp"
               alt="Port of Oakland"
               fill
               priority
