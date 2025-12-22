@@ -14,7 +14,7 @@ interface Author {
 }
 
 interface ArticleSidebarProps {
-  authors?: Author[];
+  authors?: Author[] | null;
   publishedAt: string;
   postTitle: string;
 }
