@@ -104,35 +104,35 @@ export default function MobileMenu() {
                   <AccordionContent>
                     <ul className="ml-4 space-y-1">
                       <MobileNavItem
-                        href="/solutions/enterprise-compliance"
+                        href="/#audiences"
                         onClick={() => setIsOpen(false)}
                       >
-                        Enterprise Compliance
+                        Customs Brokers
                       </MobileNavItem>
                       <MobileNavItem
-                        href="/solutions/customs-brokerage"
+                        href="/#audiences"
                         onClick={() => setIsOpen(false)}
                       >
-                        Customs Brokerage
+                        Enterprise Teams
                       </MobileNavItem>
                       <MobileNavItem
-                        href="/solutions/advisory-trade-law"
+                        href="/#audiences"
                         onClick={() => setIsOpen(false)}
                       >
-                        Advisory & Trade Law
+                        Trade Advisory
+                      </MobileNavItem>
+                      <MobileNavItem
+                        href="/#audiences"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        Trade Law
                       </MobileNavItem>
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
               </Accordion>
-              <MobileNavItem href="/#product" onClick={() => setIsOpen(false)}>
-                Product
-              </MobileNavItem>
-              <MobileNavItem href="/#how" onClick={() => setIsOpen(false)}>
-                How it works
-              </MobileNavItem>
-              <MobileNavItem href="/#results" onClick={() => setIsOpen(false)}>
-                Results
+              <MobileNavItem href="/writings" onClick={() => setIsOpen(false)}>
+                Writings
               </MobileNavItem>
             </ul>
           </nav>

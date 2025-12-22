@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -15,6 +16,9 @@ export default function DefaultLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   useEffect(() => {
     AOS.init({
       once: true,
@@ -26,8 +30,8 @@ export default function DefaultLayout({
 
   return (
     <>
-      <ScrollProgress />
-      <SectionNav />
+      {isHomePage && <ScrollProgress />}
+      {isHomePage && <SectionNav />}
       <MobileNav />
       <main className="grow">{children}</main>
       <Footer />

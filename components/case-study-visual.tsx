@@ -3,8 +3,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import {
-  IconCloseOutline18 as X,
-  IconCheckOutline18 as Check,
+  IconBoxCheckOutline18 as Check,
   IconArrowRightOutline18 as ArrowRight,
 } from "nucleo-ui-outline-18";
 
@@ -28,7 +27,7 @@ export function CaseStudyVisual() {
         <Card className="relative overflow-hidden rounded-2xl border border-red-500/30 bg-red-950/20 p-8 backdrop-blur-sm">
           <div className="absolute right-4 top-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500/20">
-              <X className="h-6 w-6 text-red-400" />
+              <span className="text-2xl font-bold text-red-400">×</span>
             </div>
           </div>
 

@@ -1,151 +1,164 @@
-import { ReactNode, forwardRef, ComponentPropsWithoutRef } from "react";
+"use client";
+
+import { ReactNode, forwardRef, ComponentPropsWithoutRef, useState, useRef } from "react";
 import Link from "next/link";
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu";
 import { cn } from "@/lib/utils";
 import MobileMenu from "./ui/mobile-menu";
 import { Button } from "./ui/button";
+import {
+  IconBoxScaleOutline18 as Ship,
+  IconUsersOutline18 as Building,
+  IconChartColumnOutline18 as PieChart,
+  IconScrollTextOutline18 as Gavel,
+} from "nucleo-ui-outline-18";
 
-const NavItem = ({
-  href,
-  target = "_self",
-  children,
-}: {
-  href: string;
-  target?: React.HTMLAttributeAnchorTarget;
-  children: ReactNode;
-}) => (
-  <NavigationMenuLink
-    asChild
-    className={navigationMenuTriggerStyle()}
-    href={href}
-    target={target}
-  >
-    <Link href={href}>{children}</Link>
-  </NavigationMenuLink>
-);
-
-const DropdownNavItem = ({
-  trigger,
-  children,
-}: {
-  trigger: string;
-  children: ReactNode;
-}) => (
-  <NavigationMenuItem>
-    <NavigationMenuTrigger>{trigger}</NavigationMenuTrigger>
-    <NavigationMenuContent>{children}</NavigationMenuContent>
-  </NavigationMenuItem>
-);
-
-const ListItem = forwardRef<
-  HTMLAnchorElement,
-  ComponentPropsWithoutRef<"a"> & { title: string; href: string }
->(({ className, title, children, href, ...props }, ref) => (
-  <li>
-    <NavigationMenuLink asChild>
-      <Link
-        ref={ref}
-        href={href}
-        className={cn(
-          "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-[#f2f4ff] hover:text-[#343CED] focus:bg-[#f2f4ff] focus:text-[#343CED]",
-          className,
-        )}
-        {...props}
-      >
-        <div className="text-sm font-medium leading-none">{title}</div>
-        <p className="line-clamp-2 text-sm leading-snug text-gray-600/90 dark:text-gray-500">
-          {children}
-        </p>
-      </Link>
-    </NavigationMenuLink>
-  </li>
-));
-ListItem.displayName = "ListItem";
+const solutions = [
+  {
+    title: "Customs Brokers",
+    description: "Accurate HTS codes with audit-ready documentation",
+    href: "/#audiences",
+    icon: Ship,
+  },
+  {
+    title: "Enterprise Teams",
+    description: "Product catalog monitoring at scale",
+    href: "/#audiences",
+    icon: Building,
+  },
+  {
+    title: "Trade Advisory",
+    description: "White-label classification services",
+    href: "/#audiences",
+    icon: PieChart,
+  },
+  {
+    title: "Trade Law",
+    description: "Litigation-grade classification evidence",
+    href: "/#audiences",
+    icon: Gavel,
+  },
+];
 
 export default function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsOpen(false);
+    }, 200);
+  };
+
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4">
-      <div className="mx-auto max-w-6xl">
+      <div className="mx-auto max-w-7xl">
         <nav
-          className="sail-nav-dark flex items-center justify-between rounded-full px-4 py-3 lg:px-6"
+          className="sail-nav-dark flex items-center justify-between rounded-full px-6 py-3"
           aria-label="Main navigation"
         >
-          <div className="flex items-center gap-8">
-            <Link
-              href="/"
-              className={cn("sail-wordmark text-2xl text-white")}
-              aria-label="SAIL Home"
+          {/* Logo */}
+          <Link
+            href="/"
+            className={cn("sail-wordmark text-2xl text-white")}
+            aria-label="SAIL Home"
+          >
+            SAIL
+          </Link>
+
+          {/* Desktop Nav */}
+          <div className="hidden items-center gap-4 lg:flex">
+            {/* Solutions Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
             >
-              SAIL
+              <button
+                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/90 transition-all duration-150 hover:bg-white/10 hover:text-white"
+                aria-expanded={isOpen}
+              >
+                Solutions
+                <span
+                  className={cn(
+                    "text-xs transition-transform duration-150",
+                    isOpen && "rotate-180"
+                  )}
+                >
+                  ▼
+                </span>
+              </button>
+
+              {/* Dropdown Menu */}
+              {isOpen && (
+                <div
+                  className="absolute left-0 top-full mt-2 w-80 animate-in fade-in slide-in-from-top-2 duration-150"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+                    <div className="p-2">
+                      {solutions.map((solution) => (
+                        <Link
+                          key={solution.title}
+                          href={solution.href}
+                          className="group flex items-start gap-3 rounded-lg p-3 transition-all duration-150 hover:bg-slate-50"
+                        >
+                          <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-sail-blue/10 transition-all duration-150 group-hover:bg-sail-blue">
+                            <solution.icon className="h-4 w-4 text-sail-blue transition-all duration-150 group-hover:text-white" />
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <div className="text-sm font-semibold text-slate-900">
+                              {solution.title}
+                            </div>
+                            <div className="mt-0.5 text-xs leading-snug text-slate-600">
+                              {solution.description}
+                            </div>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Writings */}
+            <Link
+              href="/writings"
+              className="rounded-full px-4 py-2 text-sm font-medium text-white/90 transition-all duration-150 hover:bg-white/10 hover:text-white"
+            >
+              Writings
             </Link>
           </div>
 
-          <nav className="hidden lg:block">
-            <NavigationMenu>
-              <NavigationMenuList className="text-sm text-white/90">
-                <DropdownNavItem trigger="Solutions">
-                  <ul className="grid w-[360px] gap-3 bg-white p-4 md:w-[420px]">
-                    <ListItem
-                      href="/solutions/enterprise-compliance"
-                      title="Enterprise Compliance"
-                    >
-                      Centralized classification, duties, and audit trails.
-                    </ListItem>
-                    <ListItem
-                      href="/solutions/customs-brokerage"
-                      title="Customs Brokerage"
-                    >
-                      Faster filing and fewer holds at the port.
-                    </ListItem>
-                    <ListItem
-                      href="/solutions/advisory-trade-law"
-                      title="Advisory & Trade Law"
-                    >
-                      Audit-ready documentation for every client.
-                    </ListItem>
-                  </ul>
-                </DropdownNavItem>
-                <NavItem href="/#product">Product</NavItem>
-                <NavItem href="/#how">How it works</NavItem>
-                <NavItem href="/#results">Results</NavItem>
-              </NavigationMenuList>
-            </NavigationMenu>
-          </nav>
-
+          {/* CTA Buttons */}
           <div className="hidden items-center gap-3 lg:flex">
             <Button
               variant="outline"
-              className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900"
+              size="sm"
+              className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all duration-150 hover:bg-white hover:text-slate-900"
               asChild
             >
               <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
             </Button>
             <Button
               variant="sail"
-              className="group relative overflow-hidden transition-all duration-500"
+              size="sm"
+              className="transition-all duration-150 hover:scale-105"
               asChild
             >
-              <Link
-                href="mailto:info@sailgtx.com"
-                className="flex items-center justify-center"
-              >
-                <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                  Claim Your Free Audit
-                </span>
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                  Save Millions!
-                </span>
-              </Link>
+              <Link href="mailto:info@sailgtx.com">Claim Free Audit</Link>
             </Button>
           </div>
+
+          {/* Mobile Menu */}
           <div className="lg:hidden">
             <MobileMenu />
           </div>
