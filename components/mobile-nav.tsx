@@ -51,7 +51,7 @@ export function MobileNav() {
       {
         threshold: [0, 0.1, 0.2, 0.3, 0.5],
         rootMargin: "-10% 0px -40% 0px",
-      }
+      },
     );
 
     sections.forEach(({ id }) => {
@@ -83,7 +83,7 @@ export function MobileNav() {
         "fixed bottom-0 left-0 right-0 z-50 transition-all duration-500 xl:hidden",
         isVisible
           ? "translate-y-0 opacity-100"
-          : "pointer-events-none translate-y-full opacity-0"
+          : "pointer-events-none translate-y-full opacity-0",
       )}
       aria-label="Mobile navigation"
     >
@@ -99,7 +99,7 @@ export function MobileNav() {
         />
 
         {/* Navigation Items */}
-        <div className="mx-auto flex max-w-lg items-center justify-around px-4 py-2 safe-bottom">
+        <div className="safe-bottom mx-auto flex max-w-lg items-center justify-around px-4 py-2">
           {sections.map(({ id, label, icon: Icon }) => {
             const isActive = activeSection === id;
             return (
@@ -110,7 +110,7 @@ export function MobileNav() {
                   "group relative flex flex-1 flex-col items-center gap-1 py-2 transition-all duration-300",
                   isActive
                     ? "text-sail-blue"
-                    : "text-slate-400 hover:text-slate-600"
+                    : "text-slate-400 hover:text-slate-600",
                 )}
                 aria-label={`Navigate to ${label}`}
                 aria-current={isActive ? "true" : "false"}
@@ -121,7 +121,7 @@ export function MobileNav() {
                     "relative flex h-8 w-8 items-center justify-center rounded-full transition-all duration-300",
                     isActive
                       ? "bg-sail-blue/10 shadow-sm shadow-sail-blue/20"
-                      : "bg-transparent group-hover:bg-slate-100"
+                      : "bg-transparent group-hover:bg-slate-100",
                   )}
                 >
                   <Icon
@@ -129,7 +129,7 @@ export function MobileNav() {
                       "h-4 w-4 transition-all duration-300",
                       isActive
                         ? "scale-110 text-sail-blue"
-                        : "text-slate-400 group-hover:scale-105 group-hover:text-slate-600"
+                        : "text-slate-400 group-hover:scale-105 group-hover:text-slate-600",
                     )}
                   />
 
@@ -145,7 +145,7 @@ export function MobileNav() {
                     "text-[10px] font-semibold transition-all duration-300",
                     isActive
                       ? "scale-100 opacity-100"
-                      : "scale-95 opacity-60 group-hover:scale-100 group-hover:opacity-80"
+                      : "scale-95 opacity-60 group-hover:scale-100 group-hover:opacity-80",
                   )}
                 >
                   {label}
@@ -155,7 +155,7 @@ export function MobileNav() {
                 <span
                   className={cn(
                     "absolute -top-0.5 h-1 w-1 rounded-full bg-sail-green transition-all duration-300",
-                    isActive ? "scale-100 opacity-100" : "scale-0 opacity-0"
+                    isActive ? "scale-100 opacity-100" : "scale-0 opacity-0",
                   )}
                 />
               </button>

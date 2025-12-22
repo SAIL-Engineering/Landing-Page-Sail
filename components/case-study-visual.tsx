@@ -44,7 +44,9 @@ export function CaseStudyVisual() {
             <div className="flex items-start gap-3">
               <div className="mt-1 h-2 w-2 flex-shrink-0 rounded-full bg-red-400"></div>
               <p className="text-sm text-slate-300">
-                <span className="font-semibold text-white">8,000+ products</span>{" "}
+                <span className="font-semibold text-white">
+                  8,000+ products
+                </span>{" "}
                 classified across multiple business units
               </p>
             </div>
@@ -103,9 +105,7 @@ export function CaseStudyVisual() {
             <Badge className="border-sail-green/60 bg-sail-green/20 text-sail-green">
               After SAIL
             </Badge>
-            <h3 className="mt-4 text-2xl font-bold text-white">
-              The Results
-            </h3>
+            <h3 className="mt-4 text-2xl font-bold text-white">The Results</h3>
           </div>
 
           <div className="space-y-4">
@@ -266,12 +266,12 @@ export function CaseStudyVisual() {
           </div>
 
           <blockquote className="text-xl italic leading-relaxed text-white/90 md:text-2xl">
-            &ldquo;We used to <span className="text-red-400">dread</span>{" "}
-            tariff changes. Now <span className="text-sail-green">SAIL</span>{" "}
-            flags exactly what&apos;s affected and generates the
-            re-classification analysis automatically. We just review and
-            approve. Our team finally has time for{" "}
-            <span className="text-sail-green">strategic work</span>.&rdquo;
+            &ldquo;We used to <span className="text-red-400">dread</span> tariff
+            changes. Now <span className="text-sail-green">SAIL</span> flags
+            exactly what&apos;s affected and generates the re-classification
+            analysis automatically. We just review and approve. Our team finally
+            has time for <span className="text-sail-green">strategic work</span>
+            .&rdquo;
           </blockquote>
 
           <div className="mt-8">

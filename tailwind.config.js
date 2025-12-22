@@ -186,9 +186,9 @@ module.exports = {
       },
       // Award-winning timing curves
       transitionTimingFunction: {
-        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
-        'bounce-subtle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
-        'sail': 'cubic-bezier(0.19, 1, 0.22, 1)',
+        smooth: "cubic-bezier(0.4, 0, 0.2, 1)",
+        "bounce-subtle": "cubic-bezier(0.34, 1.56, 0.64, 1)",
+        sail: "cubic-bezier(0.19, 1, 0.22, 1)",
       },
       keyframes: {
         "accordion-down": {
@@ -211,7 +211,7 @@ module.exports = {
           "0%": { transform: "scale(0.95)", opacity: "0" },
           "100%": { transform: "scale(1)", opacity: "1" },
         },
-        "glow": {
+        glow: {
           "0%, 100%": { boxShadow: "0 0 20px rgba(216, 253, 73, 0.3)" },
           "50%": { boxShadow: "0 0 40px rgba(216, 253, 73, 0.5)" },
         },
@@ -222,7 +222,7 @@ module.exports = {
         "fadein-opacity": "fadein-opacity 0.6s ease-in-out",
         "slide-up": "slide-up 0.6s cubic-bezier(0.19, 1, 0.22, 1)",
         "scale-in": "scale-in 0.4s cubic-bezier(0.19, 1, 0.22, 1)",
-        "glow": "glow 2s ease-in-out infinite",
+        glow: "glow 2s ease-in-out infinite",
         spin: "spin .5s linear infinite",
       },
     },

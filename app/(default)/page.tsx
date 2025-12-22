@@ -140,7 +140,7 @@ export default function Home() {
                   alt="Koch Industries"
                   width={100}
                   height={28}
-                  className="h-7 w-auto opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                  className="h-7 w-auto opacity-60 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
                 />
                 {/* Subtle glow on hover */}
                 <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-sail-blue/10 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -151,7 +151,7 @@ export default function Home() {
                   alt="Invista"
                   width={120}
                   height={44}
-                  className="h-11 w-auto opacity-60 grayscale transition-all duration-500 group-hover:opacity-100 group-hover:grayscale-0 group-hover:scale-105"
+                  className="h-11 w-auto opacity-60 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
                 />
                 {/* Subtle glow on hover */}
                 <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-sail-blue/10 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
@@ -175,59 +175,60 @@ export default function Home() {
                   <p className="mt-6 text-lg text-slate-600">
                     Most Trade Compliance teams are running on spreadsheets last
                     touched six months ago. When tariffs shift—and they shift
-                    constantly—someone has to manually review thousands of product
-                    classifications. That someone is usually already behind.
+                    constantly—someone has to manually review thousands of
+                    product classifications. That someone is usually already
+                    behind.
                   </p>
                   <p className="mt-4 text-slate-600">
                     <span className="sail-wordmark">SAIL</span> monitors
-                    regulatory changes and automatically flags affected products.
-                    Your catalog stays current. Your team stays focused on
-                    exceptions, not maintenance.
+                    regulatory changes and automatically flags affected
+                    products. Your catalog stays current. Your team stays
+                    focused on exceptions, not maintenance.
                   </p>
                 </div>
               </ScrollReveal>
 
               <ScrollReveal direction="right" delay={200}>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
-                  The math doesn&apos;t work:
-                </p>
-                <div className="space-y-4">
-                  {[
-                    {
-                      label: "Average enterprise product catalog",
-                      value: "15,000+ SKUs",
-                    },
-                    {
-                      label: "Annual HTS schedule changes",
-                      value: "2,000+ modifications",
-                    },
-                    {
-                      label: "Time to manually re-classify one product",
-                      value: "45 minutes",
-                    },
-                    {
-                      label: "Full catalog review",
-                      value: "Never actually completed",
-                      highlight: true,
-                    },
-                  ].map((stat) => (
-                    <div
-                      key={stat.label}
-                      className="flex items-center justify-between rounded-lg bg-white p-4"
-                    >
-                      <span className="text-sm text-slate-600">
-                        {stat.label}
-                      </span>
-                      <span
-                        className={`font-mono text-sm font-semibold ${stat.highlight ? "text-red-600" : "text-slate-900"}`}
+                  <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
+                    The math doesn&apos;t work:
+                  </p>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        label: "Average enterprise product catalog",
+                        value: "15,000+ SKUs",
+                      },
+                      {
+                        label: "Annual HTS schedule changes",
+                        value: "2,000+ modifications",
+                      },
+                      {
+                        label: "Time to manually re-classify one product",
+                        value: "45 minutes",
+                      },
+                      {
+                        label: "Full catalog review",
+                        value: "Never actually completed",
+                        highlight: true,
+                      },
+                    ].map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="flex items-center justify-between rounded-lg bg-white p-4"
                       >
-                        {stat.value}
-                      </span>
-                    </div>
-                  ))}
+                        <span className="text-sm text-slate-600">
+                          {stat.label}
+                        </span>
+                        <span
+                          className={`font-mono text-sm font-semibold ${stat.highlight ? "text-red-600" : "text-slate-900"}`}
+                        >
+                          {stat.value}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
               </ScrollReveal>
             </div>
           </div>
@@ -273,60 +274,68 @@ export default function Home() {
                   title: "Real-Time Classification",
                   body: "HTS codes with confidence scores, legal reasoning, and evidence chains.",
                   icon: Zap,
-                  preview: "Get HTS codes in seconds with AI-powered classification and full legal reasoning.",
+                  preview:
+                    "Get HTS codes in seconds with AI-powered classification and full legal reasoning.",
                 },
                 {
                   title: "Continuous Monitoring",
                   body: "Product catalog checked against regulatory changes daily.",
                   icon: Eye,
-                  preview: "Automatic daily scans detect tariff changes affecting your products instantly.",
+                  preview:
+                    "Automatic daily scans detect tariff changes affecting your products instantly.",
                 },
                 {
                   title: "Tariff Stack Calculator",
                   body: "MFN + Section 301 + 232 + Chapter 99 + IEPA + MPF/HMF.",
                   icon: BarChart3,
-                  preview: "Calculate total landed costs with all applicable tariffs and fees automatically.",
+                  preview:
+                    "Calculate total landed costs with all applicable tariffs and fees automatically.",
                 },
                 {
                   title: "CF-28/29 Response",
                   body: "Audit documentation generated instantly with evidence chains.",
                   icon: FileText,
-                  preview: "Generate complete audit responses with product specs and legal justification.",
+                  preview:
+                    "Generate complete audit responses with product specs and legal justification.",
                 },
                 {
                   title: "Product Catalog",
                   body: "Central source of truth with version history and approvals.",
                   icon: Database,
-                  preview: "Maintain classification history with approval workflows and version control.",
+                  preview:
+                    "Maintain classification history with approval workflows and version control.",
                 },
                 {
                   title: "Entity Screening",
                   body: "OFAC, BIS Entity List, denied parties. Checked continuously.",
                   icon: ShieldCheck,
-                  preview: "Automated screening against all major denied party lists updated daily.",
+                  preview:
+                    "Automated screening against all major denied party lists updated daily.",
                 },
                 {
                   title: "Broker Collaboration",
                   body: "Share classification data directly. No more email attachments.",
                   icon: Send,
-                  preview: "Real-time data sharing with customs brokers through secure portals.",
+                  preview:
+                    "Real-time data sharing with customs brokers through secure portals.",
                 },
                 {
                   title: "Regulatory Alerts",
                   body: "HTS changes, tariff mods, new exclusions. Know first.",
                   icon: AlertTriangle,
-                  preview: "Receive instant notifications when regulations change affecting your business.",
+                  preview:
+                    "Receive instant notifications when regulations change affecting your business.",
                 },
               ].map((item, index) => (
                 <Card
                   key={item.title}
-                  className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 transition-all duration-500 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10 hover:-translate-y-1"
+                  className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 50}ms`,
                   }}
                 >
                   <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-sail-blue/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-sail-blue group-hover:shadow-lg group-hover:shadow-sail-blue/30">
-                    <item.icon className="h-4 w-4 text-sail-blue transition-all duration-500 group-hover:text-white group-hover:scale-110" />
+                    <item.icon className="h-4 w-4 text-sail-blue transition-all duration-500 group-hover:scale-110 group-hover:text-white" />
                   </div>
                   <h3 className="mb-1 font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sail-blue">
                     {item.title}
@@ -428,7 +437,7 @@ export default function Home() {
               ].map((audience, index) => (
                 <Card
                   key={audience.title}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10 hover:-translate-y-2"
+                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 75}ms`,
                   }}
@@ -436,7 +445,7 @@ export default function Home() {
                   {audience.isLink ? (
                     <Link
                       href="mailto:info@sailgtx.com"
-                      className="mb-4 inline-flex items-center gap-1 rounded-full bg-sail-blue px-3 py-1 text-xs font-bold text-white transition-all duration-300 hover:bg-sail-blue-hover hover:gap-2 hover:shadow-lg hover:shadow-sail-blue/30"
+                      className="mb-4 inline-flex items-center gap-1 rounded-full bg-sail-blue px-3 py-1 text-xs font-bold text-white transition-all duration-300 hover:gap-2 hover:bg-sail-blue-hover hover:shadow-lg hover:shadow-sail-blue/30"
                     >
                       {audience.timeline}
                       <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
@@ -540,7 +549,7 @@ export default function Home() {
                     alt={logo.alt}
                     width={logo.width}
                     height={40}
-                    className="h-auto opacity-70 transition hover:opacity-100 hover:scale-110"
+                    className="h-auto opacity-70 transition hover:scale-110 hover:opacity-100"
                     style={{ maxHeight: "40px", width: "auto" }}
                   />
                 </div>
@@ -605,7 +614,11 @@ export default function Home() {
                   subtext: "With evidence chains",
                 },
               ].map((stat, index) => (
-                <ScrollReveal key={stat.label} delay={index * 100} direction="up">
+                <ScrollReveal
+                  key={stat.label}
+                  delay={index * 100}
+                  direction="up"
+                >
                   <div className="text-center">
                     <div className="font-serif text-4xl font-bold text-sail-blue">
                       {stat.value}
@@ -728,7 +741,10 @@ export default function Home() {
         {/* ═══════════════════════════════════════════════════════════════════
             CTA - Final Push
         ═══════════════════════════════════════════════════════════════════ */}
-        <section id="cta" className="relative overflow-hidden bg-sail-blue py-20">
+        <section
+          id="cta"
+          className="relative overflow-hidden bg-sail-blue py-20"
+        >
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-sail-blue via-sail-blue-light to-sail-blue opacity-80" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-sail-green/10 via-transparent to-transparent" />
@@ -736,45 +752,45 @@ export default function Home() {
           <ScrollReveal>
             <div className="relative mx-auto max-w-7xl px-6">
               <div className="flex flex-col items-center justify-between gap-8 text-center text-white md:flex-row md:text-left">
-              <div className="max-w-2xl">
-                <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
-                  See what&apos;s hiding in your trade data.
-                </h2>
-                <p className="mt-4 text-lg text-white/90">
-                  Get a free audit of your classification accuracy. No
-                  commitment. No sales pitch. Just a clear picture of where you
-                  stand.
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-4">
-                <Button
-                  size="lg"
-                  className="group relative overflow-hidden bg-sail-green text-black transition-all duration-500 hover:scale-105 hover:bg-sail-green-light hover:shadow-2xl hover:shadow-sail-green/40"
-                  asChild
-                >
-                  <Link
-                    href="mailto:info@sailgtx.com"
-                    className="flex items-center justify-center"
+                <div className="max-w-2xl">
+                  <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
+                    See what&apos;s hiding in your trade data.
+                  </h2>
+                  <p className="mt-4 text-lg text-white/90">
+                    Get a free audit of your classification accuracy. No
+                    commitment. No sales pitch. Just a clear picture of where
+                    you stand.
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-4">
+                  <Button
+                    size="lg"
+                    className="group relative overflow-hidden bg-sail-green text-black transition-all duration-500 hover:scale-105 hover:bg-sail-green-light hover:shadow-2xl hover:shadow-sail-green/40"
+                    asChild
                   >
-                    <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                      Claim Your Free Audit
-                    </span>
-                    <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                      Save Millions!
-                    </span>
-                  </Link>
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl"
-                  asChild
-                >
-                  <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                </Button>
+                    <Link
+                      href="mailto:info@sailgtx.com"
+                      className="flex items-center justify-center"
+                    >
+                      <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
+                        Claim Your Free Audit
+                      </span>
+                      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
+                        Save Millions!
+                      </span>
+                    </Link>
+                  </Button>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl"
+                    asChild
+                  >
+                    <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
           </ScrollReveal>
         </section>
       </main>

@@ -48,9 +48,10 @@ export default async function BlogPostPage({
     category: post.category?.slug,
     limit: 3,
   });
-  const relatedPosts = relatedPostsResponse.data?.filter(
-    (p) => p.slug !== post.slug
-  ).slice(0, 3) || [];
+  const relatedPosts =
+    relatedPostsResponse.data
+      ?.filter((p) => p.slug !== post.slug)
+      .slice(0, 3) || [];
 
   return (
     <main className="min-h-screen bg-white">
@@ -154,20 +155,7 @@ export default async function BlogPostPage({
 
             {/* Article Content - Clean Professional Typography */}
             <div
-              className="prose prose-lg prose-slate max-w-none
-                prose-headings:font-serif prose-headings:text-slate-900
-                prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-                prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                prose-p:text-slate-700 prose-p:leading-[1.75]
-                prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline
-                prose-strong:text-slate-900 prose-strong:font-semibold
-                prose-code:text-sm prose-code:bg-slate-100 prose-code:text-slate-800 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:before:content-none prose-code:after:content-none
-                prose-pre:bg-slate-50 prose-pre:border prose-pre:border-slate-200 prose-pre:text-sm
-                prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-600
-                prose-img:rounded-lg
-                prose-hr:border-slate-200
-                prose-li:text-slate-700
-              "
+              className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h3:mb-3 prose-h3:mt-8 prose-h3:text-xl prose-p:leading-[1.75] prose-p:text-slate-700 prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-600 prose-strong:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50 prose-pre:text-sm prose-li:text-slate-700 prose-img:rounded-lg prose-hr:border-slate-200"
               dangerouslySetInnerHTML={{ __html: post.html_content }}
             />
 
@@ -200,11 +188,7 @@ export default async function BlogPostPage({
                 See how SAIL can help you classify faster and stay compliant.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
-                <Button
-                  size="lg"
-                  variant="sail"
-                  asChild
-                >
+                <Button size="lg" variant="sail" asChild>
                   <Link href="mailto:info@sailgtx.com">
                     Claim Your Free Audit
                   </Link>
@@ -242,7 +226,7 @@ export default async function BlogPostPage({
                         {relatedPost.title}
                       </h3>
                       {relatedPost.excerpt && (
-                        <p className="text-sm text-slate-600 line-clamp-2">
+                        <p className="line-clamp-2 text-sm text-slate-600">
                           {relatedPost.excerpt}
                         </p>
                       )}

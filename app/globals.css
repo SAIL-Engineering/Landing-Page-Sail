@@ -178,7 +178,7 @@
   box-shadow:
     0 20px 40px rgba(51, 60, 237, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.8);
-  background: linear-gradient(180deg, #4d54f0 0%, #343CED 100%) !important;
+  background: linear-gradient(180deg, #4d54f0 0%, #343ced 100%) !important;
   color: white !important;
 }
 
@@ -226,11 +226,11 @@
 
 @layer utilities {
   .sail-kicker {
-    @apply font-mono text-xs uppercase tracking-[0.3em] text-slate-500 font-semibold;
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.3em] text-slate-500;
   }
 
   .sail-kicker-light {
-    @apply font-mono text-xs uppercase tracking-[0.3em] font-semibold;
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.3em];
     color: rgba(255, 255, 255, 0.7);
   }
 

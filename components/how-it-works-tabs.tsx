@@ -54,7 +54,9 @@ const stepsData = [
           <div className="font-medium text-white">
             Section 301 List Update — Effective Jan 15
           </div>
-          <div className="text-slate-400">47 products in your catalog affected</div>
+          <div className="text-slate-400">
+            47 products in your catalog affected
+          </div>
           <div className="space-y-1 text-xs text-slate-400">
             <div>
               HTS 8471.50 → Rate change:{" "}
@@ -115,15 +117,21 @@ const stepsData = [
         <div className="space-y-2 text-sm">
           <div className="flex items-center gap-2">
             <CheckCircle className="h-4 w-4 text-sail-green" />
-            <span className="text-slate-300">Product specification (14 pages)</span>
+            <span className="text-slate-300">
+              Product specification (14 pages)
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="h-4 w-4 text-sail-green" />
-            <span className="text-slate-300">Classification reasoning chain</span>
+            <span className="text-slate-300">
+              Classification reasoning chain
+            </span>
           </div>
           <div className="flex items-center gap-2">
             <CheckCircle className="h-4 w-4 text-sail-green" />
-            <span className="text-slate-300">HTS legal notes & CROSS rulings</span>
+            <span className="text-slate-300">
+              HTS legal notes & CROSS rulings
+            </span>
           </div>
         </div>
       ),
@@ -135,18 +143,14 @@ export function HowItWorksTabs() {
   const [activeTab, setActiveTab] = useState("classify");
 
   return (
-    <Tabs
-      value={activeTab}
-      onValueChange={setActiveTab}
-      className="w-full"
-    >
+    <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
       {/* Tab Navigation */}
       <TabsList className="mb-12 grid h-auto w-full grid-cols-2 gap-3 bg-transparent p-0 md:grid-cols-4">
         {stepsData.map((step) => (
           <TabsTrigger
             key={step.id}
             value={step.id}
-            className="group relative flex flex-col items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-left transition-all duration-300 data-[state=active]:border-sail-blue/50 data-[state=active]:bg-white/10 data-[state=active]:shadow-lg data-[state=active]:shadow-sail-blue/20 hover:border-white/20 hover:bg-white/10 md:p-5"
+            className="group relative flex flex-col items-start gap-2 rounded-xl border border-white/10 bg-white/5 p-4 text-left transition-all duration-300 hover:border-white/20 hover:bg-white/10 data-[state=active]:border-sail-blue/50 data-[state=active]:bg-white/10 data-[state=active]:shadow-lg data-[state=active]:shadow-sail-blue/20 md:p-5"
           >
             {/* Step Icon & Number */}
             <div className="flex w-full items-center justify-between">

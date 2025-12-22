@@ -44,7 +44,7 @@ export function SectionNav() {
       {
         threshold: [0, 0.1, 0.2, 0.3, 0.5], // Multiple thresholds for better tracking
         rootMargin: "-10% 0px -40% 0px", // Less aggressive margins
-      }
+      },
     );
 
     sections.forEach(({ id }) => {
@@ -74,7 +74,7 @@ export function SectionNav() {
     <nav
       className={cn(
         "fixed right-8 top-1/2 z-40 hidden -translate-y-1/2 transition-all duration-500 xl:block",
-        isVisible ? "opacity-100" : "pointer-events-none opacity-0"
+        isVisible ? "opacity-100" : "pointer-events-none opacity-0",
       )}
       aria-label="Page sections"
     >
@@ -86,7 +86,9 @@ export function SectionNav() {
               onClick={(e) => handleClick(e, id)}
               className={cn(
                 "group flex items-center gap-3 transition-all duration-300",
-                activeSection === id ? "text-sail-blue" : "text-slate-400 hover:text-slate-600"
+                activeSection === id
+                  ? "text-sail-blue"
+                  : "text-slate-400 hover:text-slate-600",
               )}
             >
               {/* Animated dot */}
@@ -95,7 +97,7 @@ export function SectionNav() {
                 <span
                   className={cn(
                     "absolute h-3 w-3 rounded-full bg-sail-blue blur-sm transition-all duration-300",
-                    activeSection === id ? "opacity-60" : "opacity-0"
+                    activeSection === id ? "opacity-60" : "opacity-0",
                   )}
                 />
                 {/* Main dot */}
@@ -104,7 +106,7 @@ export function SectionNav() {
                     "relative h-2 w-2 rounded-full transition-all duration-300",
                     activeSection === id
                       ? "w-8 bg-gradient-to-r from-sail-blue to-sail-green shadow-lg shadow-sail-blue/30"
-                      : "bg-slate-300 group-hover:bg-slate-400"
+                      : "bg-slate-300 group-hover:bg-slate-400",
                   )}
                 />
               </span>
@@ -115,7 +117,7 @@ export function SectionNav() {
                   "text-xs font-medium transition-all duration-300",
                   activeSection === id
                     ? "translate-x-0 opacity-100"
-                    : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100"
+                    : "-translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100",
                 )}
               >
                 {label}

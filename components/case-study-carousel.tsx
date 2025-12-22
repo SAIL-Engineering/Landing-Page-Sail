@@ -202,7 +202,7 @@ export function CaseStudyCarousel() {
                 {currentCase.results.map((row, index) => (
                   <div
                     key={row.metric}
-                    className="flex items-center justify-between border-b border-white/10 pb-4 last:border-0 last:pb-0 transition-all duration-300"
+                    className="flex items-center justify-between border-b border-white/10 pb-4 transition-all duration-300 last:border-0 last:pb-0"
                     style={{
                       animationDelay: `${index * 50}ms`,
                     }}
@@ -296,7 +296,7 @@ export function CaseStudyCarousel() {
                   "h-2 rounded-full transition-all duration-500",
                   currentSlide === index
                     ? "w-8 bg-sail-green shadow-lg shadow-sail-green/30"
-                    : "w-2 bg-white/30 hover:bg-white/50"
+                    : "w-2 bg-white/30 hover:bg-white/50",
                 )}
                 aria-label={`Go to slide ${index + 1}`}
               />

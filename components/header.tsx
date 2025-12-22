@@ -1,6 +1,12 @@
 "use client";
 
-import { ReactNode, forwardRef, ComponentPropsWithoutRef, useState, useRef } from "react";
+import {
+  ReactNode,
+  forwardRef,
+  ComponentPropsWithoutRef,
+  useState,
+  useRef,
+} from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MobileMenu from "./ui/mobile-menu";
@@ -88,7 +94,7 @@ export default function Header() {
                 <span
                   className={cn(
                     "text-xs transition-transform duration-150",
-                    isOpen && "rotate-180"
+                    isOpen && "rotate-180",
                   )}
                 >
                   ▼
@@ -98,7 +104,7 @@ export default function Header() {
               {/* Dropdown Menu */}
               {isOpen && (
                 <div
-                  className="absolute left-0 top-full mt-2 w-80 animate-in fade-in slide-in-from-top-2 duration-150"
+                  className="animate-in fade-in slide-in-from-top-2 absolute left-0 top-full mt-2 w-80 duration-150"
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
@@ -113,7 +119,7 @@ export default function Header() {
                           <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-sail-blue/10 transition-all duration-150 group-hover:bg-sail-blue">
                             <solution.icon className="h-4 w-4 text-sail-blue transition-all duration-150 group-hover:text-white" />
                           </div>
-                          <div className="flex-1 min-w-0">
+                          <div className="min-w-0 flex-1">
                             <div className="text-sm font-semibold text-slate-900">
                               {solution.title}
                             </div>

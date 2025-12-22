@@ -17,7 +17,7 @@ export const metadata: Metadata = constructMetadata({
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/writings/${post.slug}`} className="group block">
-      <Card className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10 hover:-translate-y-1">
+      <Card className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10">
         {/* Category badge */}
         {post.category && (
           <Badge className="mb-4 border-sail-blue/40 bg-sail-blue/10 font-mono text-xs font-semibold uppercase tracking-wider text-sail-blue">
@@ -32,7 +32,7 @@ function PostCard({ post }: { post: BlogPost }) {
 
         {/* Excerpt */}
         {post.excerpt && (
-          <p className="mb-4 text-sm leading-relaxed text-slate-600 line-clamp-3">
+          <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-600">
             {post.excerpt}
           </p>
         )}
@@ -59,7 +59,9 @@ function PostCard({ post }: { post: BlogPost }) {
                   </div>
                 ))}
               </div>
-              <span className="font-medium text-slate-600">{post.authors[0].name}</span>
+              <span className="font-medium text-slate-600">
+                {post.authors[0].name}
+              </span>
             </>
           )}
           {post.published_at && (
@@ -116,7 +118,8 @@ export default async function WritingsPage({
           </h1>
 
           <p className="max-w-2xl text-lg leading-relaxed text-white/80">
-            Deep technical dives, regulatory updates, and classification strategies to help you ship globally with confidence.
+            Deep technical dives, regulatory updates, and classification
+            strategies to help you ship globally with confidence.
           </p>
         </div>
       </section>
