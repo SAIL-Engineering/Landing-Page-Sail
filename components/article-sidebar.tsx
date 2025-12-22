@@ -134,14 +134,16 @@ export function ArticleSidebar({
             Share
           </p>
           <div className="flex gap-2">
-            {typeof navigator !== "undefined" && navigator.share && (
-              <button
-                onClick={handleShare}
-                className="flex-1 rounded border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
-              >
-                Share
-              </button>
-            )}
+            {typeof navigator !== "undefined" &&
+              "share" in navigator &&
+              typeof navigator.share === "function" && (
+                <button
+                  onClick={handleShare}
+                  className="flex-1 rounded border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+                >
+                  Share
+                </button>
+              )}
             <button
               onClick={handleCopyLink}
               className="flex-1 rounded border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"

@@ -12,7 +12,9 @@
     "start": "next start",
     "format": "prettier --write .",
     "lint": "next lint",
-    "prepare": "husky"
+    "prepare": "husky",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run lint && npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
