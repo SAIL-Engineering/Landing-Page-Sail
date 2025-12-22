@@ -14,19 +14,19 @@ export interface BlogPost {
   category?: {
     name: string;
     slug: string;
-  };
+  } | null;
   tags?: Array<{
     name: string;
     slug: string;
-  }>;
+  }> | null;
   authors?: Array<{
     slug: string;
     name: string;
     image_url?: string;
     website?: string;
     twitter?: string;
-  }>;
-  excerpt?: string;
+  }> | null;
+  excerpt?: string | null;
   published_at: string;
 }
 
