@@ -31,8 +31,8 @@ export function ArticleSidebar({
       await navigator.clipboard.writeText(window.location.href);
       setCopySuccess(true);
       setTimeout(() => setCopySuccess(false), 2000);
-    } catch (err) {
-      console.error("Failed to copy:", err);
+    } catch {
+      // Silently fail - clipboard copy not critical
     }
   };
 
@@ -43,8 +43,8 @@ export function ArticleSidebar({
           title: postTitle,
           url: window.location.href,
         });
-      } catch (err) {
-        console.error("Error sharing:", err);
+      } catch {
+        // Silently fail - user likely cancelled the share
       }
     }
   };

@@ -15,8 +15,8 @@ const fetchDisposableDomains = async () => {
     const domainArray = data.trim().split("\n").filter(Boolean);
 
     return new Set(domainArray.map((d) => d.toLowerCase()));
-  } catch (error) {
-    console.error("Error fetching disposable domains:", error);
+  } catch {
+    // Silently fail and fallback to local domains
     return null;
   }
 };

@@ -31,7 +31,8 @@ const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "600", "700", "800", "900"],
   variable: "--font-nunito-sans",
-  display: "swap", // Fix font override warning + better performance
+  display: "swap",
+  adjustFontFallback: false, // Disable automatic font fallback adjustments
 });
 
 export default function RootLayout({
