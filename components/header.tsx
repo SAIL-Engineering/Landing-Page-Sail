@@ -17,6 +17,7 @@ import {
   IconChartColumnOutline18 as PieChart,
   IconScrollTextOutline18 as Gavel,
 } from "nucleo-ui-outline-18";
+import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 const solutions = [
   {
@@ -146,14 +147,9 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden items-center gap-3 lg:flex">
-            <Button
-              variant="outline"
+            <TalkToFounderButton
               size="sm"
-              className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all duration-150 hover:bg-white hover:text-slate-900"
-              asChild
-            >
-              <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-            </Button>
+            />
             <Button
               variant="sail"
               size="sm"

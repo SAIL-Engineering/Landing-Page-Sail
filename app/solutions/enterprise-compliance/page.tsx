@@ -6,6 +6,8 @@ import { constructMetadata } from "@/lib/utils";
 import { Metadata } from "next/types";
 import Link from "next/link";
 
+import { TalkToFounderButton } from "@/components/talk-to-founder-button";
+
 export const metadata: Metadata = constructMetadata({
   title: "Enterprise Compliance",
   description:
@@ -34,13 +36,9 @@ export default function EnterpriseCompliancePage() {
                 <Button variant="sail" asChild>
                   <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
-                <Button
-                  variant="outline"
+                <TalkToFounderButton
                   className="border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60"
-                  asChild
-                >
-                  <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                </Button>
+                />
               </div>
               <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
                 <div className="flex items-center gap-2">
@@ -81,15 +79,7 @@ export default function EnterpriseCompliancePage() {
               </Card>
             </div>
           </div>
-          <div className="sail-kicker mx-auto mt-10 flex max-w-6xl flex-wrap items-center gap-6 px-6">
-            <span className="text-slate-400">Trusted by</span>
-            <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Koch Industries
-            </span>
-            <span className="rounded-full border border-slate-200 bg-white px-3 py-1">
-              Invista
-            </span>
-          </div>
+
         </section>
 
         <section className="bg-white py-16">
@@ -195,13 +185,9 @@ export default function EnterpriseCompliancePage() {
                 <Button variant="sail" asChild>
                   <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
-                <Button
-                  variant="outline"
+                <TalkToFounderButton
                   className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
-                  asChild
-                >
-                  <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                </Button>
+                />
               </div>
             </div>
           </div>

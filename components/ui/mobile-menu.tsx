@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Button } from "./button";
+import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 import { Menu } from "lucide-react";
 import {
   Sheet,
@@ -83,18 +84,10 @@ export default function MobileMenu() {
                 </span>
               </Link>
             </Button>
-            <Button
-              variant="outline"
+            <TalkToFounderButton
               className="w-full border-slate-300/70 text-slate-700"
-              asChild
-            >
-              <Link
-                href="mailto:info@sailgtx.com"
-                onClick={() => setIsOpen(false)}
-              >
-                Talk to Founder
-              </Link>
-            </Button>
+              onBeforeClick={() => setIsOpen(false)}
+            />
           </div>
           <nav aria-label="Mobile menu">
             <ul className="space-y-1">

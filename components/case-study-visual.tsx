@@ -14,7 +14,7 @@ export function CaseStudyVisual() {
       <div className="text-center">
         <p className="sail-kicker-light">Case Study</p>
         <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-white md:text-4xl lg:text-5xl">
-          How Invista transformed Trade Compliance operations
+          How a Fortune 500 Chemicals Company transformed Trade Compliance operations
         </h2>
         <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-400">
           From reactive firefighting to continuous confidence in just 11 days
@@ -278,7 +278,7 @@ export function CaseStudyVisual() {
             <p className="font-semibold text-white">
               Director of Trade Compliance
             </p>
-            <p className="mt-1 text-sail-green">Invista</p>
+            <p className="mt-1 text-sail-green">Fortune 500 Chemicals Company</p>
           </div>
         </div>
       </Card>

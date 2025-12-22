@@ -29,11 +29,11 @@ interface CaseStudy {
 
 const caseStudies: CaseStudy[] = [
   {
-    company: "Invista",
-    title: "How Invista transformed Trade Compliance operations.",
+    company: "Fortune 500 Chemicals Company",
+    title: "How a Fortune 500 Chemicals Company transformed Trade Compliance operations.",
     subtitle: "From reactive firefighting to continuous confidence.",
     challenge:
-      "Invista's Trade Compliance team managed 8,000+ product classifications across multiple business units. Every tariff change meant weeks of manual review. CF-28 responses took 3-4 weeks to compile.",
+      "A Fortune 500 Chemicals Company's Trade Compliance team managed 8,000+ product classifications across multiple business units. Every tariff change meant weeks of manual review. CF-28 responses took 3-4 weeks to compile.",
     approach:
       "SAIL GTX deployed in 11 days. Full product catalog imported. Classification confidence scores generated. Continuous monitoring activated.",
     results: [
@@ -67,7 +67,7 @@ const caseStudies: CaseStudy[] = [
       quote:
         "We used to dread tariff changes. Now SAIL flags exactly what's affected and generates the re-classification analysis automatically. We just review and approve. Our team finally has time for strategic work.",
       author: "Director of Trade Compliance",
-      role: "Invista",
+      role: "Fortune 500 Chemicals Company",
     },
   },
   // Add more case studies here in the future

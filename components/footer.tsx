@@ -1,6 +1,7 @@
 import { footerSections, socialMediaLinks } from "@/utils/constants";
 import Link from "next/link";
 import { Button } from "./ui/button";
+import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 export default function Footer() {
   return (
@@ -37,13 +38,9 @@ export default function Footer() {
                   </span>
                 </Link>
               </Button>
-              <Button
-                variant="outline"
+              <TalkToFounderButton
                 className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
-                asChild
-              >
-                <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-              </Button>
+              />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">

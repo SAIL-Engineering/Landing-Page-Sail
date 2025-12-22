@@ -29,6 +29,7 @@ import {
   IconChartColumnOutline18 as BarChart3,
   IconEnvelopeOutline18 as Send,
 } from "nucleo-ui-outline-18";
+import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 export const metadata: Metadata = constructMetadata({
   title: "SAIL",
@@ -103,14 +104,10 @@ export default function Home() {
                       </span>
                     </Link>
                   </Button>
-                  <Button
-                    variant="outline"
+                  <TalkToFounderButton
                     size="lg"
                     className="border-white/40 bg-white/5 text-white hover:bg-white hover:text-slate-900"
-                    asChild
-                  >
-                    <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                  </Button>
+                  />
                 </div>
               </div>
 
@@ -122,43 +119,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* ═══════════════════════════════════════════════════════════════════
-            LOGO BAR - Elegant Social Proof
-        ═══════════════════════════════════════════════════════════════════ */}
-        <section className="relative overflow-hidden border-b border-slate-200/50 bg-white py-12">
-          {/* Subtle gradient background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-slate-50 to-transparent opacity-50" />
 
-          <div className="relative mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8 px-6">
-            <span className="text-sm font-semibold text-slate-600">
-              Trusted by Trade Compliance teams at
-            </span>
-            <div className="flex items-center gap-12">
-              <div className="group relative">
-                <Image
-                  src="/logos/Koch_logo.svg"
-                  alt="Koch Industries"
-                  width={100}
-                  height={28}
-                  className="h-7 w-auto opacity-60 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
-                />
-                {/* Subtle glow on hover */}
-                <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-sail-blue/10 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-              </div>
-              <div className="group relative">
-                <Image
-                  src="/logos/Invista_Logo-removebg-preview.png"
-                  alt="Invista"
-                  width={120}
-                  height={44}
-                  className="h-11 w-auto opacity-60 grayscale transition-all duration-500 group-hover:scale-105 group-hover:opacity-100 group-hover:grayscale-0"
-                />
-                {/* Subtle glow on hover */}
-                <div className="absolute inset-0 -z-10 rounded-lg bg-gradient-to-r from-sail-blue/10 to-transparent opacity-0 blur-xl transition-opacity duration-500 group-hover:opacity-100" />
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
             THE PROBLEM - "Your Trade Compliance data is already out of date"
@@ -780,14 +741,10 @@ export default function Home() {
                       </span>
                     </Link>
                   </Button>
-                  <Button
-                    variant="outline"
+                  <TalkToFounderButton
                     size="lg"
                     className="border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl"
-                    asChild
-                  >
-                    <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                  </Button>
+                  />
                 </div>
               </div>
             </div>
