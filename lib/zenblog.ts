@@ -9,7 +9,7 @@ export const zenblog = createZenblogClient({
 // Type definitions for our blog posts
 export interface BlogPost {
   title: string;
-  html_content: string;
+  html_content?: string; // Optional - only present in full post, not in list
   slug: string;
   category?: {
     name: string;

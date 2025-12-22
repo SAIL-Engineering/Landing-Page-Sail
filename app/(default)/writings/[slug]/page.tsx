@@ -154,10 +154,12 @@ export default async function BlogPostPage({
             </div>
 
             {/* Article Content - Clean Professional Typography */}
-            <div
-              className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h3:mb-3 prose-h3:mt-8 prose-h3:text-xl prose-p:leading-[1.75] prose-p:text-slate-700 prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-600 prose-strong:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50 prose-pre:text-sm prose-li:text-slate-700 prose-img:rounded-lg prose-hr:border-slate-200"
-              dangerouslySetInnerHTML={{ __html: post.html_content }}
-            />
+            {post.html_content && (
+              <div
+                className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h3:mb-3 prose-h3:mt-8 prose-h3:text-xl prose-p:leading-[1.75] prose-p:text-slate-700 prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-600 prose-strong:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50 prose-pre:text-sm prose-li:text-slate-700 prose-img:rounded-lg prose-hr:border-slate-200"
+                dangerouslySetInnerHTML={{ __html: post.html_content }}
+              />
+            )}
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
