@@ -5,11 +5,32 @@ import { constructMetadata } from "@/lib/utils";
 import { Metadata } from "next/types";
 import Link from "next/link";
 import Image from "next/image";
+import HeroAnimation from "@/components/hero-animation";
+import {
+  IconArrowRightOutline18 as ArrowRight,
+  IconShieldCheckOutline18 as ShieldCheck,
+  IconMagnifierAlertOutline18 as FileSearch,
+  IconEyeScannerOutline18 as Eye,
+  IconRefreshOutline18 as RefreshCw,
+  IconBoxScaleOutline18 as Scale,
+  IconBoxOutline18 as Package,
+  IconEarthOutline18 as Globe,
+  IconScrollTextOutline18 as FileText,
+  IconShieldOutline18 as ClipboardCheck,
+  IconUsersOutline18 as Users,
+  IconBellOnOutline18 as AlertTriangle,
+  IconClockRotateClockwiseOutline18 as Clock,
+  IconBoxCheckOutline18 as CheckCircle,
+  IconBoltOutline18 as Zap,
+  IconBox2Outline18 as Database,
+  IconChartColumnOutline18 as BarChart3,
+  IconEnvelopeOutline18 as Send,
+} from "nucleo-ui-outline-18";
 
 export const metadata: Metadata = constructMetadata({
   title: "SAIL",
   description:
-    "Modern trade compliance software for brokers and enterprises that need audit-ready workflows and faster tariff updates.",
+    "Trade compliance that keeps up with the world. Classification, monitoring, and audit-ready documentation for brokers, enterprises, and trade professionals.",
   canonical: "/",
 });
 
@@ -17,9 +38,12 @@ export default function Home() {
   return (
     <>
       <main className="bg-[#F6F3EB]">
+        {/* ═══════════════════════════════════════════════════════════════════
+            HERO - "Trade compliance that keeps up with the world"
+        ═══════════════════════════════════════════════════════════════════ */}
         <section
           id="hero"
-          className="relative overflow-hidden bg-[#0b0f2b] pb-24 pt-32 text-white"
+          className="relative overflow-hidden bg-[#0b0f2b] pb-20 pt-32 text-white"
         >
           <div className="absolute inset-0 z-0">
             <Image
@@ -31,604 +55,842 @@ export default function Home() {
               sizes="100vw"
             />
           </div>
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/65 to-black/90" />
-          <div className="absolute left-10 top-10 z-10 h-24 w-24 rounded-full border border-white/10" />
-          <div className="absolute right-16 top-32 z-10 h-40 w-40 rounded-full border border-white/10" />
-          <div className="relative z-20 mx-auto grid max-w-6xl items-center gap-12 px-6 lg:grid-cols-[1fr_1.1fr]">
-            <div className="space-y-6">
-              <Badge className="border border-[#D8FD49]/60 bg-[#D8FD49] text-black">
-                Built for Brokers & Enterprises
-              </Badge>
-              <h1 className="fade-up font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.35)] md:text-6xl">
-                Global Trade Execution <br className="hidden md:block" /> for
-                the Modern Compliance Team.
-              </h1>
-              <p className="fade-up fade-up-delay max-w-xl text-lg text-white/85 md:text-xl">
-                <span className="sail-wordmark">SAIL</span>{" "}
-                <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                  GTX
-                </span>{" "}
-                is the platform that equips trade compliance teams and brokers
-                with intelligent agents to automate classification, screen
-                risks, and recover revenue—in real time.
-              </p>
-              <div className="fade-up flex flex-col gap-3 sm:flex-row sm:items-center">
-                <div className="flex w-full items-center gap-2 rounded-full bg-white px-4 py-2 text-slate-800 shadow-[0_16px_40px_rgba(3,6,20,0.45)] sm:w-auto">
-                  <input
-                    className="min-w-[200px] flex-1 bg-transparent text-sm outline-none placeholder:text-slate-400"
-                    placeholder="Work email"
-                    aria-label="Work email"
-                  />
+          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
+
+          <div className="relative z-20 mx-auto max-w-7xl px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
+              {/* Left: Copy */}
+              <div className="space-y-8">
+                <Badge className="border border-[#D8FD49]/60 bg-[#D8FD49] text-black">
+                  Live in days, not months
+                </Badge>
+
+                <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
+                  Trade compliance that keeps up with the world.
+                </h1>
+
+                <p className="max-w-lg text-lg text-white/80">
+                  Regulations change weekly. Your classification data
+                  shouldn&apos;t fall behind.{" "}
+                  <span className="sail-wordmark">SAIL</span>{" "}
+                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
+                    GTX
+                  </span>{" "}
+                  keeps your entire product catalog current, accurate, and
+                  audit-ready—without the manual scramble.
+                </p>
+
+                <div className="flex flex-col gap-4 sm:flex-row">
                   <Button
                     variant="sail"
-                    className="group h-10 w-full overflow-hidden px-6 text-sm transition-all duration-300 hover:border-[#343CED] hover:bg-[#343CED] hover:!bg-none hover:text-white sm:w-auto"
+                    size="lg"
+                    className="group text-base"
                     asChild
                   >
-                    <Link
-                      href="mailto:info@sailgtx.com"
-                      className="relative flex items-center justify-center"
-                    >
-                      <span className="flex items-center transition-transform duration-300 group-hover:-translate-y-10">
-                        Get compliant for free
-                      </span>
-                      <span className="absolute flex translate-y-10 items-center gap-2 transition-transform duration-300 group-hover:translate-y-0">
-                        Get Your Free Audit
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12h14" />
-                          <path d="m12 5 7 7-7 7" />
-                        </svg>
-                      </span>
+                    <Link href="mailto:info@sailgtx.com">
+                      Get Your Free Audit
+                      <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
-                </div>
-                <Button
-                  variant="outline"
-                  className="border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all hover:bg-white hover:text-slate-900"
-                  asChild
-                >
-                  <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
-                </Button>
-              </div>
-              <div className="fade-up flex flex-wrap items-center gap-6 text-sm text-white/70">
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#D8FD49]" />
-                  Audit-ready workflows
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-[#D8FD49]" />
-                  Updates in minutes
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-white/40 bg-white/5 text-white hover:bg-white hover:text-slate-900"
+                    asChild
+                  >
+                    <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>
+                  </Button>
                 </div>
               </div>
-            </div>
-            <div className="fade-up relative">
-              <div className="absolute -right-10 top-10 h-56 w-56 rounded-full bg-[#343CED]/30 blur-[120px]" />
-              <div className="relative rounded-[28px] border border-white/10 bg-white/10 p-4 shadow-[0_30px_80px_rgba(5,8,30,0.45)] backdrop-blur">
-                <div className="rounded-[20px] bg-white p-5 text-slate-900 shadow-[0_18px_50px_rgba(15,23,42,0.2)]">
-                  <div className="flex items-center justify-between text-xs text-slate-400">
-                    <span>Product preview (placeholder)</span>
-                    <span className="rounded-full bg-[#D8FD49] px-2 py-0.5 text-[10px] font-semibold text-black">
-                      Live
-                    </span>
-                  </div>
-                  <div className="mt-4 flex h-48 items-center justify-center rounded-xl bg-[#eef0ff] text-xs uppercase tracking-widest text-slate-400">
-                    UI preview placeholder
-                  </div>
-                  <div className="mt-4 grid gap-2 text-xs text-slate-500">
-                    <div className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
-                      <span>Updated classifications</span>
-                      <span className="font-mono font-semibold text-slate-900">
-                        312
-                      </span>
-                    </div>
-                    <div className="flex items-center justify-between rounded-lg bg-slate-50 px-3 py-2">
-                      <span>Audit-ready files</span>
-                      <span className="font-mono font-semibold text-slate-900">
-                        98%
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute -bottom-6 -right-4 w-40 rounded-[24px] border border-white/40 bg-white p-3 text-slate-900 shadow-[0_18px_40px_rgba(10,14,40,0.25)]">
-                  <div className="text-xs text-slate-500">Shipment check</div>
-                  <div className="mt-2 text-lg font-semibold">Low risk</div>
-                  <div className="mt-2 h-2 rounded-full bg-slate-100">
-                    <div className="h-2 w-4/5 rounded-full bg-[#343CED]" />
-                  </div>
-                </div>
-                <div className="absolute -bottom-10 right-24 w-24 rounded-[18px] border border-white/20 bg-[#0b0f2b] p-3 text-xs text-white shadow-[0_12px_30px_rgba(6,9,30,0.35)]">
-                  <span className="font-mono">132</span> shipments saved
-                </div>
+
+              {/* Right: Product UI Preview */}
+              <div className="relative h-[450px] w-full lg:h-[500px]">
+                <HeroAnimation />
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#f9fafc] py-10">
-          <div className="sail-kicker mx-auto flex max-w-6xl flex-wrap items-center gap-8 px-6">
-            <span className="text-slate-400">
-              Trusted by leaders in global trade
+        {/* ═══════════════════════════════════════════════════════════════════
+            LOGO BAR
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="border-b border-slate-200/50 bg-white py-8">
+          <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8 px-6">
+            <span className="text-sm font-medium text-slate-500">
+              Trusted by trade compliance teams at
             </span>
-            <div className="flex items-center gap-10">
-              <img
+            <div className="flex items-center gap-12">
+              <Image
                 src="/logos/Koch_logo.svg"
                 alt="Koch Industries"
-                className="h-7 w-auto"
+                width={100}
+                height={28}
+                className="h-7 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
               />
-              <img
+              <Image
                 src="/logos/Invista_Logo-removebg-preview.png"
                 alt="Invista"
-                className="h-11 w-auto"
+                width={120}
+                height={44}
+                className="h-11 w-auto opacity-70 grayscale transition hover:opacity-100 hover:grayscale-0"
               />
             </div>
           </div>
         </section>
 
-        <section id="solutions" className="bg-[#f0f4ff] py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mb-12 max-w-2xl">
-              <p className="sail-kicker">
-                <span className="sail-wordmark">SAIL</span>{" "}
-                <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                  GTX
-                </span>
-              </p>
-              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
-                Visibility isn&apos;t enough. You need execution.
-              </h2>
-              <p className="mt-4 text-slate-600">
-                Stop just monitoring risks. Start resolving them with autonomous
-                compliance workflows designed for brokers and rapid-response
-                teams.
-              </p>
+        {/* ═══════════════════════════════════════════════════════════════════
+            THE PROBLEM - "Your compliance data is already out of date"
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid items-center gap-16 lg:grid-cols-2">
+              <div>
+                <p className="sail-kicker">The Reality</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                  Your compliance data is already out of date.
+                </h2>
+                <p className="mt-6 text-lg text-slate-600">
+                  Most trade compliance teams are running on spreadsheets last
+                  touched six months ago. When tariffs shift—and they shift
+                  constantly—someone has to manually review thousands of product
+                  classifications. That someone is usually already behind.
+                </p>
+                <p className="mt-4 text-slate-600">
+                  <span className="sail-wordmark">SAIL</span> monitors
+                  regulatory changes and automatically flags affected products.
+                  Your catalog stays current. Your team stays focused on
+                  exceptions, not maintenance.
+                </p>
+              </div>
+
+              <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+                <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
+                  The math doesn&apos;t work:
+                </p>
+                <div className="space-y-4">
+                  {[
+                    {
+                      label: "Average enterprise product catalog",
+                      value: "15,000+ SKUs",
+                    },
+                    {
+                      label: "Annual HTS schedule changes",
+                      value: "2,000+ modifications",
+                    },
+                    {
+                      label: "Time to manually re-classify one product",
+                      value: "45 minutes",
+                    },
+                    {
+                      label: "Full catalog review",
+                      value: "Never actually completed",
+                      highlight: true,
+                    },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="flex items-center justify-between rounded-lg bg-white p-4"
+                    >
+                      <span className="text-sm text-slate-600">
+                        {stat.label}
+                      </span>
+                      <span
+                        className={`font-mono text-sm font-semibold ${stat.highlight ? "text-red-600" : "text-slate-900"}`}
+                      >
+                        {stat.value}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            HOW IT WORKS - Tabbed Workflow (Classify → Monitor → Maintain → Defend)
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-[#0b0f2b] py-24 text-white">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16 text-center">
+              <p className="sail-kicker-light">How It Works</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight md:text-5xl">
+                From chaos to cleared. Continuously.
+              </h2>
+            </div>
+
+            {/* 2x2 Grid of Steps */}
             <div className="grid gap-6 md:grid-cols-2">
               {[
                 {
-                  title: "Enterprise Trade Compliance",
-                  body: "Centralize classification, duties, and audit trails across global teams.",
-                  href: "/solutions/enterprise-compliance",
-                  image: "/pixel-art/containers.png", // Placeholder
+                  step: "01",
+                  title: "Classify",
+                  headline: "Get the code right the first time.",
+                  description:
+                    "Classification confidence scores with full reasoning chains. See exactly why a product maps to a specific HTS code—not just the answer, but the legal logic behind it.",
+                  icon: FileSearch,
+                  preview: {
+                    title: "HTS Classification",
+                    badge: "98% Confidence",
+                    content: (
+                      <div className="space-y-2 font-mono text-xs">
+                        <div className="flex justify-between">
+                          <span className="text-slate-400">
+                            Industrial Sensor Array
+                          </span>
+                          <span className="text-[#D8FD49]">8542.31.00.00</span>
+                        </div>
+                        <div className="space-y-1 border-l-2 border-slate-600 pl-3 text-slate-400">
+                          <div>├─ Chapter 85: Electrical machinery</div>
+                          <div>├─ Heading 8542: Electronic ICs</div>
+                          <div>└─ Subheading 8542.31: Processors</div>
+                        </div>
+                      </div>
+                    ),
+                  },
                 },
                 {
-                  title: "Customs Brokerage",
-                  body: "File faster with automated updates and reduce hold risk at the port.",
-                  href: "/solutions/customs-brokerage",
-                  image: "/pixel-art/containers.png",
+                  step: "02",
+                  title: "Monitor",
+                  headline: "Know when regulations change before they hit.",
+                  description:
+                    "SAIL tracks HTS schedule updates, Section 301/232 modifications, IEPA changes, and Chapter 99 provisions. When something affects your catalog, you know immediately.",
+                  icon: Eye,
+                  preview: {
+                    title: "Regulatory Alert",
+                    badge: "2 hours ago",
+                    content: (
+                      <div className="space-y-3 text-xs">
+                        <div className="font-medium text-white">
+                          Section 301 List Update — Effective Jan 15
+                        </div>
+                        <div className="text-slate-400">
+                          47 products in your catalog affected
+                        </div>
+                        <div className="space-y-1 text-slate-400">
+                          <div>
+                            HTS 8471.50 → Rate change:{" "}
+                            <span className="text-red-400">25% → 35%</span>
+                          </div>
+                          <div>
+                            HTS 8542.31 →{" "}
+                            <span className="text-[#D8FD49]">
+                              New exclusion available
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    ),
+                  },
                 },
                 {
-                  title: "Global Trade Advisory Firms",
-                  body: "Deliver audit-ready documentation and compliance support for clients.",
-                  href: "/solutions/advisory-trade-law",
-                  image: "/pixel-art/containers.png", // Placeholder
+                  step: "03",
+                  title: "Maintain",
+                  headline:
+                    "Keep 10,000 products current without 10,000 hours.",
+                  description:
+                    "Continuous compliance monitoring across your entire product catalog. Stale classifications surface automatically. Re-classification runs in the background.",
+                  icon: RefreshCw,
+                  preview: {
+                    title: "Catalog Health",
+                    badge: "Last scan: 12m ago",
+                    content: (
+                      <div className="space-y-2 text-xs">
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">
+                            Products monitored
+                          </span>
+                          <span className="font-mono text-white">12,847</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span className="text-slate-400">
+                            Current & verified
+                          </span>
+                          <span className="font-mono text-[#D8FD49]">
+                            98.2%
+                          </span>
+                        </div>
+                        <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-700">
+                          <div
+                            className="h-full bg-gradient-to-r from-[#343CED] to-[#D8FD49]"
+                            style={{ width: "98.2%" }}
+                          />
+                        </div>
+                      </div>
+                    ),
+                  },
                 },
                 {
-                  title: "Trade Law Firms",
-                  body: "Support counsel with rapid, data-backed regulatory analysis.",
-                  href: "/solutions/advisory-trade-law",
-                  image: "/pixel-art/containers.png", // Placeholder
+                  step: "04",
+                  title: "Defend",
+                  headline: "Audit-ready documentation, always.",
+                  description:
+                    "Every classification includes the evidence chain: product specs, material composition, legal reasoning, and approval history. When CBP sends a CF-28, you respond in hours—not weeks.",
+                  icon: ShieldCheck,
+                  preview: {
+                    title: "CF-28 Response Packet",
+                    badge: "Ready to export",
+                    content: (
+                      <div className="space-y-2 text-xs">
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <span className="text-slate-300">
+                            Product specification (14 pages)
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <span className="text-slate-300">
+                            Classification reasoning chain
+                          </span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <span className="text-slate-300">
+                            HTS legal notes & CROSS rulings
+                          </span>
+                        </div>
+                      </div>
+                    ),
+                  },
                 },
               ].map((item) => (
                 <Card
-                  key={item.title}
-                  className="group flex h-full flex-col rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)] transition hover:-translate-y-1 hover:border-[#343CED]/30 hover:bg-white"
+                  key={item.step}
+                  className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:bg-white/10"
                 >
-                  <div className="bg-dot-black/[0.1] relative mb-6 flex h-44 items-center justify-center overflow-hidden rounded-2xl border-2 border-slate-900/5 bg-slate-50 p-6 shadow-sm">
-                    {/* Radial gradient for the container to give a faded look */}
-                    <div className="absolute inset-0 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]" />
-                    <div className="absolute right-3 top-3 z-10 rounded-md border border-black/5 bg-[#D8FD49] px-2 py-0.5 font-mono text-[10px] font-bold uppercase tracking-wider text-black shadow-sm">
-                      Live
+                  <div className="mb-4 flex items-center gap-4">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#343CED]">
+                      <item.icon className="h-5 w-5 text-white" />
                     </div>
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={150}
-                      height={150}
-                      className="relative z-10 object-contain drop-shadow-md transition-transform duration-300 group-hover:scale-105"
-                    />
+                    <span className="font-mono text-sm font-semibold text-[#D8FD49]">
+                      STEP {item.step}
+                    </span>
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">
+                  <h3 className="mb-2 text-xl font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm text-slate-600">{item.body}</p>
-                  <Link
-                    href={item.href}
-                    className="mt-4 inline-flex items-center text-sm font-semibold text-[#343CED] underline-offset-4 hover:underline"
-                  >
-                    Learn more
-                  </Link>
+                  <p className="mb-4 text-sm text-white/80">{item.headline}</p>
+                  <p className="mb-6 text-sm text-white/60">
+                    {item.description}
+                  </p>
+
+                  {/* Mini Preview Card */}
+                  <div className="rounded-xl border border-white/10 bg-[#0b0f2b] p-4">
+                    <div className="mb-3 flex items-center justify-between">
+                      <span className="text-xs text-slate-400">
+                        {item.preview.title}
+                      </span>
+                      <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] text-slate-300">
+                        {item.preview.badge}
+                      </span>
+                    </div>
+                    {item.preview.content}
+                  </div>
                 </Card>
               ))}
             </div>
           </div>
         </section>
 
-        <section id="product" className="bg-white py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-12 lg:grid-cols-[0.95fr_1.05fr]">
+        {/* ═══════════════════════════════════════════════════════════════════
+            CAPABILITIES - Bento Grid
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16 text-center">
+              <p className="sail-kicker">Capabilities</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+                Everything your compliance workflow needs.
+              </h2>
+            </div>
+
+            <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Real-Time Classification",
+                  body: "HTS codes with confidence scores, legal reasoning, and evidence chains.",
+                  icon: Zap,
+                },
+                {
+                  title: "Continuous Monitoring",
+                  body: "Product catalog checked against regulatory changes daily.",
+                  icon: Eye,
+                },
+                {
+                  title: "Tariff Stack Calculator",
+                  body: "MFN + Section 301 + 232 + Chapter 99 + IEPA + MPF/HMF.",
+                  icon: BarChart3,
+                },
+                {
+                  title: "CF-28/29 Response",
+                  body: "Audit documentation generated instantly with evidence chains.",
+                  icon: FileText,
+                },
+                {
+                  title: "Product Catalog",
+                  body: "Central source of truth with version history and approvals.",
+                  icon: Database,
+                },
+                {
+                  title: "Entity Screening",
+                  body: "OFAC, BIS Entity List, denied parties. Checked continuously.",
+                  icon: ShieldCheck,
+                },
+                {
+                  title: "Broker Collaboration",
+                  body: "Share classification data directly. No more email attachments.",
+                  icon: Send,
+                },
+                {
+                  title: "Regulatory Alerts",
+                  body: "HTS changes, tariff mods, new exclusions. Know first.",
+                  icon: AlertTriangle,
+                },
+              ].map((item) => (
+                <Card
+                  key={item.title}
+                  className="rounded-xl border border-slate-200 bg-white p-5 transition hover:border-[#343CED]/30 hover:shadow-md"
+                >
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-[#343CED]/10">
+                    <item.icon className="h-4 w-4 text-[#343CED]" />
+                  </div>
+                  <h3 className="mb-1 font-semibold text-slate-900">
+                    {item.title}
+                  </h3>
+                  <p className="text-sm text-slate-600">{item.body}</p>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            WHO WE SERVE
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-[#F6F3EB] py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16 text-center">
+              <p className="sail-kicker">Who We Serve</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+                Built for everyone who touches trade compliance.
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+                Most platforms are built for one buyer.{" "}
+                <span className="sail-wordmark">SAIL</span> works across the
+                entire compliance ecosystem—because that&apos;s how the work
+                actually flows.
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                {
+                  title: "Customs Brokers",
+                  timeline: "Live in 3 days",
+                  description:
+                    "Stop chasing clients for classification data. Get accurate HTS codes with documentation you can trust—before the shipment arrives.",
+                  features: [
+                    "Classification confidence scores",
+                    "Audit-ready documentation",
+                    "Direct client collaboration",
+                    "Real-time regulatory updates",
+                  ],
+                },
+                {
+                  title: "Enterprise Teams",
+                  timeline: "Live in 2 weeks",
+                  description:
+                    "Finally, a product catalog that stays current. Monitor 10,000+ SKUs without dedicating full-time headcount to maintenance.",
+                  features: [
+                    "Continuous catalog monitoring",
+                    "Stale classification alerts",
+                    "Bulk re-classification workflows",
+                    "Full audit trail",
+                  ],
+                },
+                {
+                  title: "Trade Advisory",
+                  timeline: "White-label ready",
+                  description:
+                    "Deliver classification accuracy your clients can't get in-house. Scale your practice without scaling your headcount.",
+                  features: [
+                    "Client-specific workspaces",
+                    "Branded documentation",
+                    "Expertise augmentation",
+                    "Research acceleration",
+                  ],
+                },
+                {
+                  title: "Trade Law",
+                  timeline: "Litigation-grade",
+                  description:
+                    "Build defensible positions with classification reasoning chains and evidence documentation.",
+                  features: [
+                    "Legal reasoning exports",
+                    "CROSS ruling research",
+                    "Classification dispute support",
+                    "Prior disclosure documentation",
+                  ],
+                },
+              ].map((audience) => (
+                <Card
+                  key={audience.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-[#343CED]/30 hover:shadow-lg"
+                >
+                  <div className="mb-4 inline-block rounded-full bg-[#D8FD49] px-3 py-1 text-xs font-bold text-black">
+                    {audience.timeline}
+                  </div>
+                  <h3 className="mb-2 text-xl font-semibold text-slate-900">
+                    {audience.title}
+                  </h3>
+                  <p className="mb-4 text-sm text-slate-600">
+                    {audience.description}
+                  </p>
+                  <ul className="space-y-2 text-sm text-slate-500">
+                    {audience.features.map((feature) => (
+                      <li key={feature} className="flex items-center gap-2">
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#343CED]" />
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            INTEGRATIONS
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="border-y border-slate-200 bg-white py-16">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-10 text-center">
+              <p className="sail-kicker">Integrations</p>
+              <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
+                Connects to the systems you already use.
+              </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+                <span className="sail-wordmark">SAIL</span> fits into existing
+                workflows. ERP integration, email forwarding, broker portals. No
+                rip-and-replace required.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-3 items-center justify-items-center gap-8 md:grid-cols-5 lg:grid-cols-10">
+              {[
+                { src: "/logos/SAP_2011_logo.svg", alt: "SAP" },
+                { src: "/logos/Oracle_logo.svg", alt: "Oracle" },
+                {
+                  src: "/logos/U.S._Customs_and_Border_Protection_logo.png",
+                  alt: "CBP",
+                },
+                { src: "/logos/ace_logo_transparent.png", alt: "ACE" },
+                {
+                  src: "/logos/Slack_Technologies-Logo.wine.png",
+                  alt: "Slack",
+                },
+                {
+                  src: "/logos/Microsoft_Office_Teams_(2019–2025).svg.png",
+                  alt: "Teams",
+                },
+                {
+                  src: "/logos/Microsoft_Outlook_Icon_(2025–present).svg",
+                  alt: "Outlook",
+                },
+                {
+                  src: "/logos/gmail-logo-brandlogos.net_ni0u393lv.svg",
+                  alt: "Gmail",
+                },
+                { src: "/logos/Box,_Inc._logo.svg.png", alt: "Box" },
+                {
+                  src: "/logos/Microsoft_Office_SharePoint_(2019–2025).svg",
+                  alt: "SharePoint",
+                },
+              ].map((logo) => (
+                <div
+                  key={logo.alt}
+                  className="flex items-center justify-center p-2"
+                >
+                  <Image
+                    src={logo.src}
+                    alt={logo.alt}
+                    width={80}
+                    height={32}
+                    className="h-auto max-h-8 w-auto opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ═══════════════════════════════════════════════════════════════════
+            CASE STUDY - Invista (No Dollar Signs)
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-[#F6F3EB] py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-12 lg:grid-cols-2">
               <div>
-                <p className="sail-kicker">Intelligence</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
-                  Your automated compliance workforce.
+                <p className="sail-kicker">Case Study</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                  How Invista transformed trade compliance operations.
                 </h2>
-                <p className="mt-4 text-slate-600">
-                  Tariff and regulatory change is constant.{" "}
-                  <span className="sail-wordmark">SAIL</span>{" "}
-                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                    GTX
-                  </span>{" "}
-                  acts as a force multiplier, keeping your classifications and
-                  duties current without the manual rework.
+                <p className="mt-4 text-lg text-slate-600">
+                  From reactive firefighting to continuous confidence.
                 </p>
-                <div className="mt-8 space-y-4 text-sm text-slate-600">
-                  {[
-                    "Precision Duty Engine (Calculate & Simulate)",
-                    "Digital Compliance Twin (Audit-ready trails)",
-                    "Always-On Monitor (Auto-detect tariff changes)",
-                    "Country of origin and FTA qualification",
-                    "Supplier documentation collection",
-                    "Integrations with email, SAP, Oracle, or standalone",
-                  ].map((item) => (
-                    <div key={item} className="flex items-start gap-3">
-                      <span className="mt-1 h-2 w-2 rounded-full bg-[#343CED]" />
-                      <span>{item}</span>
-                    </div>
-                  ))}
+
+                <div className="mt-8 space-y-4">
+                  <div className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="mb-1 text-sm font-medium text-slate-500">
+                      The Challenge
+                    </p>
+                    <p className="text-sm text-slate-700">
+                      Invista&apos;s trade compliance team managed 8,000+
+                      product classifications across multiple business units.
+                      Every tariff change meant weeks of manual review. CF-28
+                      responses took 3-4 weeks to compile.
+                    </p>
+                  </div>
+                  <div className="rounded-xl border border-slate-200 bg-white p-4">
+                    <p className="mb-1 text-sm font-medium text-slate-500">
+                      The Approach
+                    </p>
+                    <p className="text-sm text-slate-700">
+                      <span className="sail-wordmark">SAIL</span> GTX deployed
+                      in 11 days. Full product catalog imported. Classification
+                      confidence scores generated. Continuous monitoring
+                      activated.
+                    </p>
+                  </div>
                 </div>
               </div>
-              <div className="grid gap-4">
-                <Card className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
-                  <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
-                    Risk score
+
+              <div className="space-y-4">
+                <Card className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
+                    The Results
                   </p>
-                  <div className="mt-4 flex items-center justify-between">
-                    <span className="text-3xl font-semibold text-slate-900">
-                      92
-                    </span>
-                    <span className="rounded-full bg-[#D8FD49] px-3 py-1 text-xs font-semibold text-black">
-                      Low risk
-                    </span>
-                  </div>
-                  <div className="mt-4 h-2 w-full rounded-full bg-slate-100">
-                    <div className="h-2 w-4/5 rounded-full bg-[#343CED]" />
-                  </div>
-                </Card>
-                <Card className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]">
-                  <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
-                    Checklist
-                  </p>
-                  <div className="mt-4 space-y-3 text-sm text-slate-600">
+                  <div className="space-y-4">
                     {[
-                      "Country of origin verified",
-                      "Tariff updates applied",
-                      "Documentation stored",
-                    ].map((item) => (
-                      <div key={item} className="flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-[#343CED]" />
-                        {item}
+                      {
+                        metric: "Time to classify new product",
+                        before: "45 minutes",
+                        after: "3 minutes",
+                      },
+                      {
+                        metric: "CF-28 response time",
+                        before: "3-4 weeks",
+                        after: "Same day",
+                      },
+                      {
+                        metric: "Products reviewed after tariff change",
+                        before: "~15% sampled",
+                        after: "100% automated",
+                      },
+                      {
+                        metric: "Classification confidence",
+                        before: "Unknown",
+                        after: "98.2% verified",
+                      },
+                      {
+                        metric: "Catalog currency",
+                        before: "Updated quarterly",
+                        after: "Continuously",
+                      },
+                    ].map((row) => (
+                      <div
+                        key={row.metric}
+                        className="flex items-center justify-between border-b border-slate-100 pb-3 last:border-0"
+                      >
+                        <span className="text-sm text-slate-600">
+                          {row.metric}
+                        </span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-sm text-slate-400 line-through">
+                            {row.before}
+                          </span>
+                          <span className="font-mono text-sm font-semibold text-[#343CED]">
+                            {row.after}
+                          </span>
+                        </div>
                       </div>
                     ))}
                   </div>
                 </Card>
+
+                <Card className="rounded-2xl border border-slate-200 bg-white p-6">
+                  <p className="text-slate-700">
+                    &ldquo;We used to dread tariff changes. Now{" "}
+                    <span className="sail-wordmark">SAIL</span> flags exactly
+                    what&apos;s affected and generates the re-classification
+                    analysis automatically. We just review and approve. Our team
+                    finally has time for strategic work.&rdquo;
+                  </p>
+                  <p className="mt-4 font-mono text-xs uppercase tracking-widest text-slate-500">
+                    — Trade Compliance Director, Invista
+                  </p>
+                </Card>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#F6F3EB] py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mb-10 max-w-2xl">
-              <p className="sail-kicker">Product previews</p>
-              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
-                A modern compliance workspace.
+        {/* ═══════════════════════════════════════════════════════════════════
+            METRICS - The Numbers That Matter
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-white py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="mb-16 text-center">
+              <p className="sail-kicker">The Numbers</p>
+              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+                Trade compliance is a numbers game.
               </h2>
-              <p className="mt-4 text-slate-600">
-                Feature screenshots will live here. We can swap in your real UI
-                assets as soon as they are ready.
-              </p>
             </div>
-            <div className="grid gap-6 md:grid-cols-3">
+
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
               {[
                 {
-                  title: "Audit trail",
-                  body: "Track every change with a clean, exportable history.",
+                  value: "45 min → 3 min",
+                  label: "Average time to classify a new product",
                 },
                 {
-                  title: "Tariff update feed",
-                  body: "See tariff changes applied across your product catalog.",
+                  value: "3 weeks → Same day",
+                  label: "CF-28 response turnaround",
                 },
-                {
-                  title: "Workflow approvals",
-                  body: "Keep reviews and approvals in one shared workspace.",
-                },
-              ].map((item) => (
-                <Card
-                  key={item.title}
-                  className="rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_14px_30px_rgba(15,23,42,0.08)]"
-                >
-                  <div className="mb-5 flex h-40 items-center justify-center rounded-2xl border border-dashed border-black/10 bg-white/70 text-xs uppercase tracking-widest text-slate-400">
-                    Screenshot placeholder
+                { value: "100%", label: "Catalog coverage after reg changes" },
+                { value: "Daily", label: "Regulatory monitoring frequency" },
+                { value: "98%+", label: "Classification confidence" },
+              ].map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="font-serif text-3xl font-bold text-[#343CED]">
+                    {stat.value}
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-slate-600">{item.body}</p>
-                </Card>
+                  <div className="mt-2 text-sm text-slate-600">
+                    {stat.label}
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="bg-white py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="mb-12 max-w-2xl">
-              <p className="sail-kicker">Coverage</p>
-              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
-                Everything a compliance team needs.
-              </h2>
-              <p className="mt-4 text-slate-600">
-                <span className="sail-wordmark">SAIL</span> supports the core
-                workflows that keep trade moving and audits clean.
-              </p>
-            </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: "Classification & duties",
-                  body: "Keep classifications current and duty calculations accurate.",
-                },
-                {
-                  title: "Country of origin",
-                  body: "Validate origin data and apply regulatory changes fast.",
-                },
-                {
-                  title: "FTA qualification",
-                  body: "Track eligibility and documentation in one place.",
-                },
-                {
-                  title: "Supplier documentation",
-                  body: "Collect and verify docs from suppliers quickly.",
-                },
-                {
-                  title: "Audit-ready trails",
-                  body: "Every change logged with approvals and evidence.",
-                },
-                {
-                  title: "Collaboration",
-                  body: "Work with brokers, legal, and trade advisors in one workspace.",
-                },
-              ].map((item) => (
-                <Card
-                  key={item.title}
-                  className="rounded-3xl border border-black/5 bg-white p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
-                >
-                  <p className="font-mono text-xs uppercase tracking-widest text-[#343CED]">
-                    Capability
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-slate-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-slate-600">{item.body}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section id="how" className="bg-[#f0f4ff] py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="max-w-2xl">
-              <p className="sail-kicker">How it works</p>
-              <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
-                Connect. Update. Prove compliance.
-              </h2>
-            </div>
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {[
-                {
-                  title: "Connect your data",
-                  body: "Sync email, SAP, Oracle, and internal docs in one workspace.",
-                },
-                {
-                  title: "Apply tariff changes",
-                  body: "Stay current with updates mapped to every product and filing.",
-                },
-                {
-                  title: "Prove compliance fast",
-                  body: "Surface audit-ready evidence in seconds, not days.",
-                },
-              ].map((item, index) => (
-                <Card
-                  key={item.title}
-                  className="rounded-2xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_10px_20px_rgba(15,23,42,0.06)]"
-                >
-                  <p className="text-xs font-semibold text-[#343CED]">
-                    0{index + 1}
-                  </p>
-                  <h3 className="mt-3 text-lg font-semibold text-slate-900">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm text-slate-600">{item.body}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="bg-[#F6F3EB] py-20">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="text-center">
-              <p className="sail-kicker">Go live in 7 days</p>
-              <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
-                What you can get done with{" "}
-                <span className="sail-wordmark">SAIL</span> in 7 days.
-              </h2>
-              <p className="mt-4 text-slate-600">
-                New compliance software should move fast.{" "}
-                <span className="sail-wordmark">SAIL</span> gets teams updated
-                in days, not quarters.
-              </p>
-            </div>
-            <div className="relative mt-14">
-              <div className="absolute left-4 right-4 top-4 h-px bg-slate-200" />
-              <div className="grid gap-6 md:grid-cols-3">
-                {[
-                  {
-                    day: "Day 1",
-                    title: "Connect data",
-                    points: [
-                      "Import classifications and duties",
-                      "Sync email and shared documents",
-                      "Map client data sources",
-                    ],
-                  },
-                  {
-                    day: "Day 3",
-                    title: "Apply changes",
-                    points: [
-                      "Update tariffs across filings",
-                      "Set workflow approvals",
-                      "Surface compliance gaps",
-                    ],
-                  },
-                  {
-                    day: "Day 7",
-                    title: "Audit-ready",
-                    points: [
-                      "Generate audit-ready evidence",
-                      "Prevent avoidable port delays",
-                      "Operate with confidence",
-                    ],
-                  },
-                ].map((item) => (
-                  <Card
-                    key={item.day}
-                    className="relative rounded-3xl border border-black/5 bg-[#F6F3EB] p-6 shadow-[0_12px_26px_rgba(15,23,42,0.08)]"
-                  >
-                    <div className="absolute -top-4 left-6 h-3 w-3 rounded-full border border-slate-300 bg-white" />
-                    <div className="inline-flex rounded-full border border-slate-200 bg-white px-3 py-1 font-mono text-xs font-semibold text-slate-600">
-                      {item.day}
-                    </div>
-                    <h3 className="mt-4 font-serif text-lg font-semibold text-slate-900">
-                      {item.title}
-                    </h3>
-                    <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                      {item.points.map((point) => (
-                        <li key={point} className="flex items-start gap-2">
-                          <span className="mt-1 h-2 w-2 rounded-full bg-[#343CED]" />
-                          <span>{point}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="results" className="bg-white py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+        {/* ═══════════════════════════════════════════════════════════════════
+            TIME TO VALUE - Speed Section
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-[#F6F3EB] py-24">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="grid gap-16 lg:grid-cols-2">
               <div>
-                <p className="sail-kicker">Reclaim Your Revenue</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
-                  Identify recovery opportunities in minutes.
+                <p className="sail-kicker">Time to Value</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
+                  Live in days. Not months.
                 </h2>
-                <p className="mt-4 text-slate-600">
-                  Tariffs change daily. Your duties shouldn&apos;t.{" "}
-                  <span className="sail-wordmark">SAIL</span>{" "}
-                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                    GTX
-                  </span>{" "}
-                  re-runs your history to find overpayments and confirm
-                  compliance.
+                <p className="mt-4 text-lg text-slate-600">
+                  Enterprise compliance platforms take 6-12 months to implement.
+                  Consultants. Data migrations. Training programs.{" "}
+                  <span className="sail-wordmark">SAIL</span> deploys in days
+                  for brokers, weeks for enterprises.
                 </p>
-                <div className="mt-8 grid gap-4 md:grid-cols-2">
+
+                <div className="mt-8 space-y-4">
                   {[
                     {
-                      label: "Shipments prevented from being stuck at port",
-                      value: "132",
+                      day: "Day 1",
+                      task: "Account setup, product catalog import",
                     },
                     {
-                      label: "Audit-ready documentation coverage",
-                      value: "98%",
+                      day: "Day 3",
+                      task: "Classification engine calibrated to your products",
                     },
                     {
-                      label: "Tariff updates applied each week",
-                      value: "50+",
+                      day: "Day 7",
+                      task: "Full regulatory monitoring active",
                     },
-                    {
-                      label: "Average time to go audit-ready",
-                      value: "7 days",
-                    },
+                    { day: "Day 14", task: "Team trained, workflows live" },
                   ].map((item) => (
-                    <Card
-                      key={item.label}
-                      className="rounded-2xl border border-black/5 bg-white p-4 shadow-[0_10px_20px_rgba(15,23,42,0.06)]"
+                    <div
+                      key={item.day}
+                      className="flex items-center gap-4 rounded-xl bg-white p-4"
                     >
-                      <p className="font-mono text-sm font-semibold text-slate-900">
-                        {item.value}
-                      </p>
-                      <p className="mt-2 text-xs text-slate-500">
-                        {item.label}
-                      </p>
-                    </Card>
+                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#343CED] font-mono text-sm font-semibold text-white">
+                        {item.day.split(" ")[1]}
+                      </div>
+                      <div>
+                        <span className="font-semibold text-slate-900">
+                          {item.day}
+                        </span>
+                        <span className="ml-2 text-slate-600">{item.task}</span>
+                      </div>
+                    </div>
                   ))}
                 </div>
               </div>
-              <Card className="rounded-3xl border border-black/5 bg-white p-8 shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-                <p className="font-mono text-xs uppercase tracking-widest text-slate-500">
-                  Case study
+
+              <div className="flex flex-col justify-center">
+                <p className="mb-4 font-mono text-sm font-semibold text-slate-500">
+                  Compare that to:
                 </p>
-                <h3 className="mt-4 text-2xl font-semibold text-slate-900">
-                  Koch Industries & Invista
-                </h3>
-                <p className="mt-4 text-sm text-slate-600">
-                  “<span className="sail-wordmark">SAIL</span> keeps our
-                  compliance files current as tariffs shift. We&apos;re
-                  audit-ready without the manual scramble.”
-                </p>
-                <p className="mt-4 font-mono text-xs uppercase tracking-widest text-slate-500">
-                  Trade compliance leadership
-                </p>
-              </Card>
+                <div className="space-y-4">
+                  {[
+                    {
+                      name: "Traditional GTS implementations",
+                      time: "6-18 months",
+                    },
+                    {
+                      name: "Competitor enterprise platforms",
+                      time: "3-6 months",
+                    },
+                    { name: "Consulting-led projects", time: "12+ months" },
+                  ].map((comp) => (
+                    <div
+                      key={comp.name}
+                      className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4"
+                    >
+                      <span className="text-slate-600">{comp.name}</span>
+                      <span className="font-mono text-sm text-slate-400">
+                        {comp.time}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
-        <section className="bg-[#f0f4ff] py-16">
-          <div className="mx-auto max-w-6xl px-6">
-            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
-              <div className="max-w-xl">
-                <p className="sail-kicker-light">Get started</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight">
-                  Modernize your compliance workflow today.
+        {/* ═══════════════════════════════════════════════════════════════════
+            CTA - Final Push
+        ═══════════════════════════════════════════════════════════════════ */}
+        <section className="bg-[#343CED] py-20">
+          <div className="mx-auto max-w-7xl px-6">
+            <div className="flex flex-col items-center justify-between gap-8 text-center text-white md:flex-row md:text-left">
+              <div className="max-w-2xl">
+                <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
+                  See what&apos;s hiding in your trade data.
                 </h2>
-                <p className="mt-3 text-white/70">
-                  Join <span className="sail-wordmark">SAIL</span>{" "}
-                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                    GTX
-                  </span>{" "}
-                  and keep every shipment audit-ready with updates in minutes.
+                <p className="mt-4 text-lg text-white/80">
+                  Get a free audit of your classification accuracy. No
+                  commitment. No sales pitch. Just a clear picture of where you
+                  stand.
                 </p>
               </div>
               <div className="flex flex-wrap gap-4">
-                <Button variant="sail" asChild>
-                  <Link href="mailto:info@sailgtx.com">Request demo</Link>
+                <Button
+                  size="lg"
+                  className="bg-[#D8FD49] text-black hover:bg-[#c8ed39]"
+                  asChild
+                >
+                  <Link href="mailto:info@sailgtx.com">
+                    Get Your Free Audit
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
+                  size="lg"
+                  className="border-white/40 text-white hover:bg-white hover:text-[#343CED]"
                   asChild
                 >
                   <Link href="mailto:info@sailgtx.com">Talk to Founder</Link>

@@ -5732,6 +5732,13 @@ nth-check@^2.0.1:
   dependencies:
     boolbase "^1.0.0"
 
+nucleo-ui-outline-18@^1.3.2:
+  version "1.3.2"
+  resolved "https://registry.yarnpkg.com/nucleo-ui-outline-18/-/nucleo-ui-outline-18-1.3.2.tgz#aa9dc3093d98b4f44bbe1c662ec539b15a2a67e7"
+  integrity sha512-TRBEWSdD+vBJ1vvwo1b2AJJpTb3Owx4BliGpD+DZwxen6YnYqvkYmOb5eloyX5e7JCqe92LiEbFL7xTb1OUApQ==
+  dependencies:
+    tslib "^2.0.0"
+
 object-assign@^4.0.1, object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
