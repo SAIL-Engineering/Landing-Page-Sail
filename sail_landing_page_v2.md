@@ -18,7 +18,7 @@
 
 ### Subhead:
 
-Regulations change weekly. Your classification data shouldn't fall behind. **SAIL GTX** keeps your entire product catalog current, accurate, and audit-ready—without the manual scramble.
+Regulations change weekly. Your trade compliance data shouldn't fall behind. **SAIL GTX** keeps your entire product catalog current, accurate, and audit-ready—without the manual scramble.
 
 **CTA Primary:** Get Your Free Audit →
 **CTA Secondary:** Talk to Founder

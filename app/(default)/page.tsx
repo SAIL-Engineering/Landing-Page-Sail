@@ -30,7 +30,7 @@ import {
 export const metadata: Metadata = constructMetadata({
   title: "SAIL",
   description:
-    "Trade compliance that keeps up with the world. Classification, monitoring, and audit-ready documentation for brokers, enterprises, and trade professionals.",
+    "Trade Compliance that keeps up with the world. Classification, monitoring, and audit-ready documentation for brokers, enterprises, and trade professionals.",
   canonical: "/",
 });
 
@@ -39,7 +39,7 @@ export default function Home() {
     <>
       <main className="bg-[#F6F3EB]">
         {/* ═══════════════════════════════════════════════════════════════════
-            HERO - "Trade compliance that keeps up with the world"
+            HERO - "Trade Compliance that keeps up with the world"
         ═══════════════════════════════════════════════════════════════════ */}
         <section
           id="hero"
@@ -51,6 +51,7 @@ export default function Home() {
               alt="Port of Oakland"
               fill
               priority
+              loading="eager"
               className="object-cover object-center brightness-110"
               sizes="100vw"
             />
@@ -66,11 +67,11 @@ export default function Home() {
                 </Badge>
 
                 <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
-                  Trade compliance that keeps up with the world.
+                  Trade Compliance that keeps up with the world.
                 </h1>
 
                 <p className="max-w-lg text-lg text-white/80">
-                  Regulations change weekly. Your classification data
+                  Regulations change weekly. Your Trade Compliance data
                   shouldn&apos;t fall behind.{" "}
                   <span className="sail-wordmark">SAIL</span>{" "}
                   <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
@@ -84,11 +85,16 @@ export default function Home() {
                   <Button
                     variant="sail"
                     size="lg"
-                    className="group text-base"
+                    className="group text-base transition-all duration-300 hover:bg-[#343CED] hover:text-white"
                     asChild
                   >
                     <Link href="mailto:info@sailgtx.com">
-                      Get Your Free Audit
+                      <span className="group-hover:hidden">
+                        Get Your Free Audit
+                      </span>
+                      <span className="hidden group-hover:inline">
+                        Identify Millions in Savings
+                      </span>
                       <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
@@ -117,7 +123,7 @@ export default function Home() {
         <section className="border-b border-slate-200/50 bg-white py-8">
           <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-8 px-6">
             <span className="text-sm font-medium text-slate-500">
-              Trusted by trade compliance teams at
+              Trusted by Trade Compliance teams at
             </span>
             <div className="flex items-center gap-12">
               <Image
@@ -139,7 +145,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            THE PROBLEM - "Your compliance data is already out of date"
+            THE PROBLEM - "Your Trade Compliance data is already out of date"
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="bg-white py-24">
           <div className="mx-auto max-w-7xl px-6">
@@ -147,10 +153,10 @@ export default function Home() {
               <div>
                 <p className="sail-kicker">The Reality</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                  Your compliance data is already out of date.
+                  Your Trade Compliance data is already out of date.
                 </h2>
                 <p className="mt-6 text-lg text-slate-600">
-                  Most trade compliance teams are running on spreadsheets last
+                  Most Trade Compliance teams are running on spreadsheets last
                   touched six months ago. When tariffs shift—and they shift
                   constantly—someone has to manually review thousands of product
                   classifications. That someone is usually already behind.
@@ -208,7 +214,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            HOW IT WORKS - Tabbed Workflow (Classify → Monitor → Maintain → Defend)
+            HOW IT WORKS - Refined Cards (Classify → Monitor → Maintain → Defend)
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="bg-[#0b0f2b] py-24 text-white">
           <div className="mx-auto max-w-7xl px-6">
@@ -219,7 +225,7 @@ export default function Home() {
               </h2>
             </div>
 
-            {/* 2x2 Grid of Steps */}
+            {/* 2x2 Grid of Steps - Refined styling */}
             <div className="grid gap-6 md:grid-cols-2">
               {[
                 {
@@ -233,17 +239,19 @@ export default function Home() {
                     title: "HTS Classification",
                     badge: "98% Confidence",
                     content: (
-                      <div className="space-y-2 font-mono text-xs">
-                        <div className="flex justify-between">
-                          <span className="text-slate-400">
+                      <div className="space-y-3">
+                        <div className="flex justify-between text-sm">
+                          <span className="text-slate-300">
                             Industrial Sensor Array
                           </span>
-                          <span className="text-[#D8FD49]">8542.31.00.00</span>
+                          <span className="font-semibold text-[#D8FD49]">
+                            8542.31.00.00
+                          </span>
                         </div>
-                        <div className="space-y-1 border-l-2 border-slate-600 pl-3 text-slate-400">
-                          <div>├─ Chapter 85: Electrical machinery</div>
-                          <div>├─ Heading 8542: Electronic ICs</div>
-                          <div>└─ Subheading 8542.31: Processors</div>
+                        <div className="space-y-1.5 border-l-2 border-[#343CED] pl-3 text-xs text-slate-400">
+                          <div>Chapter 85: Electrical machinery</div>
+                          <div>Heading 8542: Electronic ICs</div>
+                          <div>Subheading 8542.31: Processors</div>
                         </div>
                       </div>
                     ),
@@ -260,14 +268,14 @@ export default function Home() {
                     title: "Regulatory Alert",
                     badge: "2 hours ago",
                     content: (
-                      <div className="space-y-3 text-xs">
+                      <div className="space-y-3 text-sm">
                         <div className="font-medium text-white">
                           Section 301 List Update — Effective Jan 15
                         </div>
                         <div className="text-slate-400">
                           47 products in your catalog affected
                         </div>
-                        <div className="space-y-1 text-slate-400">
+                        <div className="space-y-1 text-xs text-slate-400">
                           <div>
                             HTS 8471.50 → Rate change:{" "}
                             <span className="text-red-400">25% → 35%</span>
@@ -289,30 +297,32 @@ export default function Home() {
                   headline:
                     "Keep 10,000 products current without 10,000 hours.",
                   description:
-                    "Continuous compliance monitoring across your entire product catalog. Stale classifications surface automatically. Re-classification runs in the background.",
+                    "Continuous Trade Compliance monitoring across your entire product catalog. Stale classifications surface automatically. Re-classification runs in the background.",
                   icon: RefreshCw,
                   preview: {
                     title: "Catalog Health",
                     badge: "Last scan: 12m ago",
                     content: (
-                      <div className="space-y-2 text-xs">
+                      <div className="space-y-3 text-sm">
                         <div className="flex items-center justify-between">
                           <span className="text-slate-400">
                             Products monitored
                           </span>
-                          <span className="font-mono text-white">12,847</span>
+                          <span className="font-semibold text-white">
+                            12,847
+                          </span>
                         </div>
                         <div className="flex items-center justify-between">
                           <span className="text-slate-400">
                             Current & verified
                           </span>
-                          <span className="font-mono text-[#D8FD49]">
+                          <span className="font-semibold text-[#D8FD49]">
                             98.2%
                           </span>
                         </div>
-                        <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-700">
+                        <div className="mt-2 h-2.5 overflow-hidden rounded-full bg-slate-700">
                           <div
-                            className="h-full bg-gradient-to-r from-[#343CED] to-[#D8FD49]"
+                            className="h-full rounded-full bg-gradient-to-r from-[#343CED] to-[#D8FD49]"
                             style={{ width: "98.2%" }}
                           />
                         </div>
@@ -331,21 +341,21 @@ export default function Home() {
                     title: "CF-28 Response Packet",
                     badge: "Ready to export",
                     content: (
-                      <div className="space-y-2 text-xs">
+                      <div className="space-y-2 text-sm">
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <CheckCircle className="h-4 w-4 text-[#D8FD49]" />
                           <span className="text-slate-300">
                             Product specification (14 pages)
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <CheckCircle className="h-4 w-4 text-[#D8FD49]" />
                           <span className="text-slate-300">
                             Classification reasoning chain
                           </span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <CheckCircle className="h-3 w-3 text-[#D8FD49]" />
+                          <CheckCircle className="h-4 w-4 text-[#D8FD49]" />
                           <span className="text-slate-300">
                             HTS legal notes & CROSS rulings
                           </span>
@@ -357,31 +367,31 @@ export default function Home() {
               ].map((item) => (
                 <Card
                   key={item.step}
-                  className="group rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur transition hover:bg-white/10"
+                  className="group rounded-2xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-8 backdrop-blur transition hover:border-[#343CED]/40 hover:from-white/10"
                 >
-                  <div className="mb-4 flex items-center gap-4">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-[#343CED]">
+                  <div className="mb-6 flex items-center gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#343CED] to-[#343CED]/70 shadow-lg shadow-[#343CED]/20">
                       <item.icon className="h-5 w-5 text-white" />
                     </div>
                     <span className="font-mono text-sm font-semibold text-[#D8FD49]">
                       STEP {item.step}
                     </span>
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-white">
+                  <h3 className="mb-2 text-2xl font-semibold text-white">
                     {item.title}
                   </h3>
-                  <p className="mb-4 text-sm text-white/80">{item.headline}</p>
-                  <p className="mb-6 text-sm text-white/60">
+                  <p className="mb-3 text-white/90">{item.headline}</p>
+                  <p className="mb-8 text-sm leading-relaxed text-white/60">
                     {item.description}
                   </p>
 
-                  {/* Mini Preview Card */}
-                  <div className="rounded-xl border border-white/10 bg-[#0b0f2b] p-4">
-                    <div className="mb-3 flex items-center justify-between">
-                      <span className="text-xs text-slate-400">
+                  {/* Mini Preview Card - Refined */}
+                  <div className="rounded-xl border border-white/10 bg-[#0b0f2b]/80 p-5">
+                    <div className="mb-4 flex items-center justify-between">
+                      <span className="text-sm font-medium text-slate-300">
                         {item.preview.title}
                       </span>
-                      <span className="rounded-full bg-white/10 px-2 py-0.5 text-[10px] text-slate-300">
+                      <span className="rounded-full bg-white/10 px-2.5 py-1 text-xs font-medium text-slate-300">
                         {item.preview.badge}
                       </span>
                     </div>
@@ -401,7 +411,7 @@ export default function Home() {
             <div className="mb-16 text-center">
               <p className="sail-kicker">Capabilities</p>
               <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                Everything your compliance workflow needs.
+                Everything your Trade Compliance workflow needs.
               </h2>
             </div>
 
@@ -473,13 +483,13 @@ export default function Home() {
             <div className="mb-16 text-center">
               <p className="sail-kicker">Who We Serve</p>
               <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                Built for everyone who touches trade compliance.
+                Built for everyone who touches Trade Compliance.
               </h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-600">
                 Most platforms are built for one buyer.{" "}
                 <span className="sail-wordmark">SAIL</span> works across the
-                entire compliance ecosystem—because that&apos;s how the work
-                actually flows.
+                entire Trade Compliance ecosystem—because that&apos;s how the
+                work actually flows.
               </p>
             </div>
 
@@ -487,7 +497,8 @@ export default function Home() {
               {[
                 {
                   title: "Customs Brokers",
-                  timeline: "Live in 3 days",
+                  timeline: "Sign Up Now",
+                  isLink: true,
                   description:
                     "Stop chasing clients for classification data. Get accurate HTS codes with documentation you can trust—before the shipment arrives.",
                   features: [
@@ -500,6 +511,7 @@ export default function Home() {
                 {
                   title: "Enterprise Teams",
                   timeline: "Live in 2 weeks",
+                  isLink: false,
                   description:
                     "Finally, a product catalog that stays current. Monitor 10,000+ SKUs without dedicating full-time headcount to maintenance.",
                   features: [
@@ -512,6 +524,7 @@ export default function Home() {
                 {
                   title: "Trade Advisory",
                   timeline: "White-label ready",
+                  isLink: false,
                   description:
                     "Deliver classification accuracy your clients can't get in-house. Scale your practice without scaling your headcount.",
                   features: [
@@ -524,6 +537,7 @@ export default function Home() {
                 {
                   title: "Trade Law",
                   timeline: "Litigation-grade",
+                  isLink: false,
                   description:
                     "Build defensible positions with classification reasoning chains and evidence documentation.",
                   features: [
@@ -538,9 +552,19 @@ export default function Home() {
                   key={audience.title}
                   className="rounded-2xl border border-slate-200 bg-white p-6 transition hover:border-[#343CED]/30 hover:shadow-lg"
                 >
-                  <div className="mb-4 inline-block rounded-full bg-[#D8FD49] px-3 py-1 text-xs font-bold text-black">
-                    {audience.timeline}
-                  </div>
+                  {audience.isLink ? (
+                    <Link
+                      href="mailto:info@sailgtx.com"
+                      className="mb-4 inline-flex items-center gap-1 rounded-full bg-[#343CED] px-3 py-1 text-xs font-bold text-white transition hover:bg-[#2a32c7]"
+                    >
+                      {audience.timeline}
+                      <ArrowRight className="h-3 w-3" />
+                    </Link>
+                  ) : (
+                    <div className="mb-4 inline-block rounded-full bg-[#D8FD49] px-3 py-1 text-xs font-bold text-black">
+                      {audience.timeline}
+                    </div>
+                  )}
                   <h3 className="mb-2 text-xl font-semibold text-slate-900">
                     {audience.title}
                   </h3>
@@ -562,7 +586,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            INTEGRATIONS
+            INTEGRATIONS - Fixed Logo Grid
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="border-y border-slate-200 bg-white py-16">
           <div className="mx-auto max-w-7xl px-6">
@@ -578,47 +602,58 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-3 items-center justify-items-center gap-8 md:grid-cols-5 lg:grid-cols-10">
+            <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {[
-                { src: "/logos/SAP_2011_logo.svg", alt: "SAP" },
-                { src: "/logos/Oracle_logo.svg", alt: "Oracle" },
+                { src: "/logos/SAP_2011_logo.svg", alt: "SAP", width: 80 },
+                { src: "/logos/Oracle_logo.svg", alt: "Oracle", width: 100 },
                 {
                   src: "/logos/U.S._Customs_and_Border_Protection_logo.png",
                   alt: "CBP",
+                  width: 50,
                 },
-                { src: "/logos/ace_logo_transparent.png", alt: "ACE" },
+                {
+                  src: "/logos/ace_logo_transparent.png",
+                  alt: "ACE",
+                  width: 60,
+                },
                 {
                   src: "/logos/Slack_Technologies-Logo.wine.png",
                   alt: "Slack",
+                  width: 90,
                 },
                 {
                   src: "/logos/Microsoft_Office_Teams_(2019–2025).svg.png",
                   alt: "Teams",
+                  width: 40,
                 },
                 {
                   src: "/logos/Microsoft_Outlook_Icon_(2025–present).svg",
                   alt: "Outlook",
+                  width: 36,
                 },
                 {
                   src: "/logos/gmail-logo-brandlogos.net_ni0u393lv.svg",
                   alt: "Gmail",
+                  width: 90,
                 },
-                { src: "/logos/Box,_Inc._logo.svg.png", alt: "Box" },
+                { src: "/logos/Box,_Inc._logo.svg.png", alt: "Box", width: 70 },
                 {
                   src: "/logos/Microsoft_Office_SharePoint_(2019–2025).svg",
                   alt: "SharePoint",
+                  width: 36,
                 },
               ].map((logo) => (
                 <div
                   key={logo.alt}
-                  className="flex items-center justify-center p-2"
+                  className="flex items-center justify-center"
                 >
                   <Image
                     src={logo.src}
                     alt={logo.alt}
-                    width={80}
-                    height={32}
-                    className="h-auto max-h-8 w-auto opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+                    width={logo.width}
+                    height={40}
+                    className="h-auto opacity-60 grayscale transition hover:opacity-100 hover:grayscale-0"
+                    style={{ maxHeight: "40px", width: "auto" }}
                   />
                 </div>
               ))}
@@ -627,34 +662,34 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            CASE STUDY - Invista (No Dollar Signs)
+            CASE STUDY - Invista (With Invista Brand Colors)
         ═══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#F6F3EB] py-24">
+        <section className="bg-gradient-to-br from-[#F6F3EB] to-[#EBE8E0] py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="grid gap-12 lg:grid-cols-2">
               <div>
                 <p className="sail-kicker">Case Study</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                  How Invista transformed trade compliance operations.
+                  How Invista transformed Trade Compliance operations.
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
                   From reactive firefighting to continuous confidence.
                 </p>
 
                 <div className="mt-8 space-y-4">
-                  <div className="rounded-xl border border-slate-200 bg-white p-4">
-                    <p className="mb-1 text-sm font-medium text-slate-500">
+                  <div className="rounded-xl border-l-4 border-[#003366] bg-white p-5 shadow-sm">
+                    <p className="mb-2 text-sm font-semibold text-[#003366]">
                       The Challenge
                     </p>
                     <p className="text-sm text-slate-700">
-                      Invista&apos;s trade compliance team managed 8,000+
+                      Invista&apos;s Trade Compliance team managed 8,000+
                       product classifications across multiple business units.
                       Every tariff change meant weeks of manual review. CF-28
                       responses took 3-4 weeks to compile.
                     </p>
                   </div>
-                  <div className="rounded-xl border border-slate-200 bg-white p-4">
-                    <p className="mb-1 text-sm font-medium text-slate-500">
+                  <div className="rounded-xl border-l-4 border-[#343CED] bg-white p-5 shadow-sm">
+                    <p className="mb-2 text-sm font-semibold text-[#343CED]">
                       The Approach
                     </p>
                     <p className="text-sm text-slate-700">
@@ -668,8 +703,8 @@ export default function Home() {
               </div>
 
               <div className="space-y-4">
-                <Card className="rounded-2xl border border-slate-200 bg-white p-6">
-                  <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
+                <Card className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <p className="mb-6 text-sm font-semibold text-[#003366]">
                     The Results
                   </p>
                   <div className="space-y-4">
@@ -711,7 +746,7 @@ export default function Home() {
                           <span className="text-sm text-slate-400 line-through">
                             {row.before}
                           </span>
-                          <span className="font-mono text-sm font-semibold text-[#343CED]">
+                          <span className="font-mono text-sm font-semibold text-[#003366]">
                             {row.after}
                           </span>
                         </div>
@@ -720,7 +755,7 @@ export default function Home() {
                   </div>
                 </Card>
 
-                <Card className="rounded-2xl border border-slate-200 bg-white p-6">
+                <Card className="rounded-2xl border-l-4 border-[#003366] bg-white p-6 shadow-sm">
                   <p className="text-slate-700">
                     &ldquo;We used to dread tariff changes. Now{" "}
                     <span className="sail-wordmark">SAIL</span> flags exactly
@@ -728,7 +763,7 @@ export default function Home() {
                     analysis automatically. We just review and approve. Our team
                     finally has time for strategic work.&rdquo;
                   </p>
-                  <p className="mt-4 font-mono text-xs uppercase tracking-widest text-slate-500">
+                  <p className="mt-4 text-sm font-semibold text-[#003366]">
                     — Trade Compliance Director, Invista
                   </p>
                 </Card>
@@ -738,37 +773,57 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            METRICS - The Numbers That Matter
+            METRICS - Empowering Copy
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="bg-white py-24">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-16 text-center">
-              <p className="sail-kicker">The Numbers</p>
+              <p className="sail-kicker">Your Competitive Edge</p>
               <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                Trade compliance is a numbers game.
+                Work faster. File smarter. Sleep better.
               </h2>
+              <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+                The numbers that let you outpace the competition.
+              </p>
             </div>
 
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
               {[
                 {
-                  value: "45 min → 3 min",
-                  label: "Average time to classify a new product",
+                  value: "15x",
+                  label: "Faster product classification",
+                  subtext: "45 min → 3 min",
                 },
                 {
-                  value: "3 weeks → Same day",
+                  value: "Same day",
                   label: "CF-28 response turnaround",
+                  subtext: "vs. 3-4 weeks",
                 },
-                { value: "100%", label: "Catalog coverage after reg changes" },
-                { value: "Daily", label: "Regulatory monitoring frequency" },
-                { value: "98%+", label: "Classification confidence" },
+                {
+                  value: "100%",
+                  label: "Catalog coverage after changes",
+                  subtext: "vs. ~15% sampling",
+                },
+                {
+                  value: "Daily",
+                  label: "Regulatory monitoring",
+                  subtext: "Never miss a change",
+                },
+                {
+                  value: "98%+",
+                  label: "Classification confidence",
+                  subtext: "With evidence chains",
+                },
               ].map((stat) => (
                 <div key={stat.label} className="text-center">
-                  <div className="font-serif text-3xl font-bold text-[#343CED]">
+                  <div className="font-serif text-4xl font-bold text-[#343CED]">
                     {stat.value}
                   </div>
-                  <div className="mt-2 text-sm text-slate-600">
+                  <div className="mt-2 font-medium text-slate-900">
                     {stat.label}
+                  </div>
+                  <div className="mt-1 text-xs text-slate-500">
+                    {stat.subtext}
                   </div>
                 </div>
               ))}
@@ -777,7 +832,7 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            TIME TO VALUE - Speed Section
+            TIME TO VALUE - More Emotional
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="bg-[#F6F3EB] py-24">
           <div className="mx-auto max-w-7xl px-6">
@@ -785,13 +840,17 @@ export default function Home() {
               <div>
                 <p className="sail-kicker">Time to Value</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                  Live in days. Not months.
+                  Stop waiting. Start winning.
                 </h2>
                 <p className="mt-4 text-lg text-slate-600">
-                  Enterprise compliance platforms take 6-12 months to implement.
-                  Consultants. Data migrations. Training programs.{" "}
+                  While competitors spend months in implementation hell—meetings
+                  with consultants, painful data migrations, endless training
+                  sessions—you&apos;ll already be classifying, filing, and
+                  recovering duties.
+                </p>
+                <p className="mt-4 font-medium text-[#343CED]">
                   <span className="sail-wordmark">SAIL</span> deploys in days
-                  for brokers, weeks for enterprises.
+                  for brokers, weeks for enterprises. That&apos;s it.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -799,38 +858,46 @@ export default function Home() {
                     {
                       day: "Day 1",
                       task: "Account setup, product catalog import",
+                      emoji: "🚀",
                     },
                     {
                       day: "Day 3",
                       task: "Classification engine calibrated to your products",
+                      emoji: "⚙️",
                     },
                     {
                       day: "Day 7",
                       task: "Full regulatory monitoring active",
+                      emoji: "📡",
                     },
-                    { day: "Day 14", task: "Team trained, workflows live" },
+                    {
+                      day: "Day 14",
+                      task: "Team trained, workflows live",
+                      emoji: "✅",
+                    },
                   ].map((item) => (
                     <div
                       key={item.day}
-                      className="flex items-center gap-4 rounded-xl bg-white p-4"
+                      className="flex items-center gap-4 rounded-xl bg-white p-4 shadow-sm transition hover:shadow-md"
                     >
-                      <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#343CED] font-mono text-sm font-semibold text-white">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-[#343CED] to-[#343CED]/70 font-mono text-sm font-semibold text-white shadow-lg">
                         {item.day.split(" ")[1]}
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <span className="font-semibold text-slate-900">
                           {item.day}
                         </span>
                         <span className="ml-2 text-slate-600">{item.task}</span>
                       </div>
+                      <span className="text-xl">{item.emoji}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               <div className="flex flex-col justify-center">
-                <p className="mb-4 font-mono text-sm font-semibold text-slate-500">
-                  Compare that to:
+                <p className="mb-4 text-sm font-semibold text-slate-500">
+                  Meanwhile, your competitors are stuck with:
                 </p>
                 <div className="space-y-4">
                   {[
@@ -846,15 +913,18 @@ export default function Home() {
                   ].map((comp) => (
                     <div
                       key={comp.name}
-                      className="flex items-center justify-between rounded-xl border border-slate-200 bg-white p-4"
+                      className="flex items-center justify-between rounded-xl border border-red-100 bg-white p-4"
                     >
                       <span className="text-slate-600">{comp.name}</span>
-                      <span className="font-mono text-sm text-slate-400">
+                      <span className="font-mono text-sm text-red-400">
                         {comp.time}
                       </span>
                     </div>
                   ))}
                 </div>
+                <p className="mt-6 text-center text-sm italic text-slate-500">
+                  Every month they wait is a month you&apos;re ahead.
+                </p>
               </div>
             </div>
           </div>
