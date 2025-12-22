@@ -30,7 +30,8 @@ interface CaseStudy {
 const caseStudies: CaseStudy[] = [
   {
     company: "Fortune 500 Chemicals Company",
-    title: "How a Fortune 500 Chemicals Company transformed Trade Compliance operations.",
+    title:
+      "How a Fortune 500 Chemicals Company transformed Trade Compliance operations.",
     subtitle: "From reactive firefighting to continuous confidence.",
     challenge:
       "A Fortune 500 Chemicals Company's Trade Compliance team managed 8,000+ product classifications across multiple business units. Every tariff change meant weeks of manual review. CF-28 responses took 3-4 weeks to compile.",

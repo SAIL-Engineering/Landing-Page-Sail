@@ -147,9 +147,7 @@ export default function Header() {
 
           {/* CTA Buttons */}
           <div className="hidden items-center gap-3 lg:flex">
-            <TalkToFounderButton
-              size="sm"
-            />
+            <TalkToFounderButton size="sm" />
             <Button
               variant="sail"
               size="sm"

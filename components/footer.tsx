@@ -38,9 +38,7 @@ export default function Footer() {
                   </span>
                 </Link>
               </Button>
-              <TalkToFounderButton
-                className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
-              />
+              <TalkToFounderButton className="border-white/30 text-white hover:border-white/60 hover:bg-white/10" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">

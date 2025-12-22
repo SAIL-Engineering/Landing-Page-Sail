@@ -36,9 +36,7 @@ export default function EnterpriseCompliancePage() {
                 <Button variant="sail" asChild>
                   <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
-                <TalkToFounderButton
-                  className="border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60"
-                />
+                <TalkToFounderButton className="border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60" />
               </div>
               <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
                 <div className="flex items-center gap-2">
@@ -79,7 +77,6 @@ export default function EnterpriseCompliancePage() {
               </Card>
             </div>
           </div>
-
         </section>
 
         <section className="bg-white py-16">
@@ -185,9 +182,7 @@ export default function EnterpriseCompliancePage() {
                 <Button variant="sail" asChild>
                   <Link href="mailto:info@sailgtx.com">Request demo</Link>
                 </Button>
-                <TalkToFounderButton
-                  className="border-white/30 text-white hover:border-white/60 hover:bg-white/10"
-                />
+                <TalkToFounderButton className="border-white/30 text-white hover:border-white/60 hover:bg-white/10" />
               </div>
             </div>
           </div>

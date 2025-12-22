@@ -119,8 +119,6 @@ export default function Home() {
           </div>
         </section>
 
-
-
         {/* ═══════════════════════════════════════════════════════════════════
             THE PROBLEM - "Your Trade Compliance data is already out of date"
         ═══════════════════════════════════════════════════════════════════ */}
