@@ -97,6 +97,17 @@ module.exports = {
           500: "#FDF6E3",
           600: "#FADE96",
         },
+        // SAIL Brand Colors
+        sail: {
+          blue: "#343CED",
+          "blue-hover": "#2a32c7",
+          "blue-light": "#4d54f0",
+          green: "#D8FD49",
+          "green-light": "#e6ff6b",
+          oat: "#F6F3EB",
+          navy: "#0b0f2b",
+          "navy-light": "#141a3d",
+        },
         white: {
           DEFAULT: "#FFFFFF",
           50: "#FCFDFD",
@@ -173,6 +184,12 @@ module.exports = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      // Award-winning timing curves
+      transitionTimingFunction: {
+        'smooth': 'cubic-bezier(0.4, 0, 0.2, 1)',
+        'bounce-subtle': 'cubic-bezier(0.34, 1.56, 0.64, 1)',
+        'sail': 'cubic-bezier(0.19, 1, 0.22, 1)',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },
@@ -186,11 +203,26 @@ module.exports = {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
+        "slide-up": {
+          "0%": { transform: "translateY(10px)", opacity: "0" },
+          "100%": { transform: "translateY(0)", opacity: "1" },
+        },
+        "scale-in": {
+          "0%": { transform: "scale(0.95)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "glow": {
+          "0%, 100%": { boxShadow: "0 0 20px rgba(216, 253, 73, 0.3)" },
+          "50%": { boxShadow: "0 0 40px rgba(216, 253, 73, 0.5)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fadein-opacity": "fadein-opacity 0.6s ease-in-out",
+        "slide-up": "slide-up 0.6s cubic-bezier(0.19, 1, 0.22, 1)",
+        "scale-in": "scale-in 0.4s cubic-bezier(0.19, 1, 0.22, 1)",
+        "glow": "glow 2s ease-in-out infinite",
         spin: "spin .5s linear infinite",
       },
     },

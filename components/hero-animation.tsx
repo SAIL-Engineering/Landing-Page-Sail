@@ -175,29 +175,29 @@ export default function HeroAnimation() {
       className="relative flex h-full w-full items-center justify-center overflow-hidden"
       data-testid="hero-animation"
     >
-      {/* Decorative Background */}
-      <div className="absolute -right-20 top-10 h-64 w-64 rounded-full bg-[#343CED]/10 blur-[100px]" />
-      <div className="absolute -left-10 bottom-20 h-48 w-48 rounded-full bg-[#D8FD49]/20 blur-[80px]" />
+      {/* Decorative Background - Scaled for mobile */}
+      <div className="absolute -right-10 top-10 h-48 w-48 rounded-full bg-[#343CED]/10 blur-[80px] md:-right-20 md:h-64 md:w-64 md:blur-[100px]" />
+      <div className="absolute -left-5 bottom-20 h-32 w-32 rounded-full bg-[#D8FD49]/20 blur-[60px] md:-left-10 md:h-48 md:w-48 md:blur-[80px]" />
 
-      {/* Layered Card Composition */}
-      <div className="relative">
+      {/* Layered Card Composition - Mobile optimized */}
+      <div className="relative scale-75 sm:scale-90 lg:scale-100">
         {/* Main Card: Classification Table */}
         <div className="relative z-10 transform transition-transform duration-500 hover:scale-[1.02]">
           <ClassificationTable />
         </div>
 
-        {/* Floating Card: Duty Savings - Top Right */}
-        <div className="absolute -right-16 -top-8 z-20 transform transition-transform duration-500 hover:-translate-y-1">
+        {/* Floating Card: Duty Savings - Top Right - Adjusted for mobile */}
+        <div className="absolute -right-12 -top-6 z-20 transform transition-transform duration-500 hover:-translate-y-1 sm:-right-16 sm:-top-8">
           <DutySavingsWidget />
         </div>
 
-        {/* Floating Chip: Shipment Status - Bottom Left */}
-        <div className="absolute -bottom-6 -left-12 z-20 transform transition-transform duration-500 hover:translate-x-1">
+        {/* Floating Chip: Shipment Status - Bottom Left - Adjusted for mobile */}
+        <div className="absolute -bottom-4 -left-8 z-20 transform transition-transform duration-500 hover:translate-x-1 sm:-bottom-6 sm:-left-12">
           <ShipmentStatusChip />
         </div>
 
-        {/* Floating Card: Compliance Score - Bottom Right */}
-        <div className="absolute -bottom-12 -right-8 z-20 transform transition-transform duration-500 hover:translate-y-1">
+        {/* Floating Card: Compliance Score - Bottom Right - Adjusted for mobile */}
+        <div className="absolute -bottom-10 -right-6 z-20 transform transition-transform duration-500 hover:translate-y-1 sm:-bottom-12 sm:-right-8">
           <ComplianceScore />
         </div>
       </div>
