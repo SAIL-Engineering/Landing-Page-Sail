@@ -30,11 +30,14 @@ function PostCard({ post }: { post: BlogPost }) {
           {post.title}
         </h3>
 
-        {/* Excerpt */}
+        {/* Excerpt - Editorial style with subtle sophistication */}
         {post.excerpt && (
-          <p className="mb-4 line-clamp-3 text-sm leading-relaxed text-slate-600">
-            {post.excerpt}
-          </p>
+          <div className="relative mb-5 pl-4">
+            <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-sail-blue/40 to-transparent" />
+            <p className="line-clamp-3 font-serif italic leading-[1.7] text-slate-700/90">
+              {post.excerpt}
+            </p>
+          </div>
         )}
 
         {/* Meta */}
