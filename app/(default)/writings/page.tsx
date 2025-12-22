@@ -90,18 +90,26 @@ export default async function WritingsPage({
 }: {
   searchParams: { category?: string; tag?: string };
 }) {
-  // Fetch posts and categories server-side
-  const [postsResponse, categoriesResponse] = await Promise.all([
-    zenblog.posts.list({
-      category: searchParams.category,
-      tags: searchParams.tag ? [searchParams.tag] : undefined,
-      limit: 50,
-    }),
-    zenblog.categories.list(),
-  ]);
+  // Fetch posts and categories server-side with error handling
+  let posts: BlogPost[] = [];
+  let categories: BlogCategory[] = [];
 
-  const posts = postsResponse.data || [];
-  const categories = categoriesResponse.data || [];
+  try {
+    const [postsResponse, categoriesResponse] = await Promise.all([
+      zenblog.posts.list({
+        category: searchParams.category,
+        tags: searchParams.tag ? [searchParams.tag] : undefined,
+        limit: 50,
+      }),
+      zenblog.categories.list(),
+    ]);
+
+    posts = postsResponse.data || [];
+    categories = categoriesResponse.data || [];
+  } catch {
+    // Continue with empty arrays - will show "No articles yet" message
+  }
+
   const selectedCategory = searchParams.category;
 
   return (
