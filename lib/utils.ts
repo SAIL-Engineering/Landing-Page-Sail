@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 type MetadataProps = {
   title?: string;
   description?: string;
-  canonical: string;
+  canonical?: string;
   ogImage?: string;
 };
 
