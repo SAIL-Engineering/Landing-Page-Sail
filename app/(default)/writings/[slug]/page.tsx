@@ -18,7 +18,7 @@ export async function generateMetadata({
   try {
     const { data: post } = await zenblog.posts.get(
       { slug: params.slug },
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
 
     return constructMetadata({
@@ -44,7 +44,7 @@ export default async function BlogPostPage({
   try {
     const response = await zenblog.posts.get(
       { slug: params.slug },
-      { cache: "no-store" }
+      { cache: "no-store" },
     );
     post = response.data;
   } catch {
