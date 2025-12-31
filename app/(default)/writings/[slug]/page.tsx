@@ -16,7 +16,10 @@ export async function generateMetadata({
   params: { slug: string };
 }): Promise<Metadata> {
   try {
-    const { data: post } = await zenblog.posts.get({ slug: params.slug });
+    const { data: post } = await zenblog.posts.get(
+      { slug: params.slug },
+      { cache: "no-store" }
+    );
 
     return constructMetadata({
       title: `${post.title} | SAIL GTX`,
@@ -39,7 +42,10 @@ export default async function BlogPostPage({
   let post: BlogPost;
 
   try {
-    const response = await zenblog.posts.get({ slug: params.slug });
+    const response = await zenblog.posts.get(
+      { slug: params.slug },
+      { cache: "no-store" }
+    );
     post = response.data;
   } catch {
     notFound();
@@ -49,6 +55,7 @@ export default async function BlogPostPage({
   const relatedPostsResponse = await zenblog.posts.list({
     category: post.category?.slug,
     limit: 3,
+    cache: "no-store",
   });
   const relatedPosts =
     relatedPostsResponse.data

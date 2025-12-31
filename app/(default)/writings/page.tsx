@@ -103,6 +103,7 @@ export default async function WritingsPage({
         category: searchParams.category,
         tags: searchParams.tag ? [searchParams.tag] : undefined,
         limit: 50,
+        cache: "no-store",
       }),
       zenblog.categories.list(),
     ]);
