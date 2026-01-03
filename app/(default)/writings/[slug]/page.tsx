@@ -231,13 +231,13 @@ export default async function BlogPostPage({
               <p className="mb-6 text-[#5d584e]">
                 See how SAIL can help you classify faster and stay compliant.
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                <Button size="lg" variant="sail" asChild>
+              <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
+                <Button size="lg" variant="sail" className="w-full sm:w-auto" asChild>
                   <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
                 <TalkToFounderButton
                   size="lg"
-                  className="border-[#e0dbcf] bg-white text-slate-900 hover:bg-[#fffdf8]"
+                  className="w-full border-[#e0dbcf] bg-white text-slate-900 hover:bg-[#fffdf8] sm:w-auto"
                 />
               </div>
             </div>

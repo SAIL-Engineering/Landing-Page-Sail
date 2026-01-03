@@ -84,7 +84,7 @@ export default function Home() {
                   <Button
                     variant="sail"
                     size="lg"
-                    className="group relative overflow-hidden text-base transition-all duration-500"
+                    className="group relative w-full overflow-hidden text-base transition-all duration-500 sm:w-auto"
                     asChild
                   >
                     <Link
@@ -96,7 +96,7 @@ export default function Home() {
                   </Button>
                   <TalkToFounderButton
                     size="lg"
-                    className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900"
+                    className="w-full border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 sm:w-auto"
                   />
                 </div>
 
@@ -819,7 +819,7 @@ export default function Home() {
                     ].map((comp) => (
                       <Card
                         key={comp.name}
-                        className="flex items-center justify-between rounded-none border border-[#f1b3ad] bg-white p-5 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] ring-0"
+                        className="flex flex-col items-start gap-2 rounded-none border border-[#f1b3ad] bg-white p-5 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] ring-0 sm:flex-row sm:items-center sm:justify-between"
                       >
                         <span className="text-sm text-[#5d584e]">
                           {comp.name}
@@ -843,7 +843,7 @@ export default function Home() {
                     <div className="grid gap-4 lg:grid-cols-2">
                       <div className="sail-card rounded-none bg-white p-4 ring-0">
                         <p className="sail-kicker-muted">Product</p>
-                        <div className="mt-3 flex items-center justify-between">
+                        <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                           <span className="text-sm font-semibold text-slate-900">
                             Industrial Sensor Array
                           </span>
@@ -893,7 +893,7 @@ export default function Home() {
 
                     <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
                       <div className="sail-card rounded-none bg-white p-4 ring-0">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                           <p className="sail-kicker-muted">Tariff stack</p>
                           <span className="font-mono text-xs font-semibold text-slate-900">
                             Total 57%
@@ -934,7 +934,7 @@ export default function Home() {
                           ].map((item) => (
                             <div
                               key={`${item.code}-${item.rate}`}
-                              className="flex items-start justify-between gap-3 border-b border-[#e0dbcf] pb-2 last:border-0 last:pb-0"
+                              className="flex flex-col gap-1 border-b border-[#e0dbcf] pb-2 last:border-0 last:pb-0 sm:flex-row sm:items-start sm:justify-between"
                             >
                               <div className="min-w-0">
                                 <div className="font-mono text-[11px] text-slate-900">
@@ -944,7 +944,7 @@ export default function Home() {
                                   {item.label}
                                 </div>
                               </div>
-                              <div className="text-right">
+                              <div className="text-left sm:text-right">
                                 <div className="font-mono text-xs font-semibold text-slate-900">
                                   {item.rate}
                                 </div>
@@ -961,7 +961,7 @@ export default function Home() {
                       </div>
 
                       <div className="sail-card rounded-none bg-white p-4 ring-0">
-                        <div className="flex items-center justify-between">
+                        <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:justify-between">
                           <p className="sail-kicker-muted">Decision trace</p>
                           <span className="font-mono text-xs font-semibold text-slate-900">
                             Ready to export
@@ -1031,10 +1031,10 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
-                <div className="flex flex-wrap gap-4">
+                <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
                   <Button
                     size="lg"
-                    className="group relative overflow-hidden bg-sail-green text-black transition-all duration-500 hover:scale-105 hover:bg-sail-green-light hover:shadow-2xl hover:shadow-sail-green/40"
+                    className="group relative w-full overflow-hidden bg-sail-green text-black transition-all duration-500 hover:scale-105 hover:bg-sail-green-light hover:shadow-2xl hover:shadow-sail-green/40 sm:w-auto"
                     asChild
                   >
                     <Link
@@ -1046,7 +1046,7 @@ export default function Home() {
                   </Button>
                   <TalkToFounderButton
                     size="lg"
-                    className="border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl"
+                    className="w-full border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl sm:w-auto"
                   />
                 </div>
               </div>

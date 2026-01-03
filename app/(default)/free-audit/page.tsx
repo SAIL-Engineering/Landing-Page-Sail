@@ -66,15 +66,15 @@ export default function FreeAuditPage() {
                   Evidence-ready output
                 </span>
               </div>
-              <div className="mt-8 flex flex-wrap gap-3">
-                <Button variant="sail" size="lg" asChild>
+              <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+                <Button variant="sail" size="lg" className="w-full sm:w-auto" asChild>
                   <Link href="https://cal.com/salik-tehami-ep98dm">
                     Book Free Audit
                   </Link>
                 </Button>
                 <TalkToFounderButton
                   size="lg"
-                  className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900"
+                  className="w-full border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 sm:w-auto"
                 />
               </div>
             </div>
@@ -293,7 +293,7 @@ export default function FreeAuditPage() {
                 Illustrative findings
               </div>
               <div className="mt-4 space-y-4 text-sm text-[#4b4640]">
-                <div className="grid grid-cols-[1.1fr_0.9fr] gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4">
+                <div className="grid grid-cols-1 gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4 sm:grid-cols-[1.1fr_0.9fr]">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Manufacturer A
@@ -305,7 +305,7 @@ export default function FreeAuditPage() {
                       40% rate variance from misapplied schedule.
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-left sm:text-right">
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Impact
                     </p>
@@ -315,7 +315,7 @@ export default function FreeAuditPage() {
                     <p className="mt-1 text-xs text-[#6f695d]">Overpayment</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-[1.1fr_0.9fr] gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4">
+                <div className="grid grid-cols-1 gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4 sm:grid-cols-[1.1fr_0.9fr]">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Manufacturer B
@@ -327,7 +327,7 @@ export default function FreeAuditPage() {
                       52% rate variance from component content errors.
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-left sm:text-right">
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Impact
                     </p>
@@ -337,7 +337,7 @@ export default function FreeAuditPage() {
                     <p className="mt-1 text-xs text-[#6f695d]">Overpayment</p>
                   </div>
                 </div>
-                <div className="grid grid-cols-[1.1fr_0.9fr] gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4">
+                <div className="grid grid-cols-1 gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4 sm:grid-cols-[1.1fr_0.9fr]">
                   <div>
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Manufacturer C
@@ -349,7 +349,7 @@ export default function FreeAuditPage() {
                       52% rate variance from reciprocal agreement errors.
                     </p>
                   </div>
-                  <div className="text-right">
+                  <div className="text-left sm:text-right">
                     <p className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                       Impact
                     </p>
@@ -383,13 +383,13 @@ export default function FreeAuditPage() {
               Book a free audit and get a defensible report you can share with
               brokers and leadership.
             </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Button variant="sail" size="lg" asChild>
+            <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
+              <Button variant="sail" size="lg" className="w-full sm:w-auto" asChild>
                 <Link href="https://cal.com/salik-tehami-ep98dm">
                   Book Free Audit
                 </Link>
               </Button>
-              <TalkToFounderButton size="lg" />
+              <TalkToFounderButton size="lg" className="w-full sm:w-auto" />
             </div>
           </div>
         </div>

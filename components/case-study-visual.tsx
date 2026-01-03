@@ -25,7 +25,7 @@ export function CaseStudyVisual() {
       {/* Before/After Comparison */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* BEFORE */}
-        <Card className="relative overflow-hidden rounded-none border border-red-300 bg-[#fff3f0] p-8 ring-0">
+        <Card className="relative overflow-hidden rounded-none border border-red-300 bg-[#fff3f0] p-6 ring-0 sm:p-8">
           <div className="absolute right-4 top-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500/20">
               <span className="text-2xl font-bold text-red-400">×</span>
@@ -95,7 +95,7 @@ export function CaseStudyVisual() {
         </Card>
 
         {/* AFTER */}
-        <Card className="relative overflow-hidden rounded-none border border-sail-green/40 bg-[#f4ffe0] p-8 ring-0">
+        <Card className="relative overflow-hidden rounded-none border border-sail-green/40 bg-[#f4ffe0] p-6 ring-0 sm:p-8">
           <div className="absolute right-4 top-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sail-green/20">
               <Check className="h-6 w-6 text-sail-green" />

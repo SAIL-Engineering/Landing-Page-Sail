@@ -32,11 +32,11 @@ export default function CustomsBrokeragePage() {
                 Stay current on tariff and regulatory changes, file faster, and
                 prevent costly holds at the port.
               </p>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="sail" asChild>
+              <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
+                <Button variant="sail" className="w-full sm:w-auto" asChild>
                   <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
-                <TalkToFounderButton className="border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60" />
+                <TalkToFounderButton className="w-full border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60 sm:w-auto" />
               </div>
               <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
                 <div className="flex items-center gap-2">
@@ -164,7 +164,7 @@ export default function CustomsBrokeragePage() {
 
         <section className="bg-white py-16">
           <div className="mx-auto max-w-6xl px-6">
-            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-10 py-12 text-white md:flex-row md:items-center">
+            <div className="flex flex-col items-start justify-between gap-8 rounded-3xl border border-[#343CED]/20 bg-gradient-to-br from-[#101430] to-[#1b1f45] px-6 py-8 text-white sm:px-10 sm:py-12 md:flex-row md:items-center">
               <div className="max-w-xl">
                 <p className="sail-kicker-light">Get started</p>
                 <h2 className="mt-4 font-serif text-3xl font-semibold">
@@ -174,11 +174,11 @@ export default function CustomsBrokeragePage() {
                   Sign up and modernize your brokerage workflow today.
                 </p>
               </div>
-              <div className="flex flex-wrap gap-4">
-                <Button variant="sail" asChild>
+              <div className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:flex-wrap">
+                <Button variant="sail" className="w-full sm:w-auto" asChild>
                   <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
-                <TalkToFounderButton className="border-white/30 text-white hover:border-white/60 hover:bg-white/10" />
+                <TalkToFounderButton className="w-full border-white/30 text-white hover:border-white/60 hover:bg-white/10 sm:w-auto" />
               </div>
             </div>
           </div>

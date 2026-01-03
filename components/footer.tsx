@@ -23,10 +23,10 @@ export default function Footer() {
               Trade compliance software for brokers and enterprises that need
               audit-ready workflows and faster updates.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
               <Button
                 variant="sail"
-                className="group relative overflow-hidden transition-all duration-500"
+                className="group relative w-full overflow-hidden transition-all duration-500 sm:w-auto"
                 asChild
               >
                 <Link
@@ -36,7 +36,7 @@ export default function Footer() {
                   Book Free Audit
                 </Link>
               </Button>
-              <TalkToFounderButton className="border-white/30 bg-white/10 text-white hover:border-white/60 hover:bg-white/20 hover:text-white" />
+              <TalkToFounderButton className="w-full border-white/30 bg-white/10 text-white hover:border-white/60 hover:bg-white/20 hover:text-white sm:w-auto" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
