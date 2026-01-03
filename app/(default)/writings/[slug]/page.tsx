@@ -49,9 +49,9 @@ export default async function BlogPostPage({
 }) {
   if (!hasZenblogConfig) {
     return (
-      <main className="min-h-screen sail-shell">
+      <main className="sail-shell min-h-screen">
         <div className="mx-auto max-w-3xl px-6 pb-16 pt-32">
-          <div className="sail-card ring-0 rounded-none bg-white p-8 text-center">
+          <div className="sail-card rounded-none bg-white p-8 text-center ring-0">
             <h1 className="mb-3 font-serif text-3xl font-semibold text-slate-900">
               Writings are unavailable
             </h1>
@@ -96,7 +96,7 @@ export default async function BlogPostPage({
       .slice(0, 3) || [];
 
   return (
-    <main className="min-h-screen sail-shell">
+    <main className="sail-shell min-h-screen">
       {/* Breadcrumb Navigation */}
       <div className="border-b border-[#e0dbcf] bg-white pt-24">
         <div className="mx-auto max-w-7xl px-6 py-4">
@@ -137,7 +137,7 @@ export default async function BlogPostPage({
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid gap-12 lg:grid-cols-[1fr_320px]">
           {/* Main Content */}
-          <article className="sail-card ring-0 min-w-0 rounded-none bg-white p-8 md:p-10">
+          <article className="sail-card min-w-0 rounded-none bg-white p-8 ring-0 md:p-10">
             {/* Category badge */}
             {post.category && (
               <div className="mb-4">
@@ -233,9 +233,7 @@ export default async function BlogPostPage({
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button size="lg" variant="sail" asChild>
-                  <Link href="/free-audit">
-                    Book Free Audit
-                  </Link>
+                  <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
                 <TalkToFounderButton
                   size="lg"

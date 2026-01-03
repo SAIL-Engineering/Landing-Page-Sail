@@ -23,7 +23,7 @@ export const metadata: Metadata = constructMetadata({
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/writings/${post.slug}`} className="group block">
-      <Card className="sail-card ring-0 group relative overflow-hidden rounded-none p-6 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10">
+      <Card className="sail-card group relative overflow-hidden rounded-none p-6 ring-0 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10">
         {/* Category badge */}
         {post.category && (
           <Badge className="mb-4 rounded-none border-sail-blue/40 bg-sail-blue/10 font-mono text-xs font-semibold uppercase tracking-wider text-sail-blue">
@@ -101,9 +101,9 @@ export default async function WritingsPage({
 }) {
   if (!hasZenblogConfig) {
     return (
-      <main className="min-h-screen sail-shell">
+      <main className="sail-shell min-h-screen">
         <section className="relative overflow-hidden pb-16 pt-32">
-          <div className="absolute inset-0 sail-grid opacity-30" />
+          <div className="sail-grid absolute inset-0 opacity-30" />
           <GridOverlay className="opacity-25" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="max-w-3xl space-y-6">
@@ -152,10 +152,10 @@ export default async function WritingsPage({
   const selectedCategory = searchParams.category;
 
   return (
-    <main className="min-h-screen sail-shell">
+    <main className="sail-shell min-h-screen">
       {/* Hero Section */}
       <section className="relative overflow-hidden pb-16 pt-32">
-        <div className="absolute inset-0 sail-grid opacity-30" />
+        <div className="sail-grid absolute inset-0 opacity-30" />
         <GridOverlay className="opacity-25" />
         <div className="relative mx-auto max-w-7xl px-6">
           <div className="max-w-3xl space-y-6">

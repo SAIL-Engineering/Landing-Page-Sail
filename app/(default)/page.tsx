@@ -47,7 +47,7 @@ export default function Home() {
       <main className="sail-shell">
         {/* ═══════════════════════════════════════════════════════════════════
             HERO - "Trade Compliance that keeps up with the world"
-        ═══════════════════════════════════════════════════════════════════ */} 
+        ═══════════════════════════════════════════════════════════════════ */}
         <section
           id="hero"
           className="relative overflow-hidden bg-[#0b0f2b] pb-24 pt-32 text-white"
@@ -119,7 +119,7 @@ export default function Home() {
                       key={stat.label}
                       className="border border-white/10 bg-white/5 px-4 py-3"
                     >
-                      <span className="text-xs font-mono uppercase tracking-[0.3em] text-white/60">
+                      <span className="font-mono text-xs uppercase tracking-[0.3em] text-white/60">
                         {stat.label}
                       </span>
                       <span className="mt-2 block text-lg font-semibold text-white">
@@ -172,7 +172,7 @@ export default function Home() {
                         </ul>
                         <div className="mt-4 font-mono text-xs text-white/60">
                           {">"} Review pending{" "}
-                          <span className="inline-block h-4 w-1 bg-sail-green animate-pulse" />
+                          <span className="inline-block h-4 w-1 animate-pulse bg-sail-green" />
                         </div>
                       </div>
 
@@ -240,15 +240,15 @@ export default function Home() {
             THE PROBLEM - "Your Trade Compliance data is already out of date"
         ═══════════════════════════════════════════════════════════════════ */}
         <section className="relative py-24">
-          <div className="absolute inset-0 sail-grid opacity-20" />
+          <div className="sail-grid absolute inset-0 opacity-20" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               <ScrollReveal direction="left">
                 <div>
                   <p className="sail-kicker-muted">Where it breaks</p>
                   <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                    Compliance is still a patchwork of tabs, inboxes, and
-                    tribal knowledge.
+                    Compliance is still a patchwork of tabs, inboxes, and tribal
+                    knowledge.
                   </h2>
                   <p className="mt-6 text-lg text-[#5d584e]">
                     Every tariff change triggers a scramble across HTS books,
@@ -340,7 +340,7 @@ export default function Home() {
                       <div className="text-[10px] uppercase tracking-[0.3em] text-[#3f5f9b]">
                         Status
                       </div>
-                      <p className="mt-3 text-sm text-[#3c4963] leading-relaxed">
+                      <p className="mt-3 text-sm leading-relaxed text-[#3c4963]">
                         Five tabs open, two inboxes, and a shared drive just to
                         get one decision out the door.
                       </p>
@@ -427,7 +427,7 @@ export default function Home() {
               ].map((item, index) => (
                 <Card
                   key={item.title}
-                  className="sail-card ring-0 group relative overflow-hidden rounded-none p-5 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
+                  className="sail-card group relative overflow-hidden rounded-none p-5 ring-0 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 50}ms`,
                   }}
@@ -513,7 +513,7 @@ export default function Home() {
               ].map((audience, index) => (
                 <Card
                   key={audience.title}
-                  className="sail-card ring-0 group relative overflow-hidden rounded-none p-6 transition-all duration-500 hover:-translate-y-2 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
+                  className="sail-card group relative overflow-hidden rounded-none p-6 ring-0 transition-all duration-500 hover:-translate-y-2 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 75}ms`,
                   }}
@@ -577,7 +577,12 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {[
-                { type: "image", src: "/logos/SAP_2011_logo.svg", alt: "SAP", width: 80 },
+                {
+                  type: "image",
+                  src: "/logos/SAP_2011_logo.svg",
+                  alt: "SAP",
+                  width: 80,
+                },
                 {
                   type: "image",
                   src: "/logos/cbp.png",
@@ -602,7 +607,12 @@ export default function Home() {
                   alt: "Teams",
                   width: 50,
                 },
-                { type: "image", src: "/logos/oracle.svg", alt: "Oracle", width: 110 },
+                {
+                  type: "image",
+                  src: "/logos/oracle.svg",
+                  alt: "Oracle",
+                  width: 110,
+                },
                 {
                   type: "image",
                   src: "/logos/Box,_Inc._logo.svg.png",
@@ -726,9 +736,9 @@ export default function Home() {
 
         {/* ═══════════════════════════════════════════════════════════════════
             TIME TO VALUE - Light, broker-first
-        ═══════════════════════════════════════════════════════════════════ */} 
+        ═══════════════════════════════════════════════════════════════════ */}
         <section className="relative bg-[#f7f8fa] py-24">
-          <div className="absolute inset-0 sail-grid opacity-15" />
+          <div className="sail-grid absolute inset-0 opacity-15" />
           <div className="relative mx-auto max-w-7xl px-6">
             <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr]">
               <div>
@@ -770,7 +780,7 @@ export default function Home() {
                   ].map((item) => (
                     <Card
                       key={item.day}
-                      className="sail-card ring-0 flex items-center gap-4 rounded-none bg-white p-4 transition hover:border-sail-blue/40 hover:shadow-lg hover:shadow-sail-blue/10"
+                      className="sail-card flex items-center gap-4 rounded-none bg-white p-4 ring-0 transition hover:border-sail-blue/40 hover:shadow-lg hover:shadow-sail-blue/10"
                     >
                       <div className="flex h-12 w-12 items-center justify-center rounded-none border border-sail-blue/20 bg-sail-blue/10">
                         <item.icon className="h-6 w-6 text-sail-blue" />
@@ -809,7 +819,7 @@ export default function Home() {
                     ].map((comp) => (
                       <Card
                         key={comp.name}
-                        className="ring-0 flex items-center justify-between rounded-none border border-[#f1b3ad] bg-white p-5 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+                        className="flex items-center justify-between rounded-none border border-[#f1b3ad] bg-white p-5 shadow-[0_1px_0_0_rgba(0,0,0,0.04)] ring-0"
                       >
                         <span className="text-sm text-[#5d584e]">
                           {comp.name}
@@ -831,7 +841,7 @@ export default function Home() {
                   </div>
                   <div className="grid gap-4 bg-[#fffdf8] p-5">
                     <div className="grid gap-4 lg:grid-cols-2">
-                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                      <div className="sail-card rounded-none bg-white p-4 ring-0">
                         <p className="sail-kicker-muted">Product</p>
                         <div className="mt-3 flex items-center justify-between">
                           <span className="text-sm font-semibold text-slate-900">
@@ -863,7 +873,7 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                      <div className="sail-card rounded-none bg-white p-4 ring-0">
                         <p className="sail-kicker-muted">Evidence chain</p>
                         <ul className="mt-3 space-y-3 text-sm text-[#5d584e]">
                           {[
@@ -882,7 +892,7 @@ export default function Home() {
                     </div>
 
                     <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
-                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                      <div className="sail-card rounded-none bg-white p-4 ring-0">
                         <div className="flex items-center justify-between">
                           <p className="sail-kicker-muted">Tariff stack</p>
                           <span className="font-mono text-xs font-semibold text-slate-900">
@@ -950,7 +960,7 @@ export default function Home() {
                         </div>
                       </div>
 
-                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                      <div className="sail-card rounded-none bg-white p-4 ring-0">
                         <div className="flex items-center justify-between">
                           <p className="sail-kicker-muted">Decision trace</p>
                           <span className="font-mono text-xs font-semibold text-slate-900">

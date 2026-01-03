@@ -13,7 +13,7 @@ export function GridOverlay({ className }: GridOverlayProps) {
       )}
       aria-hidden="true"
     >
-      <div className="h-full w-full grid-cols-6 gap-3.5 px-4 grid">
+      <div className="grid h-full w-full grid-cols-6 gap-3.5 px-4">
         <div className="border-r border-[#e0dbcf]" />
         <div className="border-r border-[#e0dbcf]" />
         <div className="border-r border-[#e0dbcf]" />

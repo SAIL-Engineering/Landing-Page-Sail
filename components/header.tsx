@@ -157,9 +157,7 @@ export default function Header() {
               className="transition-all duration-150 hover:scale-105"
               asChild
             >
-              <Link href="/free-audit">
-                Book Free Audit
-              </Link>
+              <Link href="/free-audit">Book Free Audit</Link>
             </Button>
           </div>
 

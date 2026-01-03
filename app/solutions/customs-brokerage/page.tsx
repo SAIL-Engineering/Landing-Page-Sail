@@ -34,9 +34,7 @@ export default function CustomsBrokeragePage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button variant="sail" asChild>
-                <Link href="/free-audit">
-                  Book Free Audit
-                </Link>
+                  <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
                 <TalkToFounderButton className="border-[#343CED]/30 text-slate-800 hover:border-[#343CED]/60" />
               </div>
@@ -178,9 +176,7 @@ export default function CustomsBrokeragePage() {
               </div>
               <div className="flex flex-wrap gap-4">
                 <Button variant="sail" asChild>
-                <Link href="/free-audit">
-                  Book Free Audit
-                </Link>
+                  <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
                 <TalkToFounderButton className="border-white/30 text-white hover:border-white/60 hover:bg-white/10" />
               </div>

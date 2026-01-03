@@ -25,7 +25,7 @@ export function CaseStudyVisual() {
       {/* Before/After Comparison */}
       <div className="grid gap-6 lg:grid-cols-2">
         {/* BEFORE */}
-        <Card className="ring-0 relative overflow-hidden rounded-none border border-red-300 bg-[#fff3f0] p-8">
+        <Card className="relative overflow-hidden rounded-none border border-red-300 bg-[#fff3f0] p-8 ring-0">
           <div className="absolute right-4 top-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-500/20">
               <span className="text-2xl font-bold text-red-400">×</span>
@@ -95,7 +95,7 @@ export function CaseStudyVisual() {
         </Card>
 
         {/* AFTER */}
-        <Card className="ring-0 relative overflow-hidden rounded-none border border-sail-green/40 bg-[#f4ffe0] p-8">
+        <Card className="relative overflow-hidden rounded-none border border-sail-green/40 bg-[#f4ffe0] p-8 ring-0">
           <div className="absolute right-4 top-4">
             <div className="flex h-12 w-12 items-center justify-center rounded-full bg-sail-green/20">
               <Check className="h-6 w-6 text-sail-green" />
@@ -166,7 +166,7 @@ export function CaseStudyVisual() {
       </div>
 
       {/* Metrics Comparison - Dramatic Before → After */}
-      <Card className="ring-0 overflow-hidden rounded-none border border-[#e0dbcf] bg-white">
+      <Card className="overflow-hidden rounded-none border border-[#e0dbcf] bg-white ring-0">
         <div className="border-b border-[#e0dbcf] bg-[#f3efe6] px-6 py-4">
           <div className="flex items-center justify-between">
             <p className="text-lg font-semibold text-slate-900">
@@ -258,7 +258,7 @@ export function CaseStudyVisual() {
       </Card>
 
       {/* Testimonial */}
-      <Card className="ring-0 rounded-none border border-[#e0dbcf] bg-[#fffdf8] p-8 lg:p-12">
+      <Card className="rounded-none border border-[#e0dbcf] bg-[#fffdf8] p-8 ring-0 lg:p-12">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 flex justify-center">
             <div className="h-16 w-16 rounded-full bg-gradient-to-br from-sail-blue to-sail-green p-0.5">
@@ -281,9 +281,7 @@ export function CaseStudyVisual() {
             <p className="font-semibold text-slate-900">
               Director of Trade Compliance
             </p>
-            <p className="mt-1 text-sail-blue">
-              Fortune 500 Chemicals Company
-            </p>
+            <p className="mt-1 text-sail-blue">Fortune 500 Chemicals Company</p>
           </div>
         </div>
       </Card>

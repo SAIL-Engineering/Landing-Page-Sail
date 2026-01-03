@@ -79,7 +79,7 @@ export default function FreeAuditPage() {
               </div>
             </div>
 
-            <div className="sail-card ring-0 overflow-hidden rounded-none bg-white text-slate-900">
+            <div className="sail-card overflow-hidden rounded-none bg-white text-slate-900 ring-0">
               <div className="border-b border-[#e0dbcf] bg-[#f3efe6] px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-[#6b5f50]">
                 Audit Pack
               </div>
@@ -116,9 +116,7 @@ export default function FreeAuditPage() {
                     <h3 className="mt-3 text-base font-semibold text-slate-900">
                       {item.title}
                     </h3>
-                    <p className="mt-2 text-sm text-[#5d584e]">
-                      {item.body}
-                    </p>
+                    <p className="mt-2 text-sm text-[#5d584e]">{item.body}</p>
                   </div>
                 ))}
               </div>
@@ -148,7 +146,7 @@ export default function FreeAuditPage() {
               </p>
             </div>
             <div className="space-y-4">
-              <div className="sail-card ring-0 rounded-none bg-[#fffdf8] p-6">
+              <div className="sail-card rounded-none bg-[#fffdf8] p-6 ring-0">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#6f695d]">
                   What changes with SAIL
                 </p>
@@ -156,12 +154,12 @@ export default function FreeAuditPage() {
                   From random audits to ranked risk.
                 </h3>
                 <p className="mt-3 text-[#5d584e]">
-                  We score entries for likely non-compliance, stack tariffs,
-                  and surface the highest-risk items first. You get a defensible
+                  We score entries for likely non-compliance, stack tariffs, and
+                  surface the highest-risk items first. You get a defensible
                   evidence pack instead of another spreadsheet guess.
                 </p>
               </div>
-              <div className="sail-card ring-0 rounded-none bg-white p-6">
+              <div className="sail-card rounded-none bg-white p-6 ring-0">
                 <p className="text-sm uppercase tracking-[0.3em] text-[#6f695d]">
                   Built for brokers
                 </p>
@@ -214,7 +212,7 @@ export default function FreeAuditPage() {
             ].map((step) => (
               <Card
                 key={step.title}
-                className="sail-card ring-0 rounded-none p-5"
+                className="sail-card rounded-none p-5 ring-0"
               >
                 <div className="flex h-9 w-9 items-center justify-center rounded-none bg-sail-blue/10">
                   <step.icon className="h-4 w-4 text-sail-blue" />
@@ -290,7 +288,7 @@ export default function FreeAuditPage() {
                 </span>
               </div>
             </div>
-            <div className="sail-card ring-0 rounded-none bg-white p-6">
+            <div className="sail-card rounded-none bg-white p-6 ring-0">
               <div className="border-b border-[#e0dbcf] pb-4 text-xs uppercase tracking-[0.3em] text-[#6f695d]">
                 Illustrative findings
               </div>
@@ -314,9 +312,7 @@ export default function FreeAuditPage() {
                     <p className="mt-2 text-lg font-semibold text-slate-900">
                       $420k
                     </p>
-                    <p className="mt-1 text-xs text-[#6f695d]">
-                      Overpayment
-                    </p>
+                    <p className="mt-1 text-xs text-[#6f695d]">Overpayment</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-[1.1fr_0.9fr] gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4">
@@ -338,9 +334,7 @@ export default function FreeAuditPage() {
                     <p className="mt-2 text-lg font-semibold text-slate-900">
                       $260k
                     </p>
-                    <p className="mt-1 text-xs text-[#6f695d]">
-                      Overpayment
-                    </p>
+                    <p className="mt-1 text-xs text-[#6f695d]">Overpayment</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-[1.1fr_0.9fr] gap-4 border border-[#e0dbcf] bg-[#fffdf8] p-4">
@@ -362,15 +356,13 @@ export default function FreeAuditPage() {
                     <p className="mt-2 text-lg font-semibold text-slate-900">
                       $220k
                     </p>
-                    <p className="mt-1 text-xs text-[#6f695d]">
-                      Overpayment
-                    </p>
+                    <p className="mt-1 text-xs text-[#6f695d]">Overpayment</p>
                   </div>
                 </div>
               </div>
               <div className="mt-4 border-t border-[#e0dbcf] pt-4 text-sm text-[#5d584e]">
-                <span className="font-semibold text-slate-900">$19M</span>{" "}
-                in potential overpayments identified across the sample set.
+                <span className="font-semibold text-slate-900">$19M</span> in
+                potential overpayments identified across the sample set.
               </div>
             </div>
           </div>
@@ -380,7 +372,7 @@ export default function FreeAuditPage() {
       {/* CTA */}
       <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="sail-card ring-0 rounded-none bg-white p-10 text-center">
+          <div className="sail-card rounded-none bg-white p-10 text-center ring-0">
             <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-none bg-sail-blue/10">
               <Clock className="h-5 w-5 text-sail-blue" />
             </div>

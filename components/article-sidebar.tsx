@@ -51,7 +51,7 @@ export function ArticleSidebar({
 
   return (
     <aside className="hidden lg:block">
-      <div className="sail-card ring-0 sticky top-24 space-y-6 rounded-none bg-white p-6">
+      <div className="sail-card sticky top-24 space-y-6 rounded-none bg-white p-6 ring-0">
         {/* Author Info */}
         {authors && authors.length > 0 && (
           <div className="border-b border-[#e0dbcf] pb-6">

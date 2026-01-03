@@ -148,7 +148,7 @@ export function HowItWorksTabs() {
           value={step.id}
           className="mt-0 animate-slide-up"
         >
-          <Card className="ring-0 group rounded-none border border-[#e0dbcf] bg-white p-8 transition-all duration-500 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10 md:p-10">
+          <Card className="group rounded-none border border-[#e0dbcf] bg-white p-8 ring-0 transition-all duration-500 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10 md:p-10">
             <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
               {/* Left: Text Content */}
               <div className="space-y-6">

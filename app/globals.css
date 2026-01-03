@@ -283,7 +283,12 @@
 
   .sail-shell {
     background:
-      radial-gradient(circle at top left, #ffffff 0%, #f6f3eb 55%, #edf3ff 100%),
+      radial-gradient(
+        circle at top left,
+        #ffffff 0%,
+        #f6f3eb 55%,
+        #edf3ff 100%
+      ),
       #f6f3eb;
   }
 
