@@ -639,7 +639,7 @@ export default function Home() {
                 },
               ].map((logo) => (
                 <div
-                  key={logo.type === "text" ? logo.label : logo.alt}
+                  key={logo.alt}
                   className="flex items-center justify-center"
                 >
                   <Image
