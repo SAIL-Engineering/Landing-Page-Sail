@@ -1,7 +1,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { constructMetadata } from "@/lib/utils";
-import { zenblog, BlogPost } from "@/lib/zenblog";
+import { zenblog, BlogPost, hasZenblogConfig } from "@/lib/zenblog";
 import { Metadata } from "next/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -15,6 +15,14 @@ export async function generateMetadata({
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
+  if (!hasZenblogConfig) {
+    return constructMetadata({
+      title: "Writings | SAIL GTX",
+      description: "Zenblog is not configured for this environment.",
+      canonical: "/writings",
+    });
+  }
+
   try {
     const { data: post } = await zenblog.posts.get(
       { slug: params.slug },
@@ -39,6 +47,31 @@ export default async function BlogPostPage({
 }: {
   params: { slug: string };
 }) {
+  if (!hasZenblogConfig) {
+    return (
+      <main className="min-h-screen sail-shell">
+        <div className="mx-auto max-w-3xl px-6 pb-16 pt-32">
+          <div className="sail-card ring-0 rounded-none bg-white p-8 text-center">
+            <h1 className="mb-3 font-serif text-3xl font-semibold text-slate-900">
+              Writings are unavailable
+            </h1>
+            <p className="mb-6 text-[#5d584e]">
+              Zenblog is not configured for this environment. Set
+              <span className="font-mono"> NEXT_PUBLIC_ZENBLOG_BLOG_ID</span> to
+              publish posts.
+            </p>
+            <Link
+              href="/writings"
+              className="inline-flex items-center gap-2 border border-[#e0dbcf] bg-[#fffdf8] px-4 py-2 text-sm font-semibold text-[#5d584e] transition-colors hover:border-sail-blue/40 hover:text-sail-blue"
+            >
+              Back to Writings
+            </Link>
+          </div>
+        </div>
+      </main>
+    );
+  }
+
   let post: BlogPost;
 
   try {
@@ -63,34 +96,34 @@ export default async function BlogPostPage({
       .slice(0, 3) || [];
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen sail-shell">
       {/* Breadcrumb Navigation */}
-      <div className="border-b border-slate-200 bg-white pt-24">
+      <div className="border-b border-[#e0dbcf] bg-white pt-24">
         <div className="mx-auto max-w-7xl px-6 py-4">
-          <nav className="flex items-center gap-2 text-sm">
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-[#6f695d]">
             <Link
               href="/"
-              className="font-medium text-slate-600 transition-colors hover:text-sail-blue"
+              className="font-medium transition-colors hover:text-sail-blue"
             >
               Home
             </Link>
-            <span className="text-slate-400">/</span>
+            <span className="text-[#c8c0b0]">/</span>
             <Link
               href="/writings"
-              className="font-medium text-slate-600 transition-colors hover:text-sail-blue"
+              className="font-medium transition-colors hover:text-sail-blue"
             >
               Writings
             </Link>
-            <span className="text-slate-400">/</span>
+            <span className="text-[#c8c0b0]">/</span>
             {post.category && (
               <>
                 <Link
                   href={`/writings?category=${post.category.slug}`}
-                  className="font-medium text-slate-600 transition-colors hover:text-sail-blue"
+                  className="font-medium transition-colors hover:text-sail-blue"
                 >
                   {post.category.name}
                 </Link>
-                <span className="text-slate-400">/</span>
+                <span className="text-[#c8c0b0]">/</span>
               </>
             )}
             <span className="truncate font-semibold text-slate-900">
@@ -102,13 +135,13 @@ export default async function BlogPostPage({
 
       {/* Article Container */}
       <div className="mx-auto max-w-7xl px-6 py-12">
-        <div className="grid gap-12 lg:grid-cols-[1fr_300px]">
+        <div className="grid gap-12 lg:grid-cols-[1fr_320px]">
           {/* Main Content */}
-          <article className="min-w-0">
+          <article className="sail-card ring-0 min-w-0 rounded-none bg-white p-8 md:p-10">
             {/* Category badge */}
             {post.category && (
-              <div className="mb-4 text-sm font-medium text-slate-600">
-                {post.category.name}
+              <div className="mb-4">
+                <span className="sail-pill">{post.category.name}</span>
               </div>
             )}
 
@@ -119,13 +152,13 @@ export default async function BlogPostPage({
 
             {/* Excerpt */}
             {post.excerpt && (
-              <p className="mb-8 text-lg leading-relaxed text-slate-600">
+              <p className="mb-8 text-lg leading-relaxed text-[#5d584e]">
                 {post.excerpt}
               </p>
             )}
 
             {/* Meta info (mobile) */}
-            <div className="mb-10 flex flex-wrap items-center gap-4 border-b border-slate-200 pb-6 lg:hidden">
+            <div className="mb-10 flex flex-wrap items-center gap-4 border-b border-[#e0dbcf] pb-6 lg:hidden">
               {post.authors && post.authors.length > 0 && (
                 <>
                   <div className="flex -space-x-2">
@@ -150,7 +183,7 @@ export default async function BlogPostPage({
                     <p className="font-semibold text-slate-900">
                       {post.authors.map((a) => a.name).join(", ")}
                     </p>
-                    <p className="text-slate-500">
+                    <p className="text-[#6f695d]">
                       {new Date(post.published_at).toLocaleDateString("en-US", {
                         month: "long",
                         day: "numeric",
@@ -165,15 +198,15 @@ export default async function BlogPostPage({
             {/* Article Content - Clean Professional Typography */}
             {post.html_content && (
               <div
-                className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h3:mb-3 prose-h3:mt-8 prose-h3:text-xl prose-p:leading-[1.75] prose-p:text-slate-700 prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-slate-300 prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-slate-600 prose-strong:font-semibold prose-strong:text-slate-900 prose-code:rounded prose-code:bg-slate-100 prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-slate-800 prose-code:before:content-none prose-code:after:content-none prose-pre:border prose-pre:border-slate-200 prose-pre:bg-slate-50 prose-pre:text-sm prose-li:text-slate-700 prose-img:rounded-lg prose-hr:border-slate-200"
+                className="prose prose-lg prose-slate max-w-none prose-headings:font-serif prose-headings:text-slate-900 prose-h2:mb-4 prose-h2:mt-10 prose-h2:text-2xl prose-h3:mb-3 prose-h3:mt-8 prose-h3:text-xl prose-p:leading-[1.75] prose-p:text-[#5d584e] prose-a:text-sail-blue prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-2 prose-blockquote:border-[#d9d0be] prose-blockquote:pl-4 prose-blockquote:italic prose-blockquote:text-[#6f695d] prose-strong:font-semibold prose-strong:text-slate-900 prose-code:rounded-none prose-code:bg-[#f3efe6] prose-code:px-1.5 prose-code:py-0.5 prose-code:text-sm prose-code:text-[#4a4338] prose-code:before:content-none prose-code:after:content-none prose-pre:rounded-none prose-pre:border prose-pre:border-[#e0dbcf] prose-pre:bg-[#fffdf8] prose-pre:text-sm prose-li:text-[#5d584e] prose-img:rounded-none prose-hr:border-[#e0dbcf]"
                 dangerouslySetInnerHTML={{ __html: post.html_content }}
               />
             )}
 
             {/* Tags */}
             {post.tags && post.tags.length > 0 && (
-              <div className="mt-12 border-t border-slate-200 pt-8">
-                <p className="mb-4 font-mono text-xs font-bold uppercase tracking-widest text-slate-500">
+              <div className="mt-12 border-t border-[#e0dbcf] pt-8">
+                <p className="mb-4 font-mono text-xs font-bold uppercase tracking-widest text-[#6f695d]">
                   Tagged with
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -181,7 +214,7 @@ export default async function BlogPostPage({
                     <Link
                       key={tag.slug}
                       href={`/writings?tag=${tag.slug}`}
-                      className="rounded-lg border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-300 hover:border-sail-blue/40 hover:bg-sail-blue/5 hover:text-sail-blue"
+                      className="rounded-none border border-[#e0dbcf] bg-[#fffdf8] px-4 py-2 text-sm font-medium text-[#5d584e] transition-all duration-300 hover:border-sail-blue/40 hover:bg-white hover:text-sail-blue"
                     >
                       {tag.name}
                     </Link>
@@ -191,29 +224,29 @@ export default async function BlogPostPage({
             )}
 
             {/* CTA */}
-            <div className="mt-12 rounded-lg border border-slate-200 bg-slate-50 p-8 text-center">
+            <div className="sail-card mt-12 rounded-none p-8 text-center">
               <h3 className="mb-3 font-serif text-2xl font-semibold text-slate-900">
                 Ready to transform your Trade Compliance?
               </h3>
-              <p className="mb-6 text-slate-600">
+              <p className="mb-6 text-[#5d584e]">
                 See how SAIL can help you classify faster and stay compliant.
               </p>
               <div className="flex flex-wrap justify-center gap-3">
                 <Button size="lg" variant="sail" asChild>
-                  <Link href="mailto:info@sailgtx.com">
-                    Claim Your Free Audit
+                  <Link href="/free-audit">
+                    Book Free Audit
                   </Link>
                 </Button>
                 <TalkToFounderButton
                   size="lg"
-                  className="border-slate-300 bg-white text-slate-900 hover:bg-slate-50"
+                  className="border-[#e0dbcf] bg-white text-slate-900 hover:bg-[#fffdf8]"
                 />
               </div>
             </div>
 
             {/* Related Posts */}
             {relatedPosts.length > 0 && (
-              <div className="mt-12 border-t border-slate-200 pt-8">
+              <div className="mt-12 border-t border-[#e0dbcf] pt-8">
                 <h2 className="mb-6 font-serif text-2xl font-semibold text-slate-900">
                   Related Articles
                 </h2>
@@ -222,10 +255,10 @@ export default async function BlogPostPage({
                     <Link
                       key={relatedPost.slug}
                       href={`/writings/${relatedPost.slug}`}
-                      className="group block border-b border-slate-100 pb-4 transition-colors hover:border-slate-300"
+                      className="group block border-b border-[#e0dbcf] pb-4 transition-colors hover:border-sail-blue/40"
                     >
                       {relatedPost.category && (
-                        <div className="mb-1 text-xs font-medium text-slate-500">
+                        <div className="mb-1 text-xs font-medium text-[#6f695d]">
                           {relatedPost.category.name}
                         </div>
                       )}
@@ -233,7 +266,7 @@ export default async function BlogPostPage({
                         {relatedPost.title}
                       </h3>
                       {relatedPost.excerpt && (
-                        <p className="line-clamp-2 text-sm text-slate-600">
+                        <p className="line-clamp-2 text-sm text-[#5d584e]">
                           {relatedPost.excerpt}
                         </p>
                       )}

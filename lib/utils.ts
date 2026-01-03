@@ -36,7 +36,7 @@ export const constructMetadata = ({
   title,
   description = defaultMetadata.description,
   canonical = "/",
-  ogImage = "/hero/hero.png",
+  ogImage = "/opengraph-image",
 }: MetadataProps) => {
   return {
     metadataBase: new URL("https://www.sailgtx.com/"),
@@ -73,20 +73,12 @@ export const constructMetadata = ({
       ],
     },
 
-    // --- will add this once we get the logo ---
-    // icons: {
-    //   icon: "/icon.png",
-    //   shortcut: "/icon.png",
-    //   apple: "/icon.png",
-    // },
-
-    // twitter: {
-    //   title,
-    //   description,
-    //   creator: "@sailgtx",
-    //   site: "sailgtx.com",
-    //   card: "summary_large_image",
-    // },
+    twitter: {
+      title,
+      description,
+      card: "summary_large_image",
+      images: [ogImage],
+    },
   };
 };
 

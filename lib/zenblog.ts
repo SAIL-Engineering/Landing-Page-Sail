@@ -2,6 +2,10 @@ import { createZenblogClient } from "zenblog";
 
 // Initialize Zenblog client
 // Get your Blog ID from the Zenblog dashboard
+export const hasZenblogConfig = Boolean(
+  process.env.NEXT_PUBLIC_ZENBLOG_BLOG_ID,
+);
+
 export const zenblog = createZenblogClient({
   blogId: process.env.NEXT_PUBLIC_ZENBLOG_BLOG_ID || "",
 });

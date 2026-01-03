@@ -4,18 +4,18 @@
 
 @layer base {
   :root {
-    --background: 0, 0%, 98%;
-    --foreground: 0, 0%, 0%;
+    --background: 44 39% 94%;
+    --foreground: 0 0% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 0 0% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 0 0% 8%;
 
     /* Existing variables */
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 0 0% 8%;
+    --primary-foreground: 0 0% 100%;
 
     /* New, more specific variables */
     --primary-50: 166, 100%, 97%;
@@ -41,30 +41,32 @@
     --gray-800: 0, 0%, 30%;
     --gray-900: 0, 0%, 20%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 44 25% 92%;
+    --secondary-foreground: 0 0% 12%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 44 25% 92%;
+    --muted-foreground: 24 10% 35%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 44 25% 92%;
+    --accent-foreground: 0 0% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 42 12% 80%;
+    --input: 42 12% 80%;
+    --ring: 0 0% 12%;
 
     --radius: 0.5rem;
 
     --blue-400: 216, 64%, 54%;
     --blue-500: 216, 79%, 53%;
 
-    --sail-blue: 52, 60, 237;
-    --sail-green: 216, 253, 73;
-    --sail-oat: 246, 243, 235;
+    --sail-blue: 237 84% 57%;
+    --sail-green: 72 98% 64%;
+    --sail-navy: 230 50% 8%;
+    --sail-oat: 44 39% 94%;
+    --sail-oatmeal: 44 39% 94%;
   }
 
   .dark {
@@ -199,6 +201,13 @@
   backdrop-filter: blur(8px);
 }
 
+.sail-nav-light {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid #e0dbcf;
+  box-shadow: 0 16px 30px rgba(55, 44, 25, 0.12);
+  backdrop-filter: blur(10px);
+}
+
 .fade-up {
   animation: fade-up 0.6s ease both;
 }
@@ -226,12 +235,16 @@
 
 @layer utilities {
   .sail-kicker {
-    @apply font-mono text-xs font-semibold uppercase tracking-[0.3em] text-slate-500;
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.3em] text-sail-blue;
   }
 
   .sail-kicker-light {
     @apply font-mono text-xs font-semibold uppercase tracking-[0.3em];
     color: rgba(255, 255, 255, 0.7);
+  }
+
+  .sail-kicker-muted {
+    @apply font-mono text-xs font-semibold uppercase tracking-[0.3em] text-[#6f695d];
   }
 
   /* Award-winning section spacing system */
@@ -260,5 +273,36 @@
   /* iOS safe area support for bottom navigation */
   .safe-bottom {
     padding-bottom: env(safe-area-inset-bottom);
+  }
+
+  .font-brand {
+    font-family:
+      var(--font-nunito-sans), "Nunito Sans", ui-sans-serif, system-ui,
+      sans-serif;
+  }
+
+  .sail-shell {
+    background:
+      radial-gradient(circle at top left, #ffffff 0%, #f6f3eb 55%, #edf3ff 100%),
+      #f6f3eb;
+  }
+
+  .sail-grid {
+    background-image:
+      linear-gradient(to right, rgba(224, 219, 207, 0.6) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(224, 219, 207, 0.6) 1px, transparent 1px);
+    background-size: 120px 120px;
+  }
+
+  .sail-card {
+    @apply border border-[#e0dbcf] bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.04)];
+  }
+
+  .sail-card-muted {
+    @apply border border-[#e0dbcf] bg-[#fffdf8];
+  }
+
+  .sail-pill {
+    @apply inline-flex items-center gap-2 rounded-none border border-[#d9d0be] bg-white px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-[#6f695d];
   }
 }

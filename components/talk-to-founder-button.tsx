@@ -17,7 +17,7 @@ export function TalkToFounderButton({
     <Button
       variant="outline"
       className={cn(
-        "border-white/50 bg-white/5 text-white backdrop-blur-sm transition-all duration-150 hover:bg-white hover:text-slate-900",
+        "border-[#d9d0be] bg-white text-slate-900 transition-all duration-150 hover:border-slate-900 hover:bg-[#f4f5f7] hover:text-slate-900",
         className,
       )}
       onClick={() => {

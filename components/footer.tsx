@@ -5,16 +5,19 @@ import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 export default function Footer() {
   return (
-    <footer className="w-full border-t border-black/10 bg-[#0f1115] px-6 py-14 text-white">
+    <footer className="w-full border-t border-white/10 bg-[#0b0f2b] px-6 py-16 text-white">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[1.4fr_2.6fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.4fr_2.6fr]">
           <div>
             <Link
               href="/"
-              className="sail-wordmark text-xl"
+              className="flex items-center gap-2 text-2xl text-white"
               aria-label="SAIL home"
             >
-              SAIL
+              <span className="sail-wordmark">SAIL</span>
+              <span className="font-brand text-2xl font-semibold tracking-tight">
+                GTX
+              </span>
             </Link>
             <p className="mt-4 max-w-sm text-sm text-white/70">
               Trade compliance software for brokers and enterprises that need
@@ -27,18 +30,13 @@ export default function Footer() {
                 asChild
               >
                 <Link
-                  href="mailto:info@sailgtx.com"
+                  href="/free-audit"
                   className="flex items-center justify-center"
                 >
-                  <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                    Claim Your Free Audit
-                  </span>
-                  <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                    Save Millions!
-                  </span>
+                  Book Free Audit
                 </Link>
               </Button>
-              <TalkToFounderButton className="border-white/30 text-white hover:border-white/60 hover:bg-white/10" />
+              <TalkToFounderButton className="border-white/30 bg-white/10 text-white hover:border-white/60 hover:bg-white/20 hover:text-white" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">
@@ -79,7 +77,7 @@ export default function Footer() {
                   key={link}
                   variant="ghost"
                   size="icon"
-                  className="rounded-full hover:bg-white/10"
+                  className="hover:bg-white/10"
                   asChild
                 >
                   <Link href={link} target="_blank" rel="noopener noreferrer">

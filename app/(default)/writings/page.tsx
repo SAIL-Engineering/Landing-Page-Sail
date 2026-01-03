@@ -1,10 +1,16 @@
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { constructMetadata } from "@/lib/utils";
-import { zenblog, BlogPost, BlogCategory } from "@/lib/zenblog";
+import {
+  zenblog,
+  BlogPost,
+  BlogCategory,
+  hasZenblogConfig,
+} from "@/lib/zenblog";
 import { Metadata } from "next/types";
 import Link from "next/link";
 import Image from "next/image";
+import { GridOverlay } from "@/components/landing/grid-overlay";
 
 export const metadata: Metadata = constructMetadata({
   title: "Writings | SAIL GTX",
@@ -17,10 +23,10 @@ export const metadata: Metadata = constructMetadata({
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <Link href={`/writings/${post.slug}`} className="group block">
-      <Card className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10">
+      <Card className="sail-card ring-0 group relative overflow-hidden rounded-none p-6 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10">
         {/* Category badge */}
         {post.category && (
-          <Badge className="mb-4 border-sail-blue/40 bg-sail-blue/10 font-mono text-xs font-semibold uppercase tracking-wider text-sail-blue">
+          <Badge className="mb-4 rounded-none border-sail-blue/40 bg-sail-blue/10 font-mono text-xs font-semibold uppercase tracking-wider text-sail-blue">
             {post.category.name}
           </Badge>
         )}
@@ -34,14 +40,14 @@ function PostCard({ post }: { post: BlogPost }) {
         {post.excerpt && (
           <div className="relative mb-5 pl-4">
             <div className="absolute left-0 top-0 h-full w-0.5 bg-gradient-to-b from-sail-blue/40 to-transparent" />
-            <p className="line-clamp-3 font-serif italic leading-[1.7] text-slate-700/90">
+            <p className="line-clamp-3 font-serif italic leading-[1.7] text-[#5d584e]">
               {post.excerpt}
             </p>
           </div>
         )}
 
         {/* Meta */}
-        <div className="flex items-center gap-3 border-t border-slate-200 pt-4 text-xs text-slate-500">
+        <div className="flex items-center gap-3 border-t border-[#e0dbcf] pt-4 text-xs text-[#6f695d]">
           {post.authors && post.authors.length > 0 && (
             <>
               <div className="flex -space-x-1">
@@ -62,14 +68,14 @@ function PostCard({ post }: { post: BlogPost }) {
                   </div>
                 ))}
               </div>
-              <span className="font-medium text-slate-600">
+              <span className="font-medium text-[#5d584e]">
                 {post.authors[0].name}
               </span>
             </>
           )}
           {post.published_at && (
             <>
-              <span className="text-slate-300">•</span>
+              <span className="text-slate-300">*</span>
               <span>
                 {new Date(post.published_at).toLocaleDateString("en-US", {
                   month: "short",
@@ -93,6 +99,35 @@ export default async function WritingsPage({
 }: {
   searchParams: { category?: string; tag?: string };
 }) {
+  if (!hasZenblogConfig) {
+    return (
+      <main className="min-h-screen sail-shell">
+        <section className="relative overflow-hidden pb-16 pt-32">
+          <div className="absolute inset-0 sail-grid opacity-30" />
+          <GridOverlay className="opacity-25" />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <div className="max-w-3xl space-y-6">
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="sail-pill">Writings</span>
+                <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6f695d]">
+                  Trade compliance insights
+                </span>
+              </div>
+              <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
+                Writings will return soon.
+              </h1>
+              <p className="max-w-2xl text-lg leading-relaxed text-[#5d584e]">
+                Zenblog is not configured for this environment. Set
+                <span className="font-mono"> NEXT_PUBLIC_ZENBLOG_BLOG_ID</span>
+                to publish posts.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+  }
+
   // Fetch posts and categories server-side with error handling
   let posts: BlogPost[] = [];
   let categories: BlogCategory[] = [];
@@ -117,35 +152,42 @@ export default async function WritingsPage({
   const selectedCategory = searchParams.category;
 
   return (
-    <main className="min-h-screen bg-[#F6F3EB]">
-      {/* Hero Section - SAIL Navy with better spacing from nav */}
-      <section className="bg-[#0b0f2b] py-20 pt-32 text-white">
-        <div className="mx-auto max-w-7xl px-6">
-          <Badge className="mb-6 animate-scale-in border border-sail-green/60 bg-sail-green font-mono text-xs font-bold uppercase tracking-widest text-black shadow-lg shadow-sail-green/30">
-            WRITINGS
-          </Badge>
+    <main className="min-h-screen sail-shell">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden pb-16 pt-32">
+        <div className="absolute inset-0 sail-grid opacity-30" />
+        <GridOverlay className="opacity-25" />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <div className="max-w-3xl space-y-6">
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="sail-pill">Writings</span>
+              <span className="font-mono text-xs uppercase tracking-[0.3em] text-[#6f695d]">
+                Trade compliance insights
+              </span>
+            </div>
 
-          <h1 className="mb-6 max-w-3xl font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-white md:text-5xl lg:text-6xl">
-            Expert insights on Trade Compliance
-          </h1>
+            <h1 className="font-serif text-4xl font-semibold leading-[1.1] tracking-tight text-slate-900 md:text-5xl lg:text-6xl">
+              Evidence-first thinking for modern brokers.
+            </h1>
 
-          <p className="max-w-2xl text-lg leading-relaxed text-white/80">
-            Deep technical dives, regulatory updates, and classification
-            strategies to help you ship globally with confidence.
-          </p>
+            <p className="max-w-2xl text-lg leading-relaxed text-[#5d584e]">
+              Deep technical dives, regulatory updates, and classification
+              strategies to help you ship globally with confidence.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* Category Filters - Functional */}
-      <section className="border-b border-slate-200 bg-white py-6">
+      {/* Category Filters */}
+      <section className="border-y border-[#e0dbcf] bg-white py-6">
         <div className="mx-auto max-w-7xl px-6">
           <div className="flex flex-wrap items-center gap-3">
             <Link
               href="/writings"
-              className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+              className={`rounded-none px-4 py-2 text-sm font-semibold transition-all duration-300 ${
                 !selectedCategory
                   ? "bg-sail-blue text-white shadow-md"
-                  : "border border-slate-200 bg-white text-slate-700 hover:border-sail-blue/40 hover:bg-slate-50"
+                  : "border border-[#e0dbcf] bg-white text-[#5d584e] hover:border-sail-blue/40 hover:bg-[#fffdf8]"
               }`}
             >
               All
@@ -154,10 +196,10 @@ export default async function WritingsPage({
               <Link
                 key={category.slug}
                 href={`/writings?category=${category.slug}`}
-                className={`rounded-lg px-4 py-2 text-sm font-semibold transition-all duration-300 ${
+                className={`rounded-none px-4 py-2 text-sm font-semibold transition-all duration-300 ${
                   selectedCategory === category.slug
                     ? "bg-sail-blue text-white shadow-md"
-                    : "border border-slate-200 bg-white text-slate-700 hover:border-sail-blue/40 hover:bg-slate-50"
+                    : "border border-[#e0dbcf] bg-white text-[#5d584e] hover:border-sail-blue/40 hover:bg-[#fffdf8]"
                 }`}
               >
                 {category.name}
@@ -168,16 +210,15 @@ export default async function WritingsPage({
       </section>
 
       {/* Posts Grid */}
-      <section className="bg-[#F6F3EB] py-16">
+      <section className="py-16">
         <div className="mx-auto max-w-7xl px-6">
           {posts.length === 0 ? (
-            <div className="flex min-h-[400px] items-center justify-center">
+            <div className="flex min-h-[320px] items-center justify-center">
               <div className="text-center">
-                <div className="mb-4 text-5xl">📝</div>
                 <h3 className="mb-2 text-xl font-semibold text-slate-900">
                   No articles yet
                 </h3>
-                <p className="text-slate-600">
+                <p className="text-[#5d584e]">
                   Check back soon for expert insights and guides.
                 </p>
               </div>

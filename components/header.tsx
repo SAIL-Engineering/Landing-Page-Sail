@@ -67,16 +67,19 @@ export default function Header() {
     <header className="fixed left-0 right-0 top-0 z-50 px-4 py-4">
       <div className="mx-auto max-w-7xl">
         <nav
-          className="sail-nav-dark flex items-center justify-between rounded-full px-6 py-3"
+          className="sail-nav-light flex items-center justify-between rounded-none px-6 py-3"
           aria-label="Main navigation"
         >
           {/* Logo */}
           <Link
             href="/"
-            className={cn("sail-wordmark text-2xl text-white")}
+            className={cn("flex items-center gap-2 text-2xl text-slate-900")}
             aria-label="SAIL Home"
           >
-            SAIL
+            <span className="sail-wordmark">SAIL</span>
+            <span className="font-brand text-2xl font-semibold tracking-tight">
+              GTX
+            </span>
           </Link>
 
           {/* Desktop Nav */}
@@ -88,7 +91,7 @@ export default function Header() {
               onMouseLeave={handleMouseLeave}
             >
               <button
-                className="flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium text-white/90 transition-all duration-150 hover:bg-white/10 hover:text-white"
+                className="flex items-center gap-1 rounded-none px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-150 hover:bg-black/5 hover:text-slate-900"
                 aria-expanded={isOpen}
               >
                 Solutions
@@ -109,13 +112,13 @@ export default function Header() {
                   onMouseEnter={handleMouseEnter}
                   onMouseLeave={handleMouseLeave}
                 >
-                  <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-xl">
+                  <div className="overflow-hidden rounded-xl border border-[#e0dbcf] bg-white shadow-xl">
                     <div className="p-2">
                       {solutions.map((solution) => (
                         <Link
                           key={solution.title}
                           href={solution.href}
-                          className="group flex items-start gap-3 rounded-lg p-3 transition-all duration-150 hover:bg-slate-50"
+                          className="group flex items-start gap-3 rounded-lg p-3 transition-all duration-150 hover:bg-[#fffdf8]"
                         >
                           <div className="mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-sail-blue/10 transition-all duration-150 group-hover:bg-sail-blue">
                             <solution.icon className="h-4 w-4 text-sail-blue transition-all duration-150 group-hover:text-white" />
@@ -139,7 +142,7 @@ export default function Header() {
             {/* Writings */}
             <Link
               href="/writings"
-              className="rounded-full px-4 py-2 text-sm font-medium text-white/90 transition-all duration-150 hover:bg-white/10 hover:text-white"
+              className="rounded-none px-4 py-2 text-sm font-medium text-slate-700 transition-all duration-150 hover:bg-black/5 hover:text-slate-900"
             >
               Writings
             </Link>
@@ -154,7 +157,9 @@ export default function Header() {
               className="transition-all duration-150 hover:scale-105"
               asChild
             >
-              <Link href="mailto:info@sailgtx.com">Claim Free Audit</Link>
+              <Link href="/free-audit">
+                Book Free Audit
+              </Link>
             </Button>
           </div>
 

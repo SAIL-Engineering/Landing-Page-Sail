@@ -48,7 +48,7 @@ export default function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="rounded-md text-white hover:bg-white/10"
+          className="rounded-none text-slate-700 hover:bg-black/5"
           aria-label="Open menu"
         >
           <Menu className="h-6 w-6" />
@@ -72,16 +72,11 @@ export default function MobileMenu() {
               asChild
             >
               <Link
-                href="mailto:info@sailgtx.com"
+                href="/free-audit"
                 onClick={() => setIsOpen(false)}
                 className="flex items-center justify-center"
               >
-                <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                  Claim Your Free Audit
-                </span>
-                <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                  Save Millions!
-                </span>
+                Book Free Audit
               </Link>
             </Button>
             <TalkToFounderButton

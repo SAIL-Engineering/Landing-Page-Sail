@@ -1,28 +1,20 @@
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { constructMetadata } from "@/lib/utils";
 import { Metadata } from "next/types";
 import Link from "next/link";
 import Image from "next/image";
-import HeroAnimation from "@/components/hero-animation";
 import { HowItWorksTabs } from "@/components/how-it-works-tabs";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { CaseStudyVisual } from "@/components/case-study-visual";
+import { GridOverlay } from "@/components/landing/grid-overlay";
 import {
   IconArrowRightOutline18 as ArrowRight,
   IconShieldCheckOutline18 as ShieldCheck,
-  IconMagnifierAlertOutline18 as FileSearch,
   IconEyeScannerOutline18 as Eye,
   IconRefreshOutline18 as RefreshCw,
-  IconBoxScaleOutline18 as Scale,
   IconBoxOutline18 as Package,
-  IconEarthOutline18 as Globe,
   IconScrollTextOutline18 as FileText,
-  IconShieldOutline18 as ClipboardCheck,
-  IconUsersOutline18 as Users,
-  IconBellOnOutline18 as AlertTriangle,
-  IconClockRotateClockwiseOutline18 as Clock,
   IconBoxCheckOutline18 as CheckCircle,
   IconBoltOutline18 as Zap,
   IconBox2Outline18 as Database,
@@ -39,50 +31,53 @@ export const metadata: Metadata = constructMetadata({
 });
 
 export default function Home() {
+  const workflowTabs = [
+    { label: "HTS Book", color: "#f6c453" },
+    { label: "CROSS Rulings", color: "#ff8a8a" },
+    { label: "PGA (FDA/EPA)", color: "#7dd3fc" },
+    { label: "SharePoint", color: "#60a5fa" },
+    { label: "Teams", color: "#8b5cf6" },
+    { label: "Email Intake", color: "#f97316" },
+    { label: "Excel Tracker", color: "#22c55e" },
+    { label: "TMS Portal", color: "#94a3b8" },
+  ];
+
   return (
     <>
-      <main className="bg-[#F6F3EB]">
+      <main className="sail-shell">
         {/* ═══════════════════════════════════════════════════════════════════
             HERO - "Trade Compliance that keeps up with the world"
-        ═══════════════════════════════════════════════════════════════════ */}
+        ═══════════════════════════════════════════════════════════════════ */} 
         <section
           id="hero"
-          className="relative overflow-hidden bg-[#0b0f2b] pb-20 pt-32 text-white"
+          className="relative overflow-hidden bg-[#0b0f2b] pb-24 pt-32 text-white"
         >
-          <div className="absolute inset-0 z-0">
-            <Image
-              src="/hero/hero.webp"
-              alt="Port of Oakland"
-              fill
-              priority
-              loading="eager"
-              className="object-cover object-center brightness-110"
-              sizes="100vw"
-            />
-          </div>
-          <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/85 via-black/70 to-black/90" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,_rgba(52,60,237,0.35),_transparent_55%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,_rgba(216,253,73,0.15),_transparent_55%)]" />
+          <GridOverlay className="opacity-10" />
 
-          <div className="relative z-20 mx-auto max-w-7xl px-6">
-            <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-12">
+          <div className="relative z-10 mx-auto max-w-7xl px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               {/* Left: Copy */}
-              <div className="space-y-6 text-center lg:space-y-8 lg:text-left">
-                <Badge className="animate-scale-in border border-sail-green/60 bg-sail-green text-black shadow-lg shadow-sail-green/30 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-sail-green/40">
-                  Live in days, not months
-                </Badge>
+              <div className="space-y-8 text-center lg:text-left">
+                <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                  <span className="border border-white/20 bg-white/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/80">
+                    Compliance command center
+                  </span>
+                  <span className="font-mono text-xs uppercase tracking-[0.3em] text-sail-green/80">
+                    Built for trade compliance leaders
+                  </span>
+                </div>
 
-                <h1 className="font-serif text-3xl font-semibold leading-[1.1] tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
-                  Trade Compliance that keeps up with the world.
+                <h1 className="font-serif text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+                  Every classification becomes a defensible decision.
                 </h1>
 
-                <p className="mx-auto max-w-lg text-base text-white/80 sm:text-lg lg:mx-0">
-                  Regulations change weekly. Your Trade Compliance data
-                  shouldn&apos;t fall behind.{" "}
+                <p className="mx-auto max-w-xl text-base text-white/70 sm:text-lg lg:mx-0">
                   <span className="sail-wordmark">SAIL</span>{" "}
-                  <span style={{ fontFamily: "var(--font-nunito-sans)" }}>
-                    GTX
-                  </span>{" "}
-                  keeps your entire product catalog current, accurate, and
-                  audit-ready—without the manual scramble.
+                  <span className="font-brand">GTX</span> is a workspace for HTS
+                  classification, tariff stacking, and audit defense. Reasoning,
+                  evidence, and approvals are captured as the work happens.
                 </p>
 
                 <div className="flex flex-col gap-3 sm:flex-row sm:gap-4 lg:justify-start">
@@ -93,27 +88,149 @@ export default function Home() {
                     asChild
                   >
                     <Link
-                      href="mailto:info@sailgtx.com"
+                      href="/free-audit"
                       className="flex items-center justify-center"
                     >
-                      <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                        Claim Your Free Audit
-                      </span>
-                      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                        Save Millions!
-                      </span>
+                      Book Free Audit
                     </Link>
                   </Button>
                   <TalkToFounderButton
                     size="lg"
-                    className="border-white/40 bg-white/5 text-white hover:bg-white hover:text-slate-900"
+                    className="border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900"
                   />
+                </div>
+
+                <div className="grid gap-4 text-left sm:grid-cols-3">
+                  {[
+                    {
+                      label: "Confidence",
+                      value: "98%+",
+                    },
+                    {
+                      label: "Time to value",
+                      value: "Days, not months",
+                    },
+                    {
+                      label: "Coverage",
+                      value: "Full catalog",
+                    },
+                  ].map((stat) => (
+                    <div
+                      key={stat.label}
+                      className="border border-white/10 bg-white/5 px-4 py-3"
+                    >
+                      <span className="text-xs font-mono uppercase tracking-[0.3em] text-white/60">
+                        {stat.label}
+                      </span>
+                      <span className="mt-2 block text-lg font-semibold text-white">
+                        {stat.value}
+                      </span>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Right: Product UI Preview - Optimized for mobile */}
-              <div className="relative mt-8 h-[350px] w-full sm:h-[400px] lg:mt-0 lg:h-[500px]">
-                <HeroAnimation />
+              {/* Right: Command Center Preview */}
+              <div className="relative">
+                <div className="overflow-hidden border border-white/10 bg-[#11163a]">
+                  <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs uppercase tracking-[0.3em] text-white/60">
+                    <span>Workspace: Classification</span>
+                    <span>Live audit trail</span>
+                  </div>
+                  <div className="p-5">
+                    <div className="flex items-center justify-between">
+                      <div>
+                        <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                          HTS 7210.41.00.00
+                        </p>
+                        <p className="mt-2 text-sm font-semibold text-white">
+                          Steel coil sheets - cold rolled
+                        </p>
+                      </div>
+                      <div className="border border-sail-green/40 bg-sail-green/20 px-3 py-1 text-xs font-semibold text-sail-green">
+                        Approved
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid gap-4 lg:grid-cols-2">
+                      <div className="border border-white/10 bg-[#0f1333] p-4">
+                        <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                          Decision trace
+                        </p>
+                        <ul className="mt-3 space-y-2 text-xs text-white/70">
+                          {[
+                            "Chapter 72: Iron and steel",
+                            "Heading 7210: Flat-rolled products",
+                            "Subheading 7210.41: Cold-rolled, plated",
+                            "Broker approval logged",
+                          ].map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 bg-sail-green" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                        <div className="mt-4 font-mono text-xs text-white/60">
+                          {">"} Review pending{" "}
+                          <span className="inline-block h-4 w-1 bg-sail-green animate-pulse" />
+                        </div>
+                      </div>
+
+                      <div className="border border-white/10 bg-[#0f1333] p-4">
+                        <p className="text-xs uppercase tracking-[0.3em] text-white/50">
+                          Tariff stack
+                        </p>
+                        <div className="mt-3 space-y-2 text-xs text-white/70">
+                          {[
+                            { label: "Base NTR", value: "Free" },
+                            { label: "IEEPA China/HK", value: "10%" },
+                            { label: "IEEPA Reciprocal", value: "10%" },
+                            { label: "Section 232 Steel", value: "50%" },
+                            { label: "Section 301 List I", value: "25%" },
+                          ].map((item) => (
+                            <div
+                              key={item.label}
+                              className="flex items-center justify-between border-b border-white/10 pb-2 last:border-0 last:pb-0"
+                            >
+                              <span>{item.label}</span>
+                              <span className="font-mono text-white">
+                                {item.value}
+                              </span>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-4 border border-white/10 bg-white/5 px-3 py-2 text-xs text-white/70">
+                          Total duty rate:{" "}
+                          <span className="font-mono text-white">57%</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-5 grid gap-3 md:grid-cols-3">
+                      {[
+                        { label: "Evidence", value: "7 documents" },
+                        { label: "Approvals", value: "2 reviewers" },
+                        { label: "Cycle time", value: "3 hours" },
+                      ].map((stat) => (
+                        <div
+                          key={stat.label}
+                          className="border border-white/10 bg-[#0f1333] p-3"
+                        >
+                          <div className="text-xs uppercase tracking-[0.2em] text-white/50">
+                            {stat.label}
+                          </div>
+                          <div className="mt-2 text-sm font-semibold text-white">
+                            {stat.value}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-6 -left-6 hidden border border-white/10 bg-[#11163a] px-4 py-3 text-xs text-white/70 lg:block">
+                  CF-28 packet ready to export
+                </div>
               </div>
             </div>
           </div>
@@ -122,70 +239,112 @@ export default function Home() {
         {/* ═══════════════════════════════════════════════════════════════════
             THE PROBLEM - "Your Trade Compliance data is already out of date"
         ═══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-white py-24">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid items-center gap-16 lg:grid-cols-2">
+        <section className="relative py-24">
+          <div className="absolute inset-0 sail-grid opacity-20" />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               <ScrollReveal direction="left">
                 <div>
-                  <p className="sail-kicker">The Reality</p>
+                  <p className="sail-kicker-muted">Where it breaks</p>
                   <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900 md:text-4xl">
-                    Your Trade Compliance data is already out of date.
+                    Compliance is still a patchwork of tabs, inboxes, and
+                    tribal knowledge.
                   </h2>
-                  <p className="mt-6 text-lg text-slate-600">
-                    Most Trade Compliance teams are running on spreadsheets last
-                    touched six months ago. When tariffs shift—and they shift
-                    constantly—someone has to manually review thousands of
-                    product classifications. That someone is usually already
-                    behind.
+                  <p className="mt-6 text-lg text-[#5d584e]">
+                    Every tariff change triggers a scramble across HTS books,
+                    CROSS rulings, spreadsheets, and emails. The work is
+                    defensible only when the evidence chain is assembled — and
+                    that takes time most brokers don&apos;t have.
                   </p>
-                  <p className="mt-4 text-slate-600">
-                    <span className="sail-wordmark">SAIL</span> monitors
-                    regulatory changes and automatically flags affected
-                    products. Your catalog stays current. Your team stays
-                    focused on exceptions, not maintenance.
-                  </p>
-                </div>
-              </ScrollReveal>
 
-              <ScrollReveal direction="right" delay={200}>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-6">
-                  <p className="mb-6 font-mono text-sm font-semibold text-slate-500">
-                    The math doesn&apos;t work:
-                  </p>
-                  <div className="space-y-4">
+                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     {[
                       {
-                        label: "Average enterprise product catalog",
-                        value: "15,000+ SKUs",
-                      },
-                      {
-                        label: "Annual HTS schedule changes",
-                        value: "2,000+ modifications",
-                      },
-                      {
-                        label: "Time to manually re-classify one product",
+                        label: "Manual review per SKU",
                         value: "45 minutes",
                       },
                       {
-                        label: "Full catalog review",
-                        value: "Never actually completed",
-                        highlight: true,
+                        label: "Catalog coverage",
+                        value: "~15%",
+                      },
+                      {
+                        label: "CF-28 response",
+                        value: "3-4 weeks",
+                      },
+                      {
+                        label: "HTS changes / year",
+                        value: "2,000+",
                       },
                     ].map((stat) => (
                       <div
                         key={stat.label}
-                        className="flex items-center justify-between rounded-lg bg-white p-4"
+                        className="sail-card flex items-center justify-between rounded-none px-4 py-3"
                       >
-                        <span className="text-sm text-slate-600">
+                        <span className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
                           {stat.label}
                         </span>
-                        <span
-                          className={`font-mono text-sm font-semibold ${stat.highlight ? "text-red-600" : "text-slate-900"}`}
-                        >
+                        <span className="font-mono text-sm font-semibold text-slate-900">
                           {stat.value}
                         </span>
                       </div>
                     ))}
+                  </div>
+                </div>
+              </ScrollReveal>
+
+              <ScrollReveal direction="right" delay={200}>
+                <div className="sail-card overflow-hidden rounded-none">
+                  <div className="flex items-center justify-between border-b border-[#e0dbcf] bg-[#f3efe6] px-4 py-2">
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#6b5f50]">
+                      Current workflow
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.3em] text-[#6b5f50]">
+                      8 systems
+                    </span>
+                  </div>
+                  <div className="flex flex-wrap gap-2 border-b border-[#e0dbcf] bg-[#f9f3e6] px-4 py-3">
+                    {workflowTabs.map((tab) => (
+                      <div
+                        key={tab.label}
+                        className="flex items-center gap-2 border border-[#e0dbcf] bg-white px-3 py-1 text-xs text-[#4a4338]"
+                      >
+                        <span
+                          className="h-2.5 w-2.5 rounded-full"
+                          style={{ backgroundColor: tab.color }}
+                        />
+                        <span>{tab.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="grid gap-4 bg-[#fffdf8] p-5">
+                    <div className="border border-[#e8dcc5] bg-[#fff8e6] p-4">
+                      <div className="text-[10px] uppercase tracking-[0.3em] text-[#8a6b2d]">
+                        Open docs
+                      </div>
+                      <div className="mt-3 space-y-2 text-sm text-[#4a4338]">
+                        <div className="flex items-center justify-between">
+                          <span>Classification notes.xlsx</span>
+                          <span className="text-xs text-[#8a7b65]">v12</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span>PGA checklist.docx</span>
+                          <span className="text-xs text-[#8a7b65]">draft</span>
+                        </div>
+                        <div className="flex items-center justify-between">
+                          <span>DDP quote calcs.xlsx</span>
+                          <span className="text-xs text-[#8a7b65]">today</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="border border-[#d4e3fb] bg-[#eef4ff] p-4">
+                      <div className="text-[10px] uppercase tracking-[0.3em] text-[#3f5f9b]">
+                        Status
+                      </div>
+                      <p className="mt-3 text-sm text-[#3c4963] leading-relaxed">
+                        Five tabs open, two inboxes, and a shared drive just to
+                        get one decision out the door.
+                      </p>
+                    </div>
                   </div>
                 </div>
               </ScrollReveal>
@@ -196,14 +355,18 @@ export default function Home() {
         {/* ═══════════════════════════════════════════════════════════════════
             HOW IT WORKS - Interactive Tabs (Award-Winning UX)
         ═══════════════════════════════════════════════════════════════════ */}
-        <section id="how" className="bg-sail-navy py-24 text-white">
+        <section id="how" className="bg-white py-24">
           <div className="mx-auto max-w-7xl px-6">
             <ScrollReveal>
               <div className="mb-16 text-center">
-                <p className="sail-kicker-light">How It Works</p>
-                <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight md:text-5xl">
-                  From chaos to cleared. Continuously.
+                <p className="sail-kicker">How It Works</p>
+                <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
+                  From chaos to cleared, with evidence.
                 </h2>
+                <p className="mx-auto mt-4 max-w-2xl text-[#5d584e]">
+                  The same pillars the app is built on — classification clarity,
+                  coordinated updates, and audit-ready defense.
+                </p>
               </div>
             </ScrollReveal>
 
@@ -222,8 +385,12 @@ export default function Home() {
               <div className="mb-16 text-center">
                 <p className="sail-kicker">Capabilities</p>
                 <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                  Everything your Trade Compliance workflow needs.
+                  The compliance stack, in one system.
                 </h2>
+                <p className="mx-auto mt-4 max-w-2xl text-[#5d584e]">
+                  Built for the daily reality of brokers and trade compliance
+                  teams — from classification to audit defense.
+                </p>
               </div>
             </ScrollReveal>
 
@@ -257,60 +424,23 @@ export default function Home() {
                   preview:
                     "Generate complete audit responses with product specs and legal justification.",
                 },
-                {
-                  title: "Product Catalog",
-                  body: "Central source of truth with version history and approvals.",
-                  icon: Database,
-                  preview:
-                    "Maintain classification history with approval workflows and version control.",
-                },
-                {
-                  title: "Entity Screening",
-                  body: "OFAC, BIS Entity List, denied parties. Checked continuously.",
-                  icon: ShieldCheck,
-                  preview:
-                    "Automated screening against all major denied party lists updated daily.",
-                },
-                {
-                  title: "Broker Collaboration",
-                  body: "Share classification data directly. No more email attachments.",
-                  icon: Send,
-                  preview:
-                    "Real-time data sharing with customs brokers through secure portals.",
-                },
-                {
-                  title: "Regulatory Alerts",
-                  body: "HTS changes, tariff mods, new exclusions. Know first.",
-                  icon: AlertTriangle,
-                  preview:
-                    "Receive instant notifications when regulations change affecting your business.",
-                },
               ].map((item, index) => (
                 <Card
                   key={item.title}
-                  className="group relative overflow-hidden rounded-xl border border-slate-200 bg-white p-5 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
+                  className="sail-card ring-0 group relative overflow-hidden rounded-none p-5 transition-all duration-500 hover:-translate-y-1 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 50}ms`,
                   }}
                 >
-                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-lg bg-sail-blue/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-sail-blue group-hover:shadow-lg group-hover:shadow-sail-blue/30">
-                    <item.icon className="h-4 w-4 text-sail-blue transition-all duration-500 group-hover:scale-110 group-hover:text-white" />
+                  <div className="mb-3 flex h-9 w-9 items-center justify-center rounded-md bg-sail-blue/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-sail-blue group-hover:shadow-lg group-hover:shadow-sail-blue/30">
+                    <item.icon className="h-4 w-4 text-sail-blue transition-all duration-500 group-hover:text-white" />
                   </div>
                   <h3 className="mb-1 font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sail-blue">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-600 transition-colors duration-300 group-hover:text-slate-700">
+                  <p className="text-sm text-[#5d584e] transition-colors duration-300 group-hover:text-slate-700">
                     {item.body}
                   </p>
-
-                  {/* Expandable preview on hover */}
-                  <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-3 group-hover:max-h-32 group-hover:opacity-100">
-                    <div className="border-t border-sail-blue/20 pt-3">
-                      <p className="text-xs leading-relaxed text-sail-blue/80">
-                        {item.preview}
-                      </p>
-                    </div>
-                  </div>
 
                   {/* Subtle gradient overlay on hover */}
                   <div className="absolute inset-0 -z-10 bg-gradient-to-br from-sail-blue/5 via-transparent to-sail-green/5 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
@@ -329,9 +459,9 @@ export default function Home() {
               <div className="mb-16 text-center">
                 <p className="sail-kicker">Who We Serve</p>
                 <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
-                  Built for everyone who touches Trade Compliance.
+                  Built for customs brokers first.
                 </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+                <p className="mx-auto mt-4 max-w-2xl text-[#5d584e]">
                   <span className="sail-wordmark">SAIL</span> works across the
                   entire Trade Compliance ecosystem—because that&apos;s how the
                   work actually flows.
@@ -339,11 +469,11 @@ export default function Home() {
               </div>
             </ScrollReveal>
 
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {[
                 {
                   title: "Customs Brokers",
-                  timeline: "Sign Up Now",
+                  timeline: "Book Free Audit",
                   isLink: true,
                   description:
                     "Stop chasing clients for classification data. Get accurate HTS codes with documentation you can trust—before the shipment arrives.",
@@ -368,19 +498,6 @@ export default function Home() {
                   ],
                 },
                 {
-                  title: "Trade Advisory",
-                  timeline: "White-label ready",
-                  isLink: false,
-                  description:
-                    "Deliver classification accuracy your clients can't get in-house. Scale your practice without scaling your headcount.",
-                  features: [
-                    "Client-specific workspaces",
-                    "Branded documentation",
-                    "Expertise augmentation",
-                    "Research acceleration",
-                  ],
-                },
-                {
                   title: "Trade Law",
                   timeline: "Litigation-grade",
                   isLink: false,
@@ -396,31 +513,31 @@ export default function Home() {
               ].map((audience, index) => (
                 <Card
                   key={audience.title}
-                  className="group relative overflow-hidden rounded-2xl border border-slate-200 bg-white p-6 transition-all duration-500 hover:-translate-y-2 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
+                  className="sail-card ring-0 group relative overflow-hidden rounded-none p-6 transition-all duration-500 hover:-translate-y-2 hover:border-sail-blue/40 hover:shadow-2xl hover:shadow-sail-blue/10"
                   style={{
                     animationDelay: `${index * 75}ms`,
                   }}
                 >
                   {audience.isLink ? (
                     <Link
-                      href="mailto:info@sailgtx.com"
-                      className="mb-4 inline-flex items-center gap-1 rounded-full bg-sail-blue px-3 py-1 text-xs font-bold text-white transition-all duration-300 hover:gap-2 hover:bg-sail-blue-hover hover:shadow-lg hover:shadow-sail-blue/30"
+                      href="/free-audit"
+                      className="mb-4 inline-flex items-center gap-1 rounded-none bg-sail-blue px-3 py-1 text-xs font-bold text-white transition-all duration-300 hover:gap-2 hover:bg-sail-blue-hover hover:shadow-lg hover:shadow-sail-blue/30"
                     >
                       {audience.timeline}
                       <ArrowRight className="h-3 w-3 transition-transform duration-300 group-hover:translate-x-0.5" />
                     </Link>
                   ) : (
-                    <div className="mb-4 inline-block rounded-full bg-sail-green px-3 py-1 text-xs font-bold text-black shadow-sm shadow-sail-green/20">
+                    <div className="mb-4 inline-block rounded-none bg-sail-green px-3 py-1 text-xs font-bold text-black shadow-sm shadow-sail-green/20">
                       {audience.timeline}
                     </div>
                   )}
                   <h3 className="mb-2 text-xl font-semibold text-slate-900 transition-colors duration-300 group-hover:text-sail-blue">
                     {audience.title}
                   </h3>
-                  <p className="mb-4 text-sm text-slate-600 transition-colors duration-300 group-hover:text-slate-700">
+                  <p className="mb-4 text-sm text-[#5d584e] transition-colors duration-300 group-hover:text-slate-700">
                     {audience.description}
                   </p>
-                  <ul className="space-y-2 text-sm text-slate-500">
+                  <ul className="space-y-2 text-sm text-[#6f695d]">
                     {audience.features.map((feature, i) => (
                       <li
                         key={feature}
@@ -444,14 +561,14 @@ export default function Home() {
         {/* ═══════════════════════════════════════════════════════════════════
             INTEGRATIONS - Fixed Logo Grid
         ═══════════════════════════════════════════════════════════════════ */}
-        <section className="border-y border-slate-200 bg-white py-16">
+        <section className="border-y border-[#e0dbcf] bg-[#fffdf8] py-16">
           <div className="mx-auto max-w-7xl px-6">
             <div className="mb-10 text-center">
               <p className="sail-kicker">Integrations</p>
               <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-slate-900">
                 Connects to the systems you already use.
               </h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-600">
+              <p className="mx-auto mt-4 max-w-2xl text-[#5d584e]">
                 <span className="sail-wordmark">SAIL</span> fits into existing
                 workflows. ERP integration, email forwarding, broker portals. No
                 rip-and-replace required.
@@ -460,47 +577,59 @@ export default function Home() {
 
             <div className="flex flex-wrap items-center justify-center gap-8 md:gap-12">
               {[
-                { src: "/logos/SAP_2011_logo.svg", alt: "SAP", width: 80 },
-                { src: "/logos/oracle.svg", alt: "Oracle", width: 110 },
+                { type: "image", src: "/logos/SAP_2011_logo.svg", alt: "SAP", width: 80 },
                 {
+                  type: "image",
                   src: "/logos/cbp.png",
                   alt: "CBP",
                   width: 90,
                 },
                 {
+                  type: "image",
                   src: "/logos/ace_logo_transparent.png",
                   alt: "ACE",
                   width: 60,
                 },
                 {
+                  type: "image",
                   src: "/logos/slack.png",
                   alt: "Slack",
                   width: 120,
                 },
                 {
+                  type: "image",
                   src: "/logos/teams.png",
                   alt: "Teams",
                   width: 50,
                 },
+                { type: "image", src: "/logos/oracle.svg", alt: "Oracle", width: 110 },
                 {
+                  type: "image",
+                  src: "/logos/Box,_Inc._logo.svg.png",
+                  alt: "Box",
+                  width: 70,
+                },
+                {
+                  type: "image",
                   src: "/logos/outlook.svg",
                   alt: "Outlook",
                   width: 36,
                 },
                 {
+                  type: "image",
                   src: "/logos/gmail-logo-brandlogos.net_ni0u393lv.svg",
                   alt: "Gmail",
                   width: 90,
                 },
-                { src: "/logos/Box,_Inc._logo.svg.png", alt: "Box", width: 70 },
                 {
+                  type: "image",
                   src: "/logos/sharepoint.svg",
                   alt: "SharePoint",
                   width: 36,
                 },
               ].map((logo) => (
                 <div
-                  key={logo.alt}
+                  key={logo.type === "text" ? logo.label : logo.alt}
                   className="flex items-center justify-center"
                 >
                   <Image
@@ -520,7 +649,7 @@ export default function Home() {
         {/* ═══════════════════════════════════════════════════════════════════
             CASE STUDY - Dramatic Before/After (Award-Winning UX)
         ═══════════════════════════════════════════════════════════════════ */}
-        <section id="case-study" className="bg-sail-navy py-24 text-white">
+        <section id="case-study" className="bg-sail-oat py-24">
           <div className="mx-auto max-w-7xl px-6">
             <ScrollReveal>
               <CaseStudyVisual />
@@ -539,13 +668,13 @@ export default function Home() {
                 <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900 md:text-5xl">
                   Work faster. File smarter. Sleep better.
                 </h2>
-                <p className="mx-auto mt-4 max-w-2xl text-lg text-slate-600">
+                <p className="mx-auto mt-4 max-w-2xl text-lg text-[#5d584e]">
                   The numbers that let you outpace the competition.
                 </p>
               </div>
             </ScrollReveal>
 
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-5">
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-5">
               {[
                 {
                   value: "15x",
@@ -578,14 +707,14 @@ export default function Home() {
                   delay={index * 100}
                   direction="up"
                 >
-                  <div className="text-center">
-                    <div className="font-serif text-4xl font-bold text-sail-blue">
+                  <div className="sail-card flex h-full flex-col items-center justify-center rounded-none px-4 py-6 text-center">
+                    <div className="font-serif text-3xl font-bold text-sail-blue md:text-4xl">
                       {stat.value}
                     </div>
                     <div className="mt-2 font-medium text-slate-900">
                       {stat.label}
                     </div>
-                    <div className="mt-1 text-xs text-slate-500">
+                    <div className="mt-1 text-xs text-[#6f695d]">
                       {stat.subtext}
                     </div>
                   </div>
@@ -596,25 +725,24 @@ export default function Home() {
         </section>
 
         {/* ═══════════════════════════════════════════════════════════════════
-            TIME TO VALUE - Dark Theme & Nucleo Icons
-        ═══════════════════════════════════════════════════════════════════ */}
-        <section className="bg-[#0b0f2b] py-24 text-white">
-          <div className="mx-auto max-w-7xl px-6">
-            <div className="grid gap-16 lg:grid-cols-2">
+            TIME TO VALUE - Light, broker-first
+        ═══════════════════════════════════════════════════════════════════ */} 
+        <section className="relative bg-[#f7f8fa] py-24">
+          <div className="absolute inset-0 sail-grid opacity-15" />
+          <div className="relative mx-auto max-w-7xl px-6">
+            <div className="grid gap-16 lg:grid-cols-[1.05fr_0.95fr]">
               <div>
-                <p className="sail-kicker-light">Time to Value</p>
-                <h2 className="mt-4 font-serif text-3xl font-semibold tracking-tight text-white md:text-4xl">
-                  Stop waiting. Start winning.
+                <p className="sail-kicker">Time to Value</p>
+                <h2 className="mt-4 font-serif text-4xl font-semibold tracking-tight text-slate-900">
+                  Live in days. Defend in weeks.
                 </h2>
-                <p className="mt-4 text-lg text-slate-400">
-                  While competitors spend months in implementation hell—meetings
-                  with consultants, painful data migrations, endless training
-                  sessions—you&apos;ll already be classifying, filing, and
-                  recovering duties.
+                <p className="mt-4 text-lg text-[#5d584e]">
+                  While competitors spend months in implementation purgatory,
+                  you&apos;re already classifying, monitoring, and responding.
                 </p>
-                <p className="mt-4 font-medium text-[#D8FD49]">
+                <p className="mt-4 font-medium text-slate-900">
                   <span className="sail-wordmark">SAIL</span> deploys in days
-                  for brokers, weeks for enterprises. That&apos;s it.
+                  for brokers and weeks for enterprises.
                 </p>
 
                 <div className="mt-8 space-y-4">
@@ -631,7 +759,7 @@ export default function Home() {
                     },
                     {
                       day: "Day 7",
-                      task: "Full regulatory monitoring active",
+                      task: "Regulatory monitoring active",
                       icon: Eye,
                     },
                     {
@@ -642,18 +770,18 @@ export default function Home() {
                   ].map((item) => (
                     <Card
                       key={item.day}
-                      className="group flex items-center gap-4 rounded-xl border border-white/10 bg-white/5 p-4 shadow-sm backdrop-blur-sm transition hover:border-[#343CED]/50 hover:bg-white/10 hover:shadow-md"
+                      className="sail-card ring-0 flex items-center gap-4 rounded-none bg-white p-4 transition hover:border-sail-blue/40 hover:shadow-lg hover:shadow-sail-blue/10"
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-[#343CED] to-[#343CED]/70 shadow-lg shadow-[#343CED]/20">
-                        <item.icon className="h-6 w-6 text-white" />
+                      <div className="flex h-12 w-12 items-center justify-center rounded-none border border-sail-blue/20 bg-sail-blue/10">
+                        <item.icon className="h-6 w-6 text-sail-blue" />
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
-                          <span className="font-mono text-xs font-bold text-[#D8FD49]">
+                          <span className="font-mono text-xs font-bold uppercase tracking-[0.2em] text-sail-blue">
                             {item.day}
                           </span>
                         </div>
-                        <span className="font-medium text-white">
+                        <span className="font-medium text-slate-900">
                           {item.task}
                         </span>
                       </div>
@@ -662,36 +790,196 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="flex flex-col justify-center">
-                <p className="mb-4 text-sm font-semibold text-slate-400">
-                  Meanwhile, your competitors are stuck with:
-                </p>
-                <div className="space-y-4">
-                  {[
-                    {
-                      name: "Traditional GTS implementations",
-                      time: "6-18 months",
-                    },
-                    {
-                      name: "Competitor enterprise platforms",
-                      time: "3-6 months",
-                    },
-                    { name: "Consulting-led projects", time: "12+ months" },
-                  ].map((comp) => (
-                    <Card
-                      key={comp.name}
-                      className="flex items-center justify-between rounded-xl border border-red-500/20 bg-red-950/20 p-5 backdrop-blur-sm transition hover:border-red-500/40"
-                    >
-                      <span className="text-slate-300">{comp.name}</span>
-                      <span className="font-mono text-sm font-semibold text-red-400">
-                        {comp.time}
-                      </span>
-                    </Card>
-                  ))}
+              <div className="flex flex-col gap-6">
+                <div>
+                  <p className="mb-4 text-sm font-semibold text-[#6f695d]">
+                    Meanwhile, traditional rollouts stall on:
+                  </p>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        name: "Traditional GTS implementations",
+                        time: "6-18 months",
+                      },
+                      {
+                        name: "Competitor enterprise platforms",
+                        time: "3-6 months",
+                      },
+                      { name: "Consulting-led projects", time: "12+ months" },
+                    ].map((comp) => (
+                      <Card
+                        key={comp.name}
+                        className="ring-0 flex items-center justify-between rounded-none border border-[#f1b3ad] bg-white p-5 shadow-[0_1px_0_0_rgba(0,0,0,0.04)]"
+                      >
+                        <span className="text-sm text-[#5d584e]">
+                          {comp.name}
+                        </span>
+                        <span className="font-mono text-sm font-semibold text-red-500">
+                          {comp.time}
+                        </span>
+                      </Card>
+                    ))}
+                  </div>
+                  <p className="mt-6 text-center text-sm italic text-[#6f695d]">
+                    Every month they wait is a month you&apos;re ahead.
+                  </p>
                 </div>
-                <p className="mt-6 text-center text-sm italic text-slate-500">
-                  Every month they wait is a month you&apos;re ahead.
-                </p>
+
+                <div className="sail-card overflow-hidden rounded-none">
+                  <div className="border-b border-[#e0dbcf] bg-[#f3efe6] px-4 py-2 text-[10px] uppercase tracking-[0.3em] text-[#6b5f50]">
+                    Product evidence snapshot
+                  </div>
+                  <div className="grid gap-4 bg-[#fffdf8] p-5">
+                    <div className="grid gap-4 lg:grid-cols-2">
+                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                        <p className="sail-kicker-muted">Product</p>
+                        <div className="mt-3 flex items-center justify-between">
+                          <span className="text-sm font-semibold text-slate-900">
+                            Industrial Sensor Array
+                          </span>
+                          <span className="font-mono text-xs font-semibold text-sail-blue">
+                            8542.31.00.00
+                          </span>
+                        </div>
+                        <div className="mt-4 space-y-3 text-xs text-[#6f695d]">
+                          <div className="flex items-center justify-between">
+                            <span>Confidence</span>
+                            <span className="font-mono text-slate-900">
+                              98%
+                            </span>
+                          </div>
+                          <div className="h-1.5 w-full bg-[#e0dbcf]">
+                            <div className="h-1.5 w-[92%] bg-sail-blue" />
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span>Tariff stack</span>
+                            <span className="font-mono text-slate-900">
+                              32.5%
+                            </span>
+                          </div>
+                          <div className="h-1.5 w-full bg-[#e0dbcf]">
+                            <div className="h-1.5 w-[68%] bg-sail-green" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                        <p className="sail-kicker-muted">Evidence chain</p>
+                        <ul className="mt-3 space-y-3 text-sm text-[#5d584e]">
+                          {[
+                            "Product spec sheet (14 pages)",
+                            "Supplier material composition",
+                            "3 matching CROSS rulings",
+                            "Broker approval logged",
+                          ].map((item) => (
+                            <li key={item} className="flex items-start gap-2">
+                              <span className="mt-1 h-1.5 w-1.5 bg-sail-blue" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-4 lg:grid-cols-[1.2fr_1fr]">
+                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                        <div className="flex items-center justify-between">
+                          <p className="sail-kicker-muted">Tariff stack</p>
+                          <span className="font-mono text-xs font-semibold text-slate-900">
+                            Total 57%
+                          </span>
+                        </div>
+                        <div className="mt-3 space-y-2 text-xs text-[#5d584e]">
+                          {[
+                            {
+                              code: "7210.41.00.00",
+                              label: "Base NTR",
+                              rate: "Free",
+                              duty: "$0",
+                            },
+                            {
+                              code: "9903.01.24",
+                              label: "IEEPA China/HK",
+                              rate: "10%",
+                              duty: "$700",
+                            },
+                            {
+                              code: "9903.01.25",
+                              label: "IEEPA Reciprocal",
+                              rate: "10%",
+                              duty: "$700",
+                            },
+                            {
+                              code: "9903.81.87",
+                              label: "Section 232 Steel",
+                              rate: "50%",
+                              duty: "$1,500",
+                            },
+                            {
+                              code: "9903.91.01",
+                              label: "Section 301 List I",
+                              rate: "25%",
+                              duty: "$1,750",
+                            },
+                          ].map((item) => (
+                            <div
+                              key={`${item.code}-${item.rate}`}
+                              className="flex items-start justify-between gap-3 border-b border-[#e0dbcf] pb-2 last:border-0 last:pb-0"
+                            >
+                              <div className="min-w-0">
+                                <div className="font-mono text-[11px] text-slate-900">
+                                  {item.code}
+                                </div>
+                                <div className="text-xs text-[#6f695d]">
+                                  {item.label}
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <div className="font-mono text-xs font-semibold text-slate-900">
+                                  {item.rate}
+                                </div>
+                                <div className="text-[11px] text-[#6f695d]">
+                                  {item.duty}
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        <div className="mt-3 border border-[#e0dbcf] bg-[#fffdf8] px-3 py-2 text-xs text-[#6f695d]">
+                          Stacked on $10,000 entered value
+                        </div>
+                      </div>
+
+                      <div className="sail-card ring-0 rounded-none bg-white p-4">
+                        <div className="flex items-center justify-between">
+                          <p className="sail-kicker-muted">Decision trace</p>
+                          <span className="font-mono text-xs font-semibold text-slate-900">
+                            Ready to export
+                          </span>
+                        </div>
+                        <div className="mt-3 grid gap-3">
+                          {[
+                            { label: "Inputs", value: "7 documents" },
+                            { label: "Approvals", value: "2 reviewers" },
+                            { label: "Cycle time", value: "3 hours" },
+                          ].map((stat) => (
+                            <div
+                              key={stat.label}
+                              className="border border-[#e0dbcf] bg-[#fffdf8] p-3"
+                            >
+                              <div className="text-xs uppercase tracking-[0.2em] text-[#6f695d]">
+                                {stat.label}
+                              </div>
+                              <div className="mt-2 text-sm font-semibold text-slate-900">
+                                {stat.value}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -704,6 +992,7 @@ export default function Home() {
           id="cta"
           className="relative overflow-hidden bg-sail-blue py-20"
         >
+          <GridOverlay className="opacity-10" />
           {/* Animated gradient background */}
           <div className="absolute inset-0 bg-gradient-to-br from-sail-blue via-sail-blue-light to-sail-blue opacity-80" />
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-sail-green/10 via-transparent to-transparent" />
@@ -713,13 +1002,24 @@ export default function Home() {
               <div className="flex flex-col items-center justify-between gap-8 text-center text-white md:flex-row md:text-left">
                 <div className="max-w-2xl">
                   <h2 className="font-serif text-3xl font-semibold tracking-tight md:text-4xl">
-                    See what&apos;s hiding in your trade data.
+                    See your decision trace before the next shipment.
                   </h2>
                   <p className="mt-4 text-lg text-white/90">
-                    Get a free audit of your classification accuracy. No
-                    commitment. No sales pitch. Just a clear picture of where
-                    you stand.
+                    Get a free audit of classification accuracy and tariff
+                    exposure. No commitment — just the evidence chain you can
+                    act on.
                   </p>
+                  <div className="mt-5 flex flex-wrap justify-center gap-3 text-xs font-semibold uppercase tracking-[0.3em] text-white/80 md:justify-start">
+                    <span className="rounded-none border border-white/30 px-3 py-1">
+                      Decision trace
+                    </span>
+                    <span className="rounded-none border border-white/30 px-3 py-1">
+                      Tariff stack
+                    </span>
+                    <span className="rounded-none border border-white/30 px-3 py-1">
+                      CF-28 readiness
+                    </span>
+                  </div>
                 </div>
                 <div className="flex flex-wrap gap-4">
                   <Button
@@ -728,15 +1028,10 @@ export default function Home() {
                     asChild
                   >
                     <Link
-                      href="mailto:info@sailgtx.com"
+                      href="/free-audit"
                       className="flex items-center justify-center"
                     >
-                      <span className="transition-all duration-500 group-hover:scale-95 group-hover:opacity-0">
-                        Claim Your Free Audit
-                      </span>
-                      <span className="absolute inset-0 flex items-center justify-center opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100">
-                        Save Millions!
-                      </span>
+                      Book Free Audit
                     </Link>
                   </Button>
                   <TalkToFounderButton

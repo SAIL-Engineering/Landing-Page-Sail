@@ -51,11 +51,11 @@ export function ArticleSidebar({
 
   return (
     <aside className="hidden lg:block">
-      <div className="sticky top-24 space-y-6">
+      <div className="sail-card ring-0 sticky top-24 space-y-6 rounded-none bg-white p-6">
         {/* Author Info */}
         {authors && authors.length > 0 && (
-          <div className="border-b border-slate-200 pb-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-slate-500">
+          <div className="border-b border-[#e0dbcf] pb-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-wide text-[#6f695d]">
               {authors.length === 1 ? "Author" : "Authors"}
             </p>
             <div className="space-y-4">
@@ -76,12 +76,12 @@ export function ArticleSidebar({
                       <p className="font-medium text-slate-900">
                         {author.name}
                       </p>
-                      <p className="text-xs text-slate-500">View bio</p>
+                      <p className="text-xs text-[#6f695d]">View bio</p>
                     </div>
                   </summary>
                   {author.bio && (
                     <div className="pl-13 mt-3">
-                      <p className="text-sm text-slate-600">{author.bio}</p>
+                      <p className="text-sm text-[#5d584e]">{author.bio}</p>
                       {(author.twitter || author.website) && (
                         <div className="mt-2 flex gap-3 text-xs">
                           {author.twitter && (
@@ -115,11 +115,11 @@ export function ArticleSidebar({
         )}
 
         {/* Meta Information */}
-        <div className="border-b border-slate-200 pb-6">
-          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <div className="border-b border-[#e0dbcf] pb-6">
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-[#6f695d]">
             Published
           </p>
-          <p className="text-sm text-slate-700">
+          <p className="text-sm text-[#5d584e]">
             {new Date(publishedAt).toLocaleDateString("en-US", {
               month: "long",
               day: "numeric",
@@ -129,8 +129,8 @@ export function ArticleSidebar({
         </div>
 
         {/* Share Section */}
-        <div className="border-b border-slate-200 pb-6">
-          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-slate-500">
+        <div className="border-b border-[#e0dbcf] pb-6">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-[#6f695d]">
             Share
           </p>
           <div className="flex gap-2">
@@ -139,14 +139,14 @@ export function ArticleSidebar({
               typeof navigator.share === "function" && (
                 <button
                   onClick={handleShare}
-                  className="flex-1 rounded border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+                  className="flex-1 rounded-none border border-[#e0dbcf] bg-white px-3 py-2 text-xs font-medium text-[#5d584e] hover:bg-[#fffdf8]"
                 >
                   Share
                 </button>
               )}
             <button
               onClick={handleCopyLink}
-              className="flex-1 rounded border border-slate-200 bg-white px-3 py-2 text-xs font-medium text-slate-700 hover:bg-slate-50"
+              className="flex-1 rounded-none border border-[#e0dbcf] bg-white px-3 py-2 text-xs font-medium text-[#5d584e] hover:bg-[#fffdf8]"
             >
               {copySuccess ? "Copied!" : "Copy"}
             </button>
@@ -156,10 +156,10 @@ export function ArticleSidebar({
         {/* Back to Writings */}
         <Link
           href="/writings"
-          className="group flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-slate-900"
+          className="group flex items-center gap-2 text-sm font-medium text-[#5d584e] hover:text-slate-900"
         >
           <span className="transition-transform duration-200 group-hover:-translate-x-1">
-            ←
+            {"<-"}
           </span>
           All Writings
         </Link>
