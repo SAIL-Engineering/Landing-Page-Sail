@@ -232,7 +232,12 @@ export default async function BlogPostPage({
                 See how SAIL can help you classify faster and stay compliant.
               </p>
               <div className="flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
-                <Button size="lg" variant="sail" className="w-full sm:w-auto" asChild>
+                <Button
+                  size="lg"
+                  variant="sail"
+                  className="w-full sm:w-auto"
+                  asChild
+                >
                   <Link href="/free-audit">Book Free Audit</Link>
                 </Button>
                 <TalkToFounderButton

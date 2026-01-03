@@ -67,7 +67,12 @@ export default function FreeAuditPage() {
                 </span>
               </div>
               <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-                <Button variant="sail" size="lg" className="w-full sm:w-auto" asChild>
+                <Button
+                  variant="sail"
+                  size="lg"
+                  className="w-full sm:w-auto"
+                  asChild
+                >
                   <Link href="https://cal.com/salik-tehami-ep98dm">
                     Book Free Audit
                   </Link>
@@ -384,7 +389,12 @@ export default function FreeAuditPage() {
               brokers and leadership.
             </p>
             <div className="mt-6 flex w-full flex-col gap-3 sm:flex-row sm:justify-center">
-              <Button variant="sail" size="lg" className="w-full sm:w-auto" asChild>
+              <Button
+                variant="sail"
+                size="lg"
+                className="w-full sm:w-auto"
+                asChild
+              >
                 <Link href="https://cal.com/salik-tehami-ep98dm">
                   Book Free Audit
                 </Link>
