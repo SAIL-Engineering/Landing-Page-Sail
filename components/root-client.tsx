@@ -11,7 +11,11 @@ const PostHogPageView = dynamic(() => import("@/app/PostHogPageView"), {
   ssr: false,
 });
 
-export default function RootClient({ children }: { children: React.ReactNode }) {
+export default function RootClient({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <ThemeProvider
       attribute="class"

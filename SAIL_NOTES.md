@@ -129,7 +129,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### Page Sections (`app/(default)/page.tsx`)
 
 1. **Hero Section**
-
    - Retro port background image with dark overlay
    - Headline + value prop
    - Dual CTAs: "Claim Your Free Audit" + "Talk to Founder"
@@ -137,49 +136,41 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - Modern glassmorphism design
 
 2. **Trusted By Strip**
-
    - Koch and Invista logos
    - Social proof for enterprise credibility
 
 3. **Solutions Cards**
-
    - Enterprise Compliance
    - Customs Brokerage
    - Advisory & Trade Law
    - Each with icon, description, and benefits
 
 4. **Product Section**
-
    - Interactive feature cards
    - Risk scoring UI examples
    - Checklist and workflow previews
 
 5. **Integrations Grid**
-
    - Oracle, SharePoint, US CBP, Slack, Teams, Outlook
    - All logos properly sized and visible
    - Grayscale with color on hover
 
 6. **How It Works**
-
    - 4-step process with dark-themed cards
    - Icons for: Classify, Monitor, Maintain, Defend
    - Detailed workflow descriptions
 
 7. **Case Study (Invista)**
-
    - Dark-themed premium cards
    - Challenge/Approach breakdown
    - Results dashboard widget
    - Customer quote with attribution
 
 8. **Competitive Metrics**
-
    - 5 key stats (15x faster, Same day, 100%, Daily, 98%+)
    - Clean, centered presentation
 
 9. **Time to Value**
-
    - Dark-themed section
    - Day 1-14 timeline with icon cards
    - Competitor comparison (showing months vs days)
@@ -192,7 +183,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### Components
 
 - **Header** (`components/header.tsx`)
-
   - Fixed position with glassmorphic nav
   - SAIL wordmark
   - Solutions dropdown
@@ -200,7 +190,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
   - Dual CTAs
 
 - **Footer** (`components/footer.tsx`)
-
   - Dark theme (`#0f1115`)
   - SAIL wordmark
   - Dual CTAs
@@ -281,19 +270,16 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### SAIL's Differentiation Strategy
 
 1. **Speed to Value**
-
    - SAIL: 7-14 days to go live
    - Altana: Enterprise-level rollout (months)
    - **Messaging:** "Stop waiting. Start winning."
 
 2. **Target Audience**
-
    - SAIL: Broker-first, self-serve onboarding
    - Altana: Enterprise + government network
    - **Messaging:** Built for teams who do the work, not committees
 
 3. **Practical Workflows**
-
    - SAIL: Audit-ready documentation, fast updates, classification
    - Altana: Network solution, Product Passports, regulator collaboration
    - **Messaging:** Real workflows for real compliance teams
@@ -312,7 +298,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 **Status: 🚧 In Progress**
 
 1. **Authentication & User Management**
-
    - [ ] Sign up flow
    - [ ] Login/logout
    - [ ] Password reset
@@ -320,7 +305,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] User profile management
 
 2. **Onboarding Experience**
-
    - [ ] Product catalog import (CSV/API)
    - [ ] Initial classification setup
    - [ ] Integration connections (ERPs, customs systems)
@@ -328,7 +312,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] Team invites
 
 3. **Product Dashboard**
-
    - [ ] Product library view
    - [ ] Classification status
    - [ ] Confidence scores
@@ -336,7 +319,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] Search and filtering
 
 4. **Classification Engine**
-
    - [ ] AI-powered HTS code suggestions
    - [ ] Confidence scoring algorithm
    - [ ] Reasoning chains
@@ -344,7 +326,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] Classification history
 
 5. **Monitoring System**
-
    - [ ] Tariff change notifications
    - [ ] HTS schedule updates (daily sync)
    - [ ] Product impact analysis
@@ -363,21 +344,18 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 **Status: 📋 Planned**
 
 1. **Duty Recovery**
-
    - [ ] Overpayment detection
    - [ ] Drawback opportunity identification
    - [ ] Filing assistance
    - [ ] ROI tracking
 
 2. **Team Collaboration**
-
    - [ ] Role-based access control
    - [ ] Comments and annotations
    - [ ] Approval workflows
    - [ ] Activity feed
 
 3. **Integrations**
-
    - [ ] Oracle NetSuite connector
    - [ ] SAP integration
    - [ ] Customs broker portals
@@ -387,7 +365,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] Email (Outlook) integration
 
 4. **Advanced Analytics**
-
    - [ ] Duty savings dashboard
    - [ ] Classification accuracy metrics
    - [ ] Time savings reports
@@ -406,7 +383,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 **Status: 🎯 Future**
 
 1. **Advanced Workflows**
-
    - [ ] Custom classification rules
    - [ ] Automated re-classification
    - [ ] Batch processing
@@ -414,7 +390,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
    - [ ] Webhooks
 
 2. **White-Label Capabilities**
-
    - [ ] Broker-branded portals
    - [ ] Custom domains
    - [ ] Logo customization
@@ -484,13 +459,11 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### Design Polish
 
 1. **Logo Assets**
-
    - [ ] Get properly cropped/sized Koch logo (remove scale hacks)
    - [ ] Optimize all integration logos for web
    - [ ] Add more customer logos as they come
 
 2. **Visual Assets**
-
    - [ ] Replace screenshot placeholders with actual product UI
    - [ ] Create custom illustrations for "How It Works"
    - [ ] Design section dividers/transitions
@@ -503,7 +476,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### Copy Refinement
 
 1. **Messaging**
-
    - [ ] A/B test CTA copy variations
    - [ ] Tighten value props in each section
    - [ ] Add more specific "before/after" outcomes
@@ -518,7 +490,6 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ### Performance
 
 1. **Optimization**
-
    - [ ] Image optimization audit
    - [ ] Font loading strategy
    - [ ] Lazy loading for below-fold content
@@ -535,22 +506,18 @@ Build a premium, conversion-focused landing page for SAIL GTX that positions the
 ## Open Questions & Decisions Needed
 
 1. **Branding**
-
    - Is "SAIL GTX" the final name or just "SAIL"?
    - Any trademark considerations?
 
 2. **Pricing**
-
    - Will pricing be public on the landing page?
    - Freemium model or enterprise-only?
 
 3. **Demo Flow**
-
    - Live demo environment or recorded video?
    - Calendar booking vs. email-based scheduling?
 
 4. **Legal**
-
    - Terms of Service content
    - Privacy Policy details
    - Cookie consent requirements

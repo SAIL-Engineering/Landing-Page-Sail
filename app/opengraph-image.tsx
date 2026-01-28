@@ -9,30 +9,28 @@ export const contentType = "image/png";
 
 export default function OpenGraphImage() {
   return new ImageResponse(
-    (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#0b0f2b",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
       <div
         style={{
-          width: "100%",
-          height: "100%",
-          backgroundColor: "#0b0f2b",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          color: "#f9fafb",
+          fontSize: 140,
+          fontWeight: 700,
+          letterSpacing: 10,
+          fontFamily: "Arial, Helvetica, sans-serif",
         }}
       >
-        <div
-          style={{
-            color: "#f9fafb",
-            fontSize: 140,
-            fontWeight: 700,
-            letterSpacing: 10,
-            fontFamily: "Arial, Helvetica, sans-serif",
-          }}
-        >
-          SAIL GTX
-        </div>
+        SAIL GTX
       </div>
-    ),
+    </div>,
     size,
   );
 }

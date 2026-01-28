@@ -6,7 +6,6 @@ import { constructMetadata } from "@/lib/utils";
 import { Metadata } from "next/types";
 import Link from "next/link";
 
-
 export const metadata: Metadata = constructMetadata({
   title: "Enterprise Compliance",
   description:

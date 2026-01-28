@@ -72,9 +72,7 @@ export default function FreeAuditPage() {
                   className="w-full sm:w-auto"
                   asChild
                 >
-                  <Link href="mailto:info@sailgtx.com">
-                    Book Free Audit
-                  </Link>
+                  <Link href="mailto:info@sailgtx.com">Book Free Audit</Link>
                 </Button>
                 {/* TalkToFounderButton removed */}
               </div>
@@ -391,9 +389,7 @@ export default function FreeAuditPage() {
                 className="w-full sm:w-auto"
                 asChild
               >
-                <Link href="mailto:info@sailgtx.com">
-                  Book Free Audit
-                </Link>
+                <Link href="mailto:info@sailgtx.com">Book Free Audit</Link>
               </Button>
               {/* TalkToFounderButton removed */}
             </div>

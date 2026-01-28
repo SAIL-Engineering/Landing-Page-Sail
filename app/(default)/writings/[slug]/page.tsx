@@ -8,7 +8,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArticleSidebar } from "@/components/article-sidebar";
 
-
 export async function generateMetadata({
   params,
 }: {
