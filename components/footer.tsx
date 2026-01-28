@@ -1,7 +1,6 @@
 import { footerSections, socialMediaLinks } from "@/utils/constants";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 export default function Footer() {
   return (
@@ -30,13 +29,13 @@ export default function Footer() {
                 asChild
               >
                 <Link
-                  href="/free-audit"
+                  href="mailto:info@sailgtx.com"
                   className="flex items-center justify-center"
                 >
                   Book Free Audit
                 </Link>
               </Button>
-              <TalkToFounderButton className="w-full border-white/30 bg-white/10 text-white hover:border-white/60 hover:bg-white/20 hover:text-white sm:w-auto" />
+              {/* TalkToFounderButton removed */}
             </div>
           </div>
           <div className="grid grid-cols-2 gap-8 md:grid-cols-3">

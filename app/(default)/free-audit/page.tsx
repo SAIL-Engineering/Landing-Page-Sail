@@ -4,7 +4,6 @@ import { constructMetadata } from "@/lib/utils";
 import { Metadata } from "next/types";
 import Link from "next/link";
 import { GridOverlay } from "@/components/landing/grid-overlay";
-import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 import {
   IconScrollTextOutline18 as FileText,
   IconChartColumnOutline18 as BarChart3,
@@ -73,14 +72,11 @@ export default function FreeAuditPage() {
                   className="w-full sm:w-auto"
                   asChild
                 >
-                  <Link href="https://cal.com/salik-tehami-ep98dm">
+                  <Link href="mailto:info@sailgtx.com">
                     Book Free Audit
                   </Link>
                 </Button>
-                <TalkToFounderButton
-                  size="lg"
-                  className="w-full border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 sm:w-auto"
-                />
+                {/* TalkToFounderButton removed */}
               </div>
             </div>
 
@@ -395,11 +391,11 @@ export default function FreeAuditPage() {
                 className="w-full sm:w-auto"
                 asChild
               >
-                <Link href="https://cal.com/salik-tehami-ep98dm">
+                <Link href="mailto:info@sailgtx.com">
                   Book Free Audit
                 </Link>
               </Button>
-              <TalkToFounderButton size="lg" className="w-full sm:w-auto" />
+              {/* TalkToFounderButton removed */}
             </div>
           </div>
         </div>

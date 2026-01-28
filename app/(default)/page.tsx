@@ -21,7 +21,7 @@ import {
   IconChartColumnOutline18 as BarChart3,
   IconEnvelopeOutline18 as Send,
 } from "nucleo-ui-outline-18";
-import { TalkToFounderButton } from "@/components/talk-to-founder-button";
+// TalkToFounderButton removed
 
 export const metadata: Metadata = constructMetadata({
   title: "SAIL",
@@ -88,23 +88,19 @@ export default function Home() {
                     asChild
                   >
                     <Link
-                      href="/free-audit"
+                      href="mailto:info@sailgtx.com"
                       className="flex items-center justify-center"
                     >
                       Book Free Audit
                     </Link>
                   </Button>
-                  <TalkToFounderButton
-                    size="lg"
-                    className="w-full border-white/40 bg-white/10 text-white hover:bg-white hover:text-slate-900 sm:w-auto"
-                  />
                 </div>
 
                 <div className="grid gap-4 text-left sm:grid-cols-3">
                   {[
                     {
                       label: "Confidence",
-                      value: "98%+",
+                      value: "95%+",
                     },
                     {
                       label: "Time to value",
@@ -707,7 +703,7 @@ export default function Home() {
                   subtext: "Never miss a change",
                 },
                 {
-                  value: "98%+",
+                  value: "95%+",
                   label: "Classification confidence",
                   subtext: "With evidence chains",
                 },
@@ -1038,16 +1034,12 @@ export default function Home() {
                     asChild
                   >
                     <Link
-                      href="/free-audit"
+                      href="mailto:info@sailgtx.com"
                       className="flex items-center justify-center"
                     >
                       Book Free Audit
                     </Link>
                   </Button>
-                  <TalkToFounderButton
-                    size="lg"
-                    className="w-full border-white/50 bg-white/10 text-white backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:bg-white hover:text-sail-blue hover:shadow-xl sm:w-auto"
-                  />
                 </div>
               </div>
             </div>

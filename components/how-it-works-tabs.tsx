@@ -21,7 +21,7 @@ const stepsData = [
     icon: FileSearch,
     preview: {
       title: "HTS Classification",
-      badge: "98% confidence",
+      badge: "95% confidence",
       content: (
         <div className="space-y-3">
           <div className="flex justify-between text-sm">

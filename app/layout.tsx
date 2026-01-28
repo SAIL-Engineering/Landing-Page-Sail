@@ -3,15 +3,9 @@ import "./globals.css";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { IBM_Plex_Serif, JetBrains_Mono, Nunito_Sans } from "next/font/google";
-import { PHProvider } from "./providers";
-import Header from "@/components/header";
-import { Toaster } from "@/components/ui/sonner";
 import dynamic from "next/dynamic";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { ThemeProvider } from "next-themes";
 
-const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
+const RootClient = dynamic(() => import("@/components/root-client"), {
   ssr: false,
 });
 
@@ -45,27 +39,9 @@ export default function RootLayout({
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${plexSerif.variable} ${jetbrainsMono.variable} ${nunitoSans.variable}`}
     >
-      <PHProvider>
-        <body className={`bg-background font-sans tracking-tight antialiased`}>
-          <ThemeProvider
-            attribute="class"
-            enableSystem
-            defaultTheme="light"
-            disableTransitionOnChange
-            enableColorScheme={false}
-          >
-            <PostHogPageView />
-            <div className="flex min-h-screen flex-col overflow-hidden">
-              <Header />
-              {children}
-              <Toaster position="bottom-right" richColors />
-              <Analytics />
-              <SpeedInsights />
-            </div>
-          </ThemeProvider>
-          <Analytics />
-        </body>
-      </PHProvider>
+      <body className={`bg-background font-sans tracking-tight antialiased`}>
+        <RootClient>{children}</RootClient>
+      </body>
     </html>
   );
 }

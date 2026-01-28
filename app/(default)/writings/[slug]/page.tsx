@@ -8,7 +8,6 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ArticleSidebar } from "@/components/article-sidebar";
 
-import { TalkToFounderButton } from "@/components/talk-to-founder-button";
 
 export async function generateMetadata({
   params,
@@ -238,12 +237,8 @@ export default async function BlogPostPage({
                   className="w-full sm:w-auto"
                   asChild
                 >
-                  <Link href="/free-audit">Book Free Audit</Link>
+                  <Link href="mailto:info@sailgtx.com">Book Free Audit</Link>
                 </Button>
-                <TalkToFounderButton
-                  size="lg"
-                  className="w-full border-[#e0dbcf] bg-white text-slate-900 hover:bg-[#fffdf8] sm:w-auto"
-                />
               </div>
             </div>
 

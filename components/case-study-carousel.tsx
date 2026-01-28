@@ -56,7 +56,7 @@ const caseStudies: CaseStudy[] = [
       {
         metric: "Classification confidence",
         before: "Unknown",
-        after: "98.2% verified",
+        after: "95% verified",
       },
       {
         metric: "Catalog currency",

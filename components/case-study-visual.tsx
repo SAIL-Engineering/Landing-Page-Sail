@@ -208,7 +208,7 @@ export function CaseStudyVisual() {
               {
                 metric: "Confidence Score",
                 before: "Unknown",
-                after: "98.2%",
+                after: "95%",
                 improvement: "Verified",
               },
               {
