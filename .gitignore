@@ -5,6 +5,7 @@ node_modules/
 .env*.local
 .DS_Store
 .vscode
+pnpm-lock.yaml
 
 # contentlayer
 .contentlayer

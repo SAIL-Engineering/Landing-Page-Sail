@@ -7,7 +7,7 @@
     "npm": "10.x"
   },
   "scripts": {
-    "dev": "rm -rf .next && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "format": "prettier --write .",
