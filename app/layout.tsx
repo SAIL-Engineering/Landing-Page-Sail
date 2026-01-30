@@ -4,6 +4,14 @@ import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { IBM_Plex_Serif, JetBrains_Mono, Nunito_Sans } from "next/font/google";
 import dynamic from "next/dynamic";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.sailgtx.com"),
+  icons: {
+    icon: "/favicon.svg",
+  },
+};
 
 const RootClient = dynamic(() => import("@/components/root-client"), {
   ssr: false,
