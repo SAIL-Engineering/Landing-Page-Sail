@@ -143,11 +143,11 @@ export default function Home() {
                           Steel coil sheets - cold rolled
                         </p>
                       </div>
-                      <div className="flex items-center gap-3">
-                        <div className="border border-white/10 bg-[#11163a] px-3 py-1 text-xs text-white/70">
+                      <div className="flex items-stretch gap-3">
+                        <div className="flex items-center border border-white/10 bg-[#11163a] px-3 py-1 text-xs text-white/70">
                           CF-28 packet ready to export
                         </div>
-                        <div className="border border-sail-green/40 bg-sail-green/20 px-3 py-1 text-xs font-semibold text-sail-green">
+                        <div className="flex items-center border border-sail-green/40 bg-sail-green/20 px-3 py-1 text-xs font-semibold text-sail-green">
                           Approved
                         </div>
                       </div>
