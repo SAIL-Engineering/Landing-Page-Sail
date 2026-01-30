@@ -57,7 +57,7 @@ export default function Home() {
           <GridOverlay className="opacity-10" />
 
           <div className="relative z-10 mx-auto max-w-7xl px-6">
-            <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
+            <div className="grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">
               {/* Left: Copy */}
               <div className="space-y-8 text-center lg:text-left">
                 <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
@@ -127,7 +127,7 @@ export default function Home() {
               </div>
 
               {/* Right: Command Center Preview */}
-              <div className="relative">
+              <div>
                 <div className="overflow-hidden border border-white/10 bg-[#11163a]">
                   <div className="flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs uppercase tracking-[0.3em] text-white/60">
                     <span>Workspace: Classification</span>
@@ -143,8 +143,13 @@ export default function Home() {
                           Steel coil sheets - cold rolled
                         </p>
                       </div>
-                      <div className="border border-sail-green/40 bg-sail-green/20 px-3 py-1 text-xs font-semibold text-sail-green">
-                        Approved
+                      <div className="flex items-center gap-3">
+                        <div className="border border-white/10 bg-[#11163a] px-3 py-1 text-xs text-white/70">
+                          CF-28 packet ready to export
+                        </div>
+                        <div className="border border-sail-green/40 bg-sail-green/20 px-3 py-1 text-xs font-semibold text-sail-green">
+                          Approved
+                        </div>
                       </div>
                     </div>
 
@@ -168,7 +173,7 @@ export default function Home() {
                         </ul>
                         <div className="mt-4 font-mono text-xs text-white/60">
                           {">"} Review pending{" "}
-                          <span className="inline-block h-4 w-1 animate-pulse bg-sail-green" />
+                          <span className="inline-block h-3 w-1 translate-y-0.5 animate-pulse bg-sail-green" />
                         </div>
                       </div>
 
@@ -222,10 +227,6 @@ export default function Home() {
                       ))}
                     </div>
                   </div>
-                </div>
-
-                <div className="absolute -bottom-6 -left-6 hidden border border-white/10 bg-[#11163a] px-4 py-3 text-xs text-white/70 lg:block">
-                  CF-28 packet ready to export
                 </div>
               </div>
             </div>
